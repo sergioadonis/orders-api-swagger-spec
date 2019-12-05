@@ -185,7 +185,7 @@ public class BusinessApi {
     }
   }
   /**
-  * Delete business
+  * Delete business by id
   * 
    * @param id 
    * @return void
@@ -248,7 +248,7 @@ public class BusinessApi {
   }
 
       /**
-   * Delete business
+   * Delete business by id
    * 
    * @param id 
   */
@@ -309,7 +309,7 @@ public class BusinessApi {
     }
   }
   /**
-  * Get business
+  * Get business by id
   * 
    * @param id 
    * @return Business
@@ -372,7 +372,7 @@ public class BusinessApi {
   }
 
       /**
-   * Get business
+   * Get business by id
    * 
    * @param id 
   */
@@ -554,7 +554,7 @@ public class BusinessApi {
     }
   }
   /**
-  * Update business
+  * Update business by id
   * 
    * @param id 
    * @param bussines 
@@ -623,7 +623,7 @@ public class BusinessApi {
   }
 
       /**
-   * Update business
+   * Update business by id
    * 
    * @param id    * @param bussines 
   */
