@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/BusinessBusinessProps', 'model/InlineResponseDefault', 'api/BusinessApi'], factory);
+    define(['ApiClient', 'model/Business', 'model/BusinessBusinessProps', 'model/Error', 'api/BusinessApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Business'), require('./model/BusinessBusinessProps'), require('./model/InlineResponseDefault'), require('./api/BusinessApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Business'), require('./model/BusinessBusinessProps'), require('./model/Error'), require('./api/BusinessApi'));
   }
-}(function(ApiClient, Business, BusinessBusinessProps, InlineResponseDefault, BusinessApi) {
+}(function(ApiClient, Business, BusinessBusinessProps, Error, BusinessApi) {
   'use strict';
 
   /**
@@ -73,10 +73,10 @@
      */
     BusinessBusinessProps: BusinessBusinessProps,
     /**
-     * The InlineResponseDefault model constructor.
-     * @property {module:model/InlineResponseDefault}
+     * The Error model constructor.
+     * @property {module:model/Error}
      */
-    InlineResponseDefault: InlineResponseDefault,
+    Error: Error,
     /**
      * The BusinessApi service constructor.
      * @property {module:api/BusinessApi}

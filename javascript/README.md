@@ -128,7 +128,7 @@ Class | Method | HTTP request | Description
 
  - [OrdersApi.Business](docs/Business.md)
  - [OrdersApi.BusinessBusinessProps](docs/BusinessBusinessProps.md)
- - [OrdersApi.InlineResponseDefault](docs/InlineResponseDefault.md)
+ - [OrdersApi.Error](docs/Error.md)
 
 
 ## Documentation for Authorization

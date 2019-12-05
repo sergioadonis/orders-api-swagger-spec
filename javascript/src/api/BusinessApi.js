@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/BusinessProps', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/Business', 'model/BusinessProps', 'model/Error'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/BusinessProps'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/BusinessProps'), require('../model/Error'));
   } else {
     // Browser globals (root is window)
     if (!root.OrdersApi) {
       root.OrdersApi = {};
     }
-    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.BusinessProps, root.OrdersApi.InlineResponseDefault);
+    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.BusinessProps, root.OrdersApi.Error);
   }
-}(this, function(ApiClient, Business, BusinessProps, InlineResponseDefault) {
+}(this, function(ApiClient, Business, BusinessProps, Error) {
   'use strict';
 
   /**
