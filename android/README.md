@@ -64,12 +64,12 @@ public class BusinessApiExample {
 
     public static void main(String[] args) {
         BusinessApi apiInstance = new BusinessApi();
-        Props businessProps = new Props(); // Props | 
+        Props props = new Props(); // Props | 
         try {
-            Business result = apiInstance.createOneBusiness(businessProps);
+            Business result = apiInstance.createBusiness(props);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BusinessApi#createOneBusiness");
+            System.err.println("Exception when calling BusinessApi#createBusiness");
             e.printStackTrace();
         }
     }
@@ -83,11 +83,11 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BusinessApi* | [**createOneBusiness**](docs/BusinessApi.md#createOneBusiness) | **POST** /business | Create business
-*BusinessApi* | [**deleteOneBusiness**](docs/BusinessApi.md#deleteOneBusiness) | **DELETE** /business/{businessId} | Delete business
-*BusinessApi* | [**getBusinessesList**](docs/BusinessApi.md#getBusinessesList) | **GET** /business | Get businesses
-*BusinessApi* | [**getOneBusiness**](docs/BusinessApi.md#getOneBusiness) | **GET** /business/{businessId} | Get business
-*BusinessApi* | [**updateOneBusiness**](docs/BusinessApi.md#updateOneBusiness) | **PUT** /business/{businessId} | Update business
+*BusinessApi* | [**createBusiness**](docs/BusinessApi.md#createBusiness) | **POST** /business | Create business
+*BusinessApi* | [**deleteBusinessById**](docs/BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business
+*BusinessApi* | [**getBusinessById**](docs/BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business
+*BusinessApi* | [**getBusinesses**](docs/BusinessApi.md#getBusinesses) | **GET** /business | Get businesses
+*BusinessApi* | [**updateBusinessById**](docs/BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business
 
 
 ## Documentation for Models

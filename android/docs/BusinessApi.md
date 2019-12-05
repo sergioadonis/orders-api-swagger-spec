@@ -4,16 +4,16 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createOneBusiness**](BusinessApi.md#createOneBusiness) | **POST** /business | Create business
-[**deleteOneBusiness**](BusinessApi.md#deleteOneBusiness) | **DELETE** /business/{businessId} | Delete business
-[**getBusinessesList**](BusinessApi.md#getBusinessesList) | **GET** /business | Get businesses
-[**getOneBusiness**](BusinessApi.md#getOneBusiness) | **GET** /business/{businessId} | Get business
-[**updateOneBusiness**](BusinessApi.md#updateOneBusiness) | **PUT** /business/{businessId} | Update business
+[**createBusiness**](BusinessApi.md#createBusiness) | **POST** /business | Create business
+[**deleteBusinessById**](BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business
+[**getBusinessById**](BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business
+[**getBusinesses**](BusinessApi.md#getBusinesses) | **GET** /business | Get businesses
+[**updateBusinessById**](BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business
 
 
-<a name="createOneBusiness"></a>
-# **createOneBusiness**
-> Business createOneBusiness(businessProps)
+<a name="createBusiness"></a>
+# **createBusiness**
+> Business createBusiness(props)
 
 Create business
 
@@ -23,12 +23,12 @@ Create business
 //import io.swagger.client.api.BusinessApi;
 
 BusinessApi apiInstance = new BusinessApi();
-Props businessProps = new Props(); // Props | 
+Props props = new Props(); // Props | 
 try {
-    Business result = apiInstance.createOneBusiness(businessProps);
+    Business result = apiInstance.createBusiness(props);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BusinessApi#createOneBusiness");
+    System.err.println("Exception when calling BusinessApi#createBusiness");
     e.printStackTrace();
 }
 ```
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessProps** | [**Props**](Props.md)|  |
+ **props** | [**Props**](Props.md)|  |
 
 ### Return type
 
@@ -52,9 +52,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteOneBusiness"></a>
-# **deleteOneBusiness**
-> deleteOneBusiness(businessId)
+<a name="deleteBusinessById"></a>
+# **deleteBusinessById**
+> deleteBusinessById(id)
 
 Delete business
 
@@ -64,11 +64,11 @@ Delete business
 //import io.swagger.client.api.BusinessApi;
 
 BusinessApi apiInstance = new BusinessApi();
-String businessId = "businessId_example"; // String | 
+String id = "id_example"; // String | 
 try {
-    apiInstance.deleteOneBusiness(businessId);
+    apiInstance.deleteBusinessById(id);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BusinessApi#deleteOneBusiness");
+    System.err.println("Exception when calling BusinessApi#deleteBusinessById");
     e.printStackTrace();
 }
 ```
@@ -77,7 +77,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessId** | **String**|  |
+ **id** | **String**|  |
 
 ### Return type
 
@@ -92,9 +92,50 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getBusinessesList"></a>
-# **getBusinessesList**
-> List&lt;Business&gt; getBusinessesList()
+<a name="getBusinessById"></a>
+# **getBusinessById**
+> Business getBusinessById(id)
+
+Get business
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.api.BusinessApi;
+
+BusinessApi apiInstance = new BusinessApi();
+String id = "id_example"; // String | 
+try {
+    Business result = apiInstance.getBusinessById(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BusinessApi#getBusinessById");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  |
+
+### Return type
+
+[**Business**](Business.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getBusinesses"></a>
+# **getBusinesses**
+> List&lt;Business&gt; getBusinesses()
 
 Get businesses
 
@@ -105,10 +146,10 @@ Get businesses
 
 BusinessApi apiInstance = new BusinessApi();
 try {
-    List<Business> result = apiInstance.getBusinessesList();
+    List<Business> result = apiInstance.getBusinesses();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BusinessApi#getBusinessesList");
+    System.err.println("Exception when calling BusinessApi#getBusinesses");
     e.printStackTrace();
 }
 ```
@@ -129,50 +170,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getOneBusiness"></a>
-# **getOneBusiness**
-> Business getOneBusiness(businessId)
-
-Get business
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.api.BusinessApi;
-
-BusinessApi apiInstance = new BusinessApi();
-String businessId = "businessId_example"; // String | 
-try {
-    Business result = apiInstance.getOneBusiness(businessId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BusinessApi#getOneBusiness");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **businessId** | **String**|  |
-
-### Return type
-
-[**Business**](Business.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateOneBusiness"></a>
-# **updateOneBusiness**
-> Business updateOneBusiness(businessId, businessProps)
+<a name="updateBusinessById"></a>
+# **updateBusinessById**
+> Business updateBusinessById(id, props)
 
 Update business
 
@@ -182,13 +182,13 @@ Update business
 //import io.swagger.client.api.BusinessApi;
 
 BusinessApi apiInstance = new BusinessApi();
-String businessId = "businessId_example"; // String | 
-Props businessProps = new Props(); // Props | 
+String id = "id_example"; // String | 
+Props props = new Props(); // Props | 
 try {
-    Business result = apiInstance.updateOneBusiness(businessId, businessProps);
+    Business result = apiInstance.updateBusinessById(id, props);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BusinessApi#updateOneBusiness");
+    System.err.println("Exception when calling BusinessApi#updateBusinessById");
     e.printStackTrace();
 }
 ```
@@ -197,8 +197,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessId** | **String**|  |
- **businessProps** | [**Props**](Props.md)|  |
+ **id** | **String**|  |
+ **props** | [**Props**](Props.md)|  |
 
 ### Return type
 
