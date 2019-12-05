@@ -14,70 +14,65 @@
  *
  */
 
-(function(factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/Error', 'api/BusinessApi'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Business'), require('./model/Error'), require('./api/BusinessApi'));
-  }
-}(function(ApiClient, Business, Error, BusinessApi) {
-  'use strict';
+import {ApiClient} from './ApiClient';
+import {Business} from './model/Business';
+import {Error} from './model/Error';
+import {BusinessApi} from './api/BusinessApi';
 
-  /**
-   * Simple_API_to_manage_businesses_and_orders.<br>
-   * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
-   * <p>
-   * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
-   * <pre>
-   * var OrdersApi = require('index'); // See note below*.
-   * var xxxSvc = new OrdersApi.XxxApi(); // Allocate the API class we're going to use.
-   * var yyyModel = new OrdersApi.Yyy(); // Construct a model instance.
-   * yyyModel.someProperty = 'someValue';
-   * ...
-   * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-   * ...
-   * </pre>
-   * <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
-   * and put the application logic within the callback function.</em>
-   * </p>
-   * <p>
-   * A non-AMD browser application (discouraged) might do something like this:
-   * <pre>
-   * var xxxSvc = new OrdersApi.XxxApi(); // Allocate the API class we're going to use.
-   * var yyy = new OrdersApi.Yyy(); // Construct a model instance.
-   * yyyModel.someProperty = 'someValue';
-   * ...
-   * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-   * ...
-   * </pre>
-   * </p>
-   * @module index
-   * @version 1.0.1
-   */
-  var exports = {
+
+/**
+* Simple_API_to_manage_businesses_and_orders.<br>
+* The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
+* <p>
+* An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
+* <pre>
+* var OrdersApi = require('index'); // See note below*.
+* var xxxSvc = new OrdersApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new OrdersApi.Yyy(); // Construct a model instance.
+* yyyModel.someProperty = 'someValue';
+* ...
+* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
+* ...
+* </pre>
+* <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
+* and put the application logic within the callback function.</em>
+* </p>
+* <p>
+* A non-AMD browser application (discouraged) might do something like this:
+* <pre>
+* var xxxSvc = new OrdersApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new OrdersApi.Yyy(); // Construct a model instance.
+* yyyModel.someProperty = 'someValue';
+* ...
+* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
+* ...
+* </pre>
+* </p>
+* @module index
+* @version 1.0.1
+*/
+export {
     /**
      * The ApiClient constructor.
      * @property {module:ApiClient}
      */
-    ApiClient: ApiClient,
+    ApiClient,
+
     /**
      * The Business model constructor.
      * @property {module:model/Business}
      */
-    Business: Business,
+    Business,
+
     /**
      * The Error model constructor.
      * @property {module:model/Error}
      */
-    Error: Error,
-    /**
-     * The BusinessApi service constructor.
-     * @property {module:api/BusinessApi}
-     */
-    BusinessApi: BusinessApi
-  };
+    Error,
 
-  return exports;
-}));
+    /**
+    * The BusinessApi service constructor.
+    * @property {module:api/BusinessApi}
+    */
+    BusinessApi
+};

@@ -14,36 +14,21 @@
  *
  */
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
-    // Browser globals (root is window)
-    if (!root.OrdersApi) {
-      root.OrdersApi = {};
-    }
-    root.OrdersApi.Error = factory(root.OrdersApi.ApiClient);
-  }
-}(this, function(ApiClient) {
-  'use strict';
+import {ApiClient} from '../ApiClient';
 
-  /**
-   * The Error model module.
-   * @module model/Error
-   * @version 1.0.1
-   */
-
+/**
+ * The Error model module.
+ * @module model/Error
+ * @version 1.0.1
+ */
+export class Error {
   /**
    * Constructs a new <code>Error</code>.
    * @alias module:model/Error
    * @class
    */
-  var exports = function() {
-  };
+  constructor() {
+  }
 
   /**
    * Constructs a <code>Error</code> from a plain JavaScript object, optionally creating a new instance.
@@ -52,9 +37,9 @@
    * @param {module:model/Error} obj Optional instance to populate.
    * @return {module:model/Error} The populated <code>Error</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new exports();
+      obj = obj || new Error();
       if (data.hasOwnProperty('code'))
         obj.code = ApiClient.convertToType(data['code'], 'String');
       if (data.hasOwnProperty('message'))
@@ -64,22 +49,21 @@
     }
     return obj;
   }
+}
 
-  /**
-   * @member {String} code
-   */
-  exports.prototype.code = undefined;
+/**
+ * @member {String} code
+ */
+Error.prototype.code = undefined;
 
-  /**
-   * @member {String} message
-   */
-  exports.prototype.message = undefined;
+/**
+ * @member {String} message
+ */
+Error.prototype.message = undefined;
 
-  /**
-   * @member {String} target
-   */
-  exports.prototype.target = undefined;
+/**
+ * @member {String} target
+ */
+Error.prototype.target = undefined;
 
-  return exports;
 
-}));

@@ -14,38 +14,27 @@
  *
  */
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/Error'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/Error'));
-  } else {
-    // Browser globals (root is window)
-    if (!root.OrdersApi) {
-      root.OrdersApi = {};
+import {ApiClient} from "../ApiClient";
+import {Business} from '../model/Business';
+import {Error} from '../model/Error';
+
+/**
+* Business service.
+* @module api/BusinessApi
+* @version 1.0.1
+*/
+export class BusinessApi {
+
+    /**
+    * Constructs a new BusinessApi. 
+    * @alias module:api/BusinessApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
-    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.Error);
-  }
-}(this, function(ApiClient, Business, Error) {
-  'use strict';
-
-  /**
-   * Business service.
-   * @module api/BusinessApi
-   * @version 1.0.1
-   */
-
-  /**
-   * Constructs a new BusinessApi. 
-   * @alias module:api/BusinessApi
-   * @class
-   * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
-   * default to {@link module:ApiClient#instance} if unspecified.
-   */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
 
 
     /**
@@ -62,8 +51,8 @@
      * @param {module:api/BusinessApi~createBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.createBusiness = function(bussines, callback) {
-      var postBody = bussines;
+    createBusiness(bussines, callback) {
+      let postBody = bussines;
 
       // verify the required parameter 'bussines' is set
       if (bussines === undefined || bussines === null) {
@@ -71,25 +60,23 @@
       }
 
 
-      var pathParams = {
+      let pathParams = {
       };
-      var queryParams = {
+      let queryParams = {
       };
-      var collectionQueryParams = {
+      let headerParams = {
       };
-      var headerParams = {
-      };
-      var formParams = {
+      let formParams = {
       };
 
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Business;
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Business;
 
       return this.apiClient.callApi(
         '/business', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
@@ -107,8 +94,8 @@
      * @param {String} id 
      * @param {module:api/BusinessApi~deleteBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteBusinessById = function(id, callback) {
-      var postBody = null;
+    deleteBusinessById(id, callback) {
+      let postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -116,26 +103,24 @@
       }
 
 
-      var pathParams = {
+      let pathParams = {
         'id': id
       };
-      var queryParams = {
+      let queryParams = {
       };
-      var collectionQueryParams = {
+      let headerParams = {
       };
-      var headerParams = {
-      };
-      var formParams = {
+      let formParams = {
       };
 
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/business/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
@@ -154,8 +139,8 @@
      * @param {module:api/BusinessApi~getBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.getBusinessById = function(id, callback) {
-      var postBody = null;
+    getBusinessById(id, callback) {
+      let postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -163,26 +148,24 @@
       }
 
 
-      var pathParams = {
+      let pathParams = {
         'id': id
       };
-      var queryParams = {
+      let queryParams = {
       };
-      var collectionQueryParams = {
+      let headerParams = {
       };
-      var headerParams = {
-      };
-      var formParams = {
+      let formParams = {
       };
 
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Business;
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Business;
 
       return this.apiClient.callApi(
         '/business/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
@@ -200,29 +183,27 @@
      * @param {module:api/BusinessApi~getBusinessesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Business>}
      */
-    this.getBusinesses = function(callback) {
-      var postBody = null;
+    getBusinesses(callback) {
+      let postBody = null;
 
 
-      var pathParams = {
+      let pathParams = {
       };
-      var queryParams = {
+      let queryParams = {
       };
-      var collectionQueryParams = {
+      let headerParams = {
       };
-      var headerParams = {
-      };
-      var formParams = {
+      let formParams = {
       };
 
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Business];
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [Business];
 
       return this.apiClient.callApi(
         '/business', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
@@ -242,8 +223,8 @@
      * @param {module:api/BusinessApi~updateBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.updateBusinessById = function(id, bussines, callback) {
-      var postBody = bussines;
+    updateBusinessById(id, bussines, callback) {
+      let postBody = bussines;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -256,30 +237,27 @@
       }
 
 
-      var pathParams = {
+      let pathParams = {
         'id': id
       };
-      var queryParams = {
+      let queryParams = {
       };
-      var collectionQueryParams = {
+      let headerParams = {
       };
-      var headerParams = {
-      };
-      var formParams = {
+      let formParams = {
       };
 
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Business;
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Business;
 
       return this.apiClient.callApi(
         '/business/{id}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
-  };
 
-  return exports;
-}));
+
+}

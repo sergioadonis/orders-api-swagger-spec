@@ -14,38 +14,23 @@
  *
  */
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
-    // Browser globals (root is window)
-    if (!root.OrdersApi) {
-      root.OrdersApi = {};
-    }
-    root.OrdersApi.Business = factory(root.OrdersApi.ApiClient);
-  }
-}(this, function(ApiClient) {
-  'use strict';
+import {ApiClient} from '../ApiClient';
 
-  /**
-   * The Business model module.
-   * @module model/Business
-   * @version 1.0.1
-   */
-
+/**
+ * The Business model module.
+ * @module model/Business
+ * @version 1.0.1
+ */
+export class Business {
   /**
    * Constructs a new <code>Business</code>.
    * @alias module:model/Business
    * @class
    * @param name {String} 
    */
-  var exports = function(name) {
+  constructor(name) {
     this.name = name;
-  };
+  }
 
   /**
    * Constructs a <code>Business</code> from a plain JavaScript object, optionally creating a new instance.
@@ -54,9 +39,9 @@
    * @param {module:model/Business} obj Optional instance to populate.
    * @return {module:model/Business} The populated <code>Business</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  static constructFromObject(data, obj) {
     if (data) {
-      obj = obj || new exports();
+      obj = obj || new Business();
       if (data.hasOwnProperty('id'))
         obj.id = ApiClient.convertToType(data['id'], 'String');
       if (data.hasOwnProperty('name'))
@@ -74,45 +59,44 @@
     }
     return obj;
   }
+}
 
-  /**
-   * @member {String} id
-   */
-  exports.prototype.id = undefined;
+/**
+ * @member {String} id
+ */
+Business.prototype.id = undefined;
 
-  /**
-   * @member {String} name
-   */
-  exports.prototype.name = undefined;
+/**
+ * @member {String} name
+ */
+Business.prototype.name = undefined;
 
-  /**
-   * @member {String} description
-   */
-  exports.prototype.description = undefined;
+/**
+ * @member {String} description
+ */
+Business.prototype.description = undefined;
 
-  /**
-   * Business category
-   * @member {String} category
-   */
-  exports.prototype.category = undefined;
+/**
+ * Business category
+ * @member {String} category
+ */
+Business.prototype.category = undefined;
 
-  /**
-   * labels or tags
-   * @member {Array.<String>} tags
-   */
-  exports.prototype.tags = undefined;
+/**
+ * labels or tags
+ * @member {Array.<String>} tags
+ */
+Business.prototype.tags = undefined;
 
-  /**
-   * @member {String} photoUrl
-   */
-  exports.prototype.photoUrl = undefined;
+/**
+ * @member {String} photoUrl
+ */
+Business.prototype.photoUrl = undefined;
 
-  /**
-   * Internal business object type
-   * @member {String} type
-   */
-  exports.prototype.type = undefined;
+/**
+ * Internal business object type
+ * @member {String} type
+ */
+Business.prototype.type = undefined;
 
-  return exports;
 
-}));

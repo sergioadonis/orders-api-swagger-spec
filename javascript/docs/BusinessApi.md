@@ -19,21 +19,20 @@ Create business
 
 ### Example
 ```javascript
-var OrdersApi = require('orders_api');
+import {OrdersApi} from 'orders_api';
 
-var apiInstance = new OrdersApi.BusinessApi();
+let apiInstance = new OrdersApi.BusinessApi();
 
-var bussines = new OrdersApi.Business(); // Business | 
+let bussines = new OrdersApi.Business(); // Business | 
 
 
-var callback = function(error, data, response) {
+apiInstance.createBusiness(bussines, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.createBusiness(bussines, callback);
+});
 ```
 
 ### Parameters
@@ -63,21 +62,20 @@ Delete business by id
 
 ### Example
 ```javascript
-var OrdersApi = require('orders_api');
+import {OrdersApi} from 'orders_api';
 
-var apiInstance = new OrdersApi.BusinessApi();
+let apiInstance = new OrdersApi.BusinessApi();
 
-var id = "id_example"; // String | 
+let id = "id_example"; // String | 
 
 
-var callback = function(error, data, response) {
+apiInstance.deleteBusinessById(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-};
-apiInstance.deleteBusinessById(id, callback);
+});
 ```
 
 ### Parameters
@@ -107,21 +105,20 @@ Get business by id
 
 ### Example
 ```javascript
-var OrdersApi = require('orders_api');
+import {OrdersApi} from 'orders_api';
 
-var apiInstance = new OrdersApi.BusinessApi();
+let apiInstance = new OrdersApi.BusinessApi();
 
-var id = "id_example"; // String | 
+let id = "id_example"; // String | 
 
 
-var callback = function(error, data, response) {
+apiInstance.getBusinessById(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.getBusinessById(id, callback);
+});
 ```
 
 ### Parameters
@@ -151,18 +148,17 @@ Get businesses
 
 ### Example
 ```javascript
-var OrdersApi = require('orders_api');
+import {OrdersApi} from 'orders_api';
 
-var apiInstance = new OrdersApi.BusinessApi();
+let apiInstance = new OrdersApi.BusinessApi();
 
-var callback = function(error, data, response) {
+apiInstance.getBusinesses((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.getBusinesses(callback);
+});
 ```
 
 ### Parameters
@@ -189,23 +185,22 @@ Update business by id
 
 ### Example
 ```javascript
-var OrdersApi = require('orders_api');
+import {OrdersApi} from 'orders_api';
 
-var apiInstance = new OrdersApi.BusinessApi();
+let apiInstance = new OrdersApi.BusinessApi();
 
-var id = "id_example"; // String | 
+let id = "id_example"; // String | 
 
-var bussines = new OrdersApi.Business(); // Business | 
+let bussines = new OrdersApi.Business(); // Business | 
 
 
-var callback = function(error, data, response) {
+apiInstance.updateBusinessById(id, bussines, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-};
-apiInstance.updateBusinessById(id, bussines, callback);
+});
 ```
 
 ### Parameters
