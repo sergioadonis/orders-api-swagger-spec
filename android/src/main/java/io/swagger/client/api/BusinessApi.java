@@ -25,7 +25,7 @@ import com.android.volley.VolleyError;
 
 import io.swagger.client.model.Business;
 import io.swagger.client.model.BusinessProps;
-import io.swagger.client.model.InlineResponseDefault;
+import io.swagger.client.model.Error;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;

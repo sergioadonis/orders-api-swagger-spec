@@ -94,7 +94,7 @@ Class | Method | HTTP request | Description
 
  - [Business](docs/Business.md)
  - [BusinessBusinessProps](docs/BusinessBusinessProps.md)
- - [InlineResponseDefault](docs/InlineResponseDefault.md)
+ - [Error](docs/Error.md)
 
 
 ## Documentation for Authorization
