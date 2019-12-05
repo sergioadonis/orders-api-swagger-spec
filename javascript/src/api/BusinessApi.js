@@ -49,8 +49,54 @@
 
 
     /**
-     * Callback function to receive the result of the businessBusinessIdDelete operation.
-     * @callback module:api/BusinessApi~businessBusinessIdDeleteCallback
+     * Callback function to receive the result of the createOneBusiness operation.
+     * @callback module:api/BusinessApi~createOneBusinessCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Business} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create business
+     * @param {module:model/BusinessProps} businessProps 
+     * @param {module:api/BusinessApi~createOneBusinessCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Business}
+     */
+    this.createOneBusiness = function(businessProps, callback) {
+      var postBody = businessProps;
+
+      // verify the required parameter 'businessProps' is set
+      if (businessProps === undefined || businessProps === null) {
+        throw new Error("Missing the required parameter 'businessProps' when calling createOneBusiness");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Business;
+
+      return this.apiClient.callApi(
+        '/business', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteOneBusiness operation.
+     * @callback module:api/BusinessApi~deleteOneBusinessCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -59,14 +105,14 @@
     /**
      * Delete business
      * @param {String} businessId 
-     * @param {module:api/BusinessApi~businessBusinessIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BusinessApi~deleteOneBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.businessBusinessIdDelete = function(businessId, callback) {
+    this.deleteOneBusiness = function(businessId, callback) {
       var postBody = null;
 
       // verify the required parameter 'businessId' is set
       if (businessId === undefined || businessId === null) {
-        throw new Error("Missing the required parameter 'businessId' when calling businessBusinessIdDelete");
+        throw new Error("Missing the required parameter 'businessId' when calling deleteOneBusiness");
       }
 
 
@@ -95,8 +141,48 @@
     }
 
     /**
-     * Callback function to receive the result of the businessBusinessIdGet operation.
-     * @callback module:api/BusinessApi~businessBusinessIdGetCallback
+     * Callback function to receive the result of the getBusinessesList operation.
+     * @callback module:api/BusinessApi~getBusinessesListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Business>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get businesses
+     * @param {module:api/BusinessApi~getBusinessesListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Business>}
+     */
+    this.getBusinessesList = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [Business];
+
+      return this.apiClient.callApi(
+        '/business', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getOneBusiness operation.
+     * @callback module:api/BusinessApi~getOneBusinessCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Business} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -105,15 +191,15 @@
     /**
      * Get business
      * @param {String} businessId 
-     * @param {module:api/BusinessApi~businessBusinessIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BusinessApi~getOneBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.businessBusinessIdGet = function(businessId, callback) {
+    this.getOneBusiness = function(businessId, callback) {
       var postBody = null;
 
       // verify the required parameter 'businessId' is set
       if (businessId === undefined || businessId === null) {
-        throw new Error("Missing the required parameter 'businessId' when calling businessBusinessIdGet");
+        throw new Error("Missing the required parameter 'businessId' when calling getOneBusiness");
       }
 
 
@@ -142,8 +228,8 @@
     }
 
     /**
-     * Callback function to receive the result of the businessBusinessIdPut operation.
-     * @callback module:api/BusinessApi~businessBusinessIdPutCallback
+     * Callback function to receive the result of the updateOneBusiness operation.
+     * @callback module:api/BusinessApi~updateOneBusinessCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Business} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -153,20 +239,20 @@
      * Update business
      * @param {String} businessId 
      * @param {module:model/BusinessProps} businessProps 
-     * @param {module:api/BusinessApi~businessBusinessIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/BusinessApi~updateOneBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.businessBusinessIdPut = function(businessId, businessProps, callback) {
+    this.updateOneBusiness = function(businessId, businessProps, callback) {
       var postBody = businessProps;
 
       // verify the required parameter 'businessId' is set
       if (businessId === undefined || businessId === null) {
-        throw new Error("Missing the required parameter 'businessId' when calling businessBusinessIdPut");
+        throw new Error("Missing the required parameter 'businessId' when calling updateOneBusiness");
       }
 
       // verify the required parameter 'businessProps' is set
       if (businessProps === undefined || businessProps === null) {
-        throw new Error("Missing the required parameter 'businessProps' when calling businessBusinessIdPut");
+        throw new Error("Missing the required parameter 'businessProps' when calling updateOneBusiness");
       }
 
 
@@ -189,92 +275,6 @@
 
       return this.apiClient.callApi(
         '/business/{businessId}', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the businessGet operation.
-     * @callback module:api/BusinessApi~businessGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Business>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get businesses
-     * @param {module:api/BusinessApi~businessGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Business>}
-     */
-    this.businessGet = function(callback) {
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = [Business];
-
-      return this.apiClient.callApi(
-        '/business', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the businessPost operation.
-     * @callback module:api/BusinessApi~businessPostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Business} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create business
-     * @param {module:model/BusinessProps} businessProps 
-     * @param {module:api/BusinessApi~businessPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Business}
-     */
-    this.businessPost = function(businessProps, callback) {
-      var postBody = businessProps;
-
-      // verify the required parameter 'businessProps' is set
-      if (businessProps === undefined || businessProps === null) {
-        throw new Error("Missing the required parameter 'businessProps' when calling businessPost");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Business;
-
-      return this.apiClient.callApi(
-        '/business', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

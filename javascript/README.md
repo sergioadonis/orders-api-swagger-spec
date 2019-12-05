@@ -97,17 +97,17 @@ var OrdersApi = require('orders_api');
 
 var api = new OrdersApi.BusinessApi()
 
-var businessId = "businessId_example"; // {String} 
+var businessProps = new OrdersApi.BusinessProps(); // {BusinessProps} 
 
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.businessBusinessIdDelete(businessId, callback);
+api.createOneBusiness(businessProps, callback);
 
 ```
 
@@ -117,11 +117,11 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OrdersApi.BusinessApi* | [**businessBusinessIdDelete**](docs/BusinessApi.md#businessBusinessIdDelete) | **DELETE** /business/{businessId} | Delete business
-*OrdersApi.BusinessApi* | [**businessBusinessIdGet**](docs/BusinessApi.md#businessBusinessIdGet) | **GET** /business/{businessId} | Get business
-*OrdersApi.BusinessApi* | [**businessBusinessIdPut**](docs/BusinessApi.md#businessBusinessIdPut) | **PUT** /business/{businessId} | Update business
-*OrdersApi.BusinessApi* | [**businessGet**](docs/BusinessApi.md#businessGet) | **GET** /business | Get businesses
-*OrdersApi.BusinessApi* | [**businessPost**](docs/BusinessApi.md#businessPost) | **POST** /business | Create business
+*OrdersApi.BusinessApi* | [**createOneBusiness**](docs/BusinessApi.md#createOneBusiness) | **POST** /business | Create business
+*OrdersApi.BusinessApi* | [**deleteOneBusiness**](docs/BusinessApi.md#deleteOneBusiness) | **DELETE** /business/{businessId} | Delete business
+*OrdersApi.BusinessApi* | [**getBusinessesList**](docs/BusinessApi.md#getBusinessesList) | **GET** /business | Get businesses
+*OrdersApi.BusinessApi* | [**getOneBusiness**](docs/BusinessApi.md#getOneBusiness) | **GET** /business/{businessId} | Get business
+*OrdersApi.BusinessApi* | [**updateOneBusiness**](docs/BusinessApi.md#updateOneBusiness) | **PUT** /business/{businessId} | Update business
 
 
 ## Documentation for Models

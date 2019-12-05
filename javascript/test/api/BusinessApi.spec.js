@@ -36,77 +36,13 @@
 
   describe('(package)', function() {
     describe('BusinessApi', function() {
-      describe('businessBusinessIdDelete', function() {
-        it('should call businessBusinessIdDelete successfully', function(done) {
-          // TODO: uncomment, update parameter values for businessBusinessIdDelete call
+      describe('createOneBusiness', function() {
+        it('should call createOneBusiness successfully', function(done) {
+          // TODO: uncomment, update parameter values for createOneBusiness call and complete the assertions
           /*
-          var businessId = "businessId_example";
-
-          instance.businessBusinessIdDelete(businessId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('businessBusinessIdGet', function() {
-        it('should call businessBusinessIdGet successfully', function(done) {
-          // TODO: uncomment, update parameter values for businessBusinessIdGet call and complete the assertions
-          /*
-          var businessId = "businessId_example";
-
-          instance.businessBusinessIdGet(businessId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(OrdersApi.Business);
-            expect(data.businessId).to.be.a('string');
-            expect(data.businessId).to.be("12ea34-651d76c-87bd-85b6f9");
-            expect(data.businessProps).to.be.a(OrdersApi.BusinessBusinessProps);
-                  expect(data.businessProps.name).to.be.a('string');
-              expect(data.businessProps.name).to.be("El Zócalo");
-              expect(data.businessProps.description).to.be.a('string');
-              expect(data.businessProps.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
-              expect(data.businessProps.category).to.be.a('string');
-              expect(data.businessProps.category).to.be("Mexican restaurant");
-              {
-                let dataCtr = data.businessProps.tags;
-                expect(dataCtr).to.be.an(Array);
-                expect(dataCtr).to.not.be.empty();
-                for (let p in dataCtr) {
-                  let data = dataCtr[p];
-                  expect(data).to.be.a('string');
-                  expect(data).to.be("");
-                }
-              }
-              expect(data.businessProps.photoUrl).to.be.a('string');
-              expect(data.businessProps.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
-              expect(data.businessProps.type).to.be.a('string');
-              expect(data.businessProps.type).to.be("RSTRNT");
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('businessBusinessIdPut', function() {
-        it('should call businessBusinessIdPut successfully', function(done) {
-          // TODO: uncomment, update parameter values for businessBusinessIdPut call and complete the assertions
-          /*
-          var businessId = "businessId_example";
           var businessProps = new OrdersApi.BusinessProps();
 
-          instance.businessBusinessIdPut(businessId, businessProps, function(error, data, response) {
+          instance.createOneBusiness(businessProps, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -144,12 +80,31 @@
           done();
         });
       });
-      describe('businessGet', function() {
-        it('should call businessGet successfully', function(done) {
-          // TODO: uncomment businessGet call and complete the assertions
+      describe('deleteOneBusiness', function() {
+        it('should call deleteOneBusiness successfully', function(done) {
+          // TODO: uncomment, update parameter values for deleteOneBusiness call
+          /*
+          var businessId = "businessId_example";
+
+          instance.deleteOneBusiness(businessId, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
+      describe('getBusinessesList', function() {
+        it('should call getBusinessesList successfully', function(done) {
+          // TODO: uncomment getBusinessesList call and complete the assertions
           /*
 
-          instance.businessGet(function(error, data, response) {
+          instance.getBusinessesList(function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -193,13 +148,58 @@
           done();
         });
       });
-      describe('businessPost', function() {
-        it('should call businessPost successfully', function(done) {
-          // TODO: uncomment, update parameter values for businessPost call and complete the assertions
+      describe('getOneBusiness', function() {
+        it('should call getOneBusiness successfully', function(done) {
+          // TODO: uncomment, update parameter values for getOneBusiness call and complete the assertions
           /*
+          var businessId = "businessId_example";
+
+          instance.getOneBusiness(businessId, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            expect(data).to.be.a(OrdersApi.Business);
+            expect(data.businessId).to.be.a('string');
+            expect(data.businessId).to.be("12ea34-651d76c-87bd-85b6f9");
+            expect(data.businessProps).to.be.a(OrdersApi.BusinessBusinessProps);
+                  expect(data.businessProps.name).to.be.a('string');
+              expect(data.businessProps.name).to.be("El Zócalo");
+              expect(data.businessProps.description).to.be.a('string');
+              expect(data.businessProps.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
+              expect(data.businessProps.category).to.be.a('string');
+              expect(data.businessProps.category).to.be("Mexican restaurant");
+              {
+                let dataCtr = data.businessProps.tags;
+                expect(dataCtr).to.be.an(Array);
+                expect(dataCtr).to.not.be.empty();
+                for (let p in dataCtr) {
+                  let data = dataCtr[p];
+                  expect(data).to.be.a('string');
+                  expect(data).to.be("");
+                }
+              }
+              expect(data.businessProps.photoUrl).to.be.a('string');
+              expect(data.businessProps.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
+              expect(data.businessProps.type).to.be.a('string');
+              expect(data.businessProps.type).to.be("RSTRNT");
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
+      describe('updateOneBusiness', function() {
+        it('should call updateOneBusiness successfully', function(done) {
+          // TODO: uncomment, update parameter values for updateOneBusiness call and complete the assertions
+          /*
+          var businessId = "businessId_example";
           var businessProps = new OrdersApi.BusinessProps();
 
-          instance.businessPost(businessProps, function(error, data, response) {
+          instance.updateOneBusiness(businessId, businessProps, function(error, data, response) {
             if (error) {
               done(error);
               return;
