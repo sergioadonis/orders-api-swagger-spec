@@ -37,7 +37,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
   /business/{id}:
     get:
-      summary: Get business
+      summary: Get business by id
       operationId: getBusinessById
       tags:
         - Business
@@ -49,7 +49,7 @@ paths:
         default:
           $ref: "#/responses/ErrorResponse"
     put:
-      summary: Update business
+      summary: Update business by id
       operationId: updateBusinessById
       tags:
         - Business
@@ -62,7 +62,7 @@ paths:
         default:
           $ref: "#/responses/ErrorResponse"
     delete:
-      summary: Delete business
+      summary: Delete business by id
       operationId: deleteBusinessById
       tags:
         - Business
