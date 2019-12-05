@@ -5,10 +5,10 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBusiness**](BusinessApi.md#createBusiness) | **POST** /business | Create business
-[**deleteBusinessById**](BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business
-[**getBusinessById**](BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business
+[**deleteBusinessById**](BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business by id
+[**getBusinessById**](BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business by id
 [**getBusinesses**](BusinessApi.md#getBusinesses) | **GET** /business | Get businesses
-[**updateBusinessById**](BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business
+[**updateBusinessById**](BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business by id
 
 
 <a name="createBusiness"></a>
@@ -59,7 +59,7 @@ No authorization required
 # **deleteBusinessById**
 > deleteBusinessById(id)
 
-Delete business
+Delete business by id
 
 ### Example
 ```javascript
@@ -103,7 +103,7 @@ No authorization required
 # **getBusinessById**
 > Business getBusinessById(id)
 
-Get business
+Get business by id
 
 ### Example
 ```javascript
@@ -185,7 +185,7 @@ No authorization required
 # **updateBusinessById**
 > Business updateBusinessById(id, bussines)
 
-Update business
+Update business by id
 
 ### Example
 ```javascript

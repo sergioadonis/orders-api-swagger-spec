@@ -118,10 +118,10 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *OrdersApi.BusinessApi* | [**createBusiness**](docs/BusinessApi.md#createBusiness) | **POST** /business | Create business
-*OrdersApi.BusinessApi* | [**deleteBusinessById**](docs/BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business
-*OrdersApi.BusinessApi* | [**getBusinessById**](docs/BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business
+*OrdersApi.BusinessApi* | [**deleteBusinessById**](docs/BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business by id
+*OrdersApi.BusinessApi* | [**getBusinessById**](docs/BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business by id
 *OrdersApi.BusinessApi* | [**getBusinesses**](docs/BusinessApi.md#getBusinesses) | **GET** /business | Get businesses
-*OrdersApi.BusinessApi* | [**updateBusinessById**](docs/BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business
+*OrdersApi.BusinessApi* | [**updateBusinessById**](docs/BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business by id
 
 
 ## Documentation for Models

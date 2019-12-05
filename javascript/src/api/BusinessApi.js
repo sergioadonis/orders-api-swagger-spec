@@ -103,7 +103,7 @@
      */
 
     /**
-     * Delete business
+     * Delete business by id
      * @param {String} id 
      * @param {module:api/BusinessApi~deleteBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -149,7 +149,7 @@
      */
 
     /**
-     * Get business
+     * Get business by id
      * @param {String} id 
      * @param {module:api/BusinessApi~getBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
@@ -236,7 +236,7 @@
      */
 
     /**
-     * Update business
+     * Update business by id
      * @param {String} id 
      * @param {module:model/Business} bussines 
      * @param {module:api/BusinessApi~updateBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
