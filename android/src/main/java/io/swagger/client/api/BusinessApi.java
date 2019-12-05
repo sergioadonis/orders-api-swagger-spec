@@ -25,7 +25,6 @@ import com.android.volley.VolleyError;
 
 import io.swagger.client.model.Business;
 import io.swagger.client.model.Error;
-import io.swagger.client.model.Props;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -38,7 +37,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
 public class BusinessApi {
-  String basePath = "https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0";
+  String basePath = "https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {
@@ -60,15 +59,15 @@ public class BusinessApi {
   /**
   * Create business
   * 
-   * @param bussinesProps 
+   * @param bussines 
    * @return Business
   */
-  public Business createBusiness (Props bussinesProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = bussinesProps;
-    // verify the required parameter 'bussinesProps' is set
-    if (bussinesProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling createBusiness",
-        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling createBusiness"));
+  public Business createBusiness (Business bussines) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = bussines;
+    // verify the required parameter 'bussines' is set
+    if (bussines == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussines' when calling createBusiness",
+        new ApiException(400, "Missing the required parameter 'bussines' when calling createBusiness"));
     }
 
     // create path and map variables
@@ -123,15 +122,15 @@ public class BusinessApi {
       /**
    * Create business
    * 
-   * @param bussinesProps 
+   * @param bussines 
   */
-  public void createBusiness (Props bussinesProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = bussinesProps;
+  public void createBusiness (Business bussines, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = bussines;
 
-    // verify the required parameter 'bussinesProps' is set
-    if (bussinesProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling createBusiness",
-        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling createBusiness"));
+    // verify the required parameter 'bussines' is set
+    if (bussines == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussines' when calling createBusiness",
+        new ApiException(400, "Missing the required parameter 'bussines' when calling createBusiness"));
     }
 
     // create path and map variables
@@ -558,20 +557,20 @@ public class BusinessApi {
   * Update business
   * 
    * @param id 
-   * @param bussinesProps 
+   * @param bussines 
    * @return Business
   */
-  public Business updateBusinessById (String id, Props bussinesProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = bussinesProps;
+  public Business updateBusinessById (String id, Business bussines) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = bussines;
     // verify the required parameter 'id' is set
     if (id == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBusinessById",
         new ApiException(400, "Missing the required parameter 'id' when calling updateBusinessById"));
     }
-    // verify the required parameter 'bussinesProps' is set
-    if (bussinesProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling updateBusinessById",
-        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling updateBusinessById"));
+    // verify the required parameter 'bussines' is set
+    if (bussines == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussines' when calling updateBusinessById",
+        new ApiException(400, "Missing the required parameter 'bussines' when calling updateBusinessById"));
     }
 
     // create path and map variables
@@ -626,20 +625,20 @@ public class BusinessApi {
       /**
    * Update business
    * 
-   * @param id    * @param bussinesProps 
+   * @param id    * @param bussines 
   */
-  public void updateBusinessById (String id, Props bussinesProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = bussinesProps;
+  public void updateBusinessById (String id, Business bussines, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = bussines;
 
     // verify the required parameter 'id' is set
     if (id == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBusinessById",
         new ApiException(400, "Missing the required parameter 'id' when calling updateBusinessById"));
     }
-    // verify the required parameter 'bussinesProps' is set
-    if (bussinesProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling updateBusinessById",
-        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling updateBusinessById"));
+    // verify the required parameter 'bussines' is set
+    if (bussines == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussines' when calling updateBusinessById",
+        new ApiException(400, "Missing the required parameter 'bussines' when calling updateBusinessById"));
     }
 
     // create path and map variables

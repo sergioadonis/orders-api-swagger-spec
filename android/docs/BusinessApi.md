@@ -1,6 +1,6 @@
 # BusinessApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createBusiness"></a>
 # **createBusiness**
-> Business createBusiness(bussinesProps)
+> Business createBusiness(bussines)
 
 Create business
 
@@ -23,9 +23,9 @@ Create business
 //import io.swagger.client.api.BusinessApi;
 
 BusinessApi apiInstance = new BusinessApi();
-Props bussinesProps = new Props(); // Props | 
+Business bussines = new Business(); // Business | 
 try {
-    Business result = apiInstance.createBusiness(bussinesProps);
+    Business result = apiInstance.createBusiness(bussines);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessApi#createBusiness");
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bussinesProps** | [**Props**](Props.md)|  |
+ **bussines** | [**Business**](Business.md)|  |
 
 ### Return type
 
@@ -172,7 +172,7 @@ No authorization required
 
 <a name="updateBusinessById"></a>
 # **updateBusinessById**
-> Business updateBusinessById(id, bussinesProps)
+> Business updateBusinessById(id, bussines)
 
 Update business
 
@@ -183,9 +183,9 @@ Update business
 
 BusinessApi apiInstance = new BusinessApi();
 String id = "id_example"; // String | 
-Props bussinesProps = new Props(); // Props | 
+Business bussines = new Business(); // Business | 
 try {
-    Business result = apiInstance.updateBusinessById(id, bussinesProps);
+    Business result = apiInstance.updateBusinessById(id, bussines);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessApi#updateBusinessById");
@@ -198,7 +198,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  |
- **bussinesProps** | [**Props**](Props.md)|  |
+ **bussines** | [**Business**](Business.md)|  |
 
 ### Return type
 

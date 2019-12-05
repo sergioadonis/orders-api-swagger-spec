@@ -64,9 +64,9 @@ public class BusinessApiExample {
 
     public static void main(String[] args) {
         BusinessApi apiInstance = new BusinessApi();
-        Props bussinesProps = new Props(); // Props | 
+        Business bussines = new Business(); // Business | 
         try {
-            Business result = apiInstance.createBusiness(bussinesProps);
+            Business result = apiInstance.createBusiness(bussines);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BusinessApi#createBusiness");
@@ -79,7 +79,7 @@ public class BusinessApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -93,7 +93,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Business](docs/Business.md)
- - [BusinessProps](docs/BusinessProps.md)
  - [Error](docs/Error.md)
 
 

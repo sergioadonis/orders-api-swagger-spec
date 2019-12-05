@@ -12,7 +12,7 @@
 
 package io.swagger.client.model;
 
-import io.swagger.client.model.BusinessProps;
+import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -21,8 +21,18 @@ public class Business {
   
   @SerializedName("id")
   private String id = null;
-  @SerializedName("props")
-  private BusinessProps props = null;
+  @SerializedName("name")
+  private String name = null;
+  @SerializedName("description")
+  private String description = null;
+  @SerializedName("category")
+  private String category = null;
+  @SerializedName("tags")
+  private List<String> tags = null;
+  @SerializedName("photoUrl")
+  private String photoUrl = null;
+  @SerializedName("type")
+  private String type = null;
 
   /**
    **/
@@ -36,12 +46,65 @@ public class Business {
 
   /**
    **/
-  @ApiModelProperty(value = "")
-  public BusinessProps getProps() {
-    return props;
+  @ApiModelProperty(required = true, value = "")
+  public String getName() {
+    return name;
   }
-  public void setProps(BusinessProps props) {
-    this.props = props;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  /**
+   * Business category
+   **/
+  @ApiModelProperty(value = "Business category")
+  public String getCategory() {
+    return category;
+  }
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  /**
+   * labels or tags
+   **/
+  @ApiModelProperty(value = "labels or tags")
+  public List<String> getTags() {
+    return tags;
+  }
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getPhotoUrl() {
+    return photoUrl;
+  }
+  public void setPhotoUrl(String photoUrl) {
+    this.photoUrl = photoUrl;
+  }
+
+  /**
+   * Internal business object type
+   **/
+  @ApiModelProperty(value = "Internal business object type")
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -55,14 +118,24 @@ public class Business {
     }
     Business business = (Business) o;
     return (this.id == null ? business.id == null : this.id.equals(business.id)) &&
-        (this.props == null ? business.props == null : this.props.equals(business.props));
+        (this.name == null ? business.name == null : this.name.equals(business.name)) &&
+        (this.description == null ? business.description == null : this.description.equals(business.description)) &&
+        (this.category == null ? business.category == null : this.category.equals(business.category)) &&
+        (this.tags == null ? business.tags == null : this.tags.equals(business.tags)) &&
+        (this.photoUrl == null ? business.photoUrl == null : this.photoUrl.equals(business.photoUrl)) &&
+        (this.type == null ? business.type == null : this.type.equals(business.type));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
-    result = 31 * result + (this.props == null ? 0: this.props.hashCode());
+    result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.description == null ? 0: this.description.hashCode());
+    result = 31 * result + (this.category == null ? 0: this.category.hashCode());
+    result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
+    result = 31 * result + (this.photoUrl == null ? 0: this.photoUrl.hashCode());
+    result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     return result;
   }
 
@@ -72,7 +145,12 @@ public class Business {
     sb.append("class Business {\n");
     
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  props: ").append(props).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  description: ").append(description).append("\n");
+    sb.append("  category: ").append(category).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
+    sb.append("  photoUrl: ").append(photoUrl).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
