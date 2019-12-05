@@ -97,7 +97,7 @@ var OrdersApi = require('orders_api');
 
 var api = new OrdersApi.BusinessApi()
 
-var businessProps = new OrdersApi.BusinessProps(); // {BusinessProps} 
+var businessProps = new OrdersApi.Props(); // {Props} 
 
 
 var callback = function(error, data, response) {
@@ -127,7 +127,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OrdersApi.Business](docs/Business.md)
- - [OrdersApi.BusinessBusinessProps](docs/BusinessBusinessProps.md)
+ - [OrdersApi.BusinessProps](docs/BusinessProps.md)
  - [OrdersApi.Error](docs/Error.md)
 
 

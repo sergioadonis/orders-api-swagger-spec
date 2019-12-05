@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/BusinessBusinessProps', 'model/Error', 'api/BusinessApi'], factory);
+    define(['ApiClient', 'model/Business', 'model/BusinessProps', 'model/Error', 'api/BusinessApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Business'), require('./model/BusinessBusinessProps'), require('./model/Error'), require('./api/BusinessApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Business'), require('./model/BusinessProps'), require('./model/Error'), require('./api/BusinessApi'));
   }
-}(function(ApiClient, Business, BusinessBusinessProps, Error, BusinessApi) {
+}(function(ApiClient, Business, BusinessProps, Error, BusinessApi) {
   'use strict';
 
   /**
@@ -68,10 +68,10 @@
      */
     Business: Business,
     /**
-     * The BusinessBusinessProps model constructor.
-     * @property {module:model/BusinessBusinessProps}
+     * The BusinessProps model constructor.
+     * @property {module:model/BusinessProps}
      */
-    BusinessBusinessProps: BusinessBusinessProps,
+    BusinessProps: BusinessProps,
     /**
      * The Error model constructor.
      * @property {module:model/Error}

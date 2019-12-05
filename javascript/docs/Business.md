@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**businessId** | **String** |  | [optional] 
-**businessProps** | [**BusinessBusinessProps**](BusinessBusinessProps.md) |  | [optional] 
+**id** | **String** |  | [optional] 
+**props** | [**BusinessProps**](BusinessProps.md) |  | [optional] 
 
 

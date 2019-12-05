@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/BusinessProps', 'model/Error'], factory);
+    define(['ApiClient', 'model/Business', 'model/Error', 'model/Props'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/BusinessProps'), require('../model/Error'));
+    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/Error'), require('../model/Props'));
   } else {
     // Browser globals (root is window)
     if (!root.OrdersApi) {
       root.OrdersApi = {};
     }
-    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.BusinessProps, root.OrdersApi.Error);
+    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.Error, root.OrdersApi.Props);
   }
-}(this, function(ApiClient, Business, BusinessProps, Error) {
+}(this, function(ApiClient, Business, Error, Props) {
   'use strict';
 
   /**
@@ -58,7 +58,7 @@
 
     /**
      * Create business
-     * @param {module:model/BusinessProps} businessProps 
+     * @param {module:model/Props} businessProps 
      * @param {module:api/BusinessApi~createOneBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
@@ -238,7 +238,7 @@
     /**
      * Update business
      * @param {String} businessId 
-     * @param {module:model/BusinessProps} businessProps 
+     * @param {module:model/Props} businessProps 
      * @param {module:api/BusinessApi~updateOneBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */

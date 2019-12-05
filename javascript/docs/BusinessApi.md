@@ -23,7 +23,7 @@ var OrdersApi = require('orders_api');
 
 var apiInstance = new OrdersApi.BusinessApi();
 
-var businessProps = new OrdersApi.BusinessProps(); // BusinessProps | 
+var businessProps = new OrdersApi.Props(); // Props | 
 
 
 var callback = function(error, data, response) {
@@ -40,7 +40,7 @@ apiInstance.createOneBusiness(businessProps, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessProps** | [**BusinessProps**](BusinessProps.md)|  | 
+ **businessProps** | [**Props**](Props.md)|  | 
 
 ### Return type
 
@@ -195,7 +195,7 @@ var apiInstance = new OrdersApi.BusinessApi();
 
 var businessId = "businessId_example"; // String | 
 
-var businessProps = new OrdersApi.BusinessProps(); // BusinessProps | 
+var businessProps = new OrdersApi.Props(); // Props | 
 
 
 var callback = function(error, data, response) {
@@ -213,7 +213,7 @@ apiInstance.updateOneBusiness(businessId, businessProps, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessId** | **String**|  | 
- **businessProps** | [**BusinessProps**](BusinessProps.md)|  | 
+ **businessProps** | [**Props**](Props.md)|  | 
 
 ### Return type
 

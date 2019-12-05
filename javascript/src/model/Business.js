@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BusinessBusinessProps'], factory);
+    define(['ApiClient', 'model/BusinessProps'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BusinessBusinessProps'));
+    module.exports = factory(require('../ApiClient'), require('./BusinessProps'));
   } else {
     // Browser globals (root is window)
     if (!root.OrdersApi) {
       root.OrdersApi = {};
     }
-    root.OrdersApi.Business = factory(root.OrdersApi.ApiClient, root.OrdersApi.BusinessBusinessProps);
+    root.OrdersApi.Business = factory(root.OrdersApi.ApiClient, root.OrdersApi.BusinessProps);
   }
-}(this, function(ApiClient, BusinessBusinessProps) {
+}(this, function(ApiClient, BusinessProps) {
   'use strict';
 
   /**
@@ -55,23 +55,23 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('businessId'))
-        obj.businessId = ApiClient.convertToType(data['businessId'], 'String');
-      if (data.hasOwnProperty('businessProps'))
-        obj.businessProps = BusinessBusinessProps.constructFromObject(data['businessProps']);
+      if (data.hasOwnProperty('id'))
+        obj.id = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('props'))
+        obj.props = BusinessProps.constructFromObject(data['props']);
     }
     return obj;
   }
 
   /**
-   * @member {String} businessId
+   * @member {String} id
    */
-  exports.prototype.businessId = undefined;
+  exports.prototype.id = undefined;
 
   /**
-   * @member {module:model/BusinessBusinessProps} businessProps
+   * @member {module:model/BusinessProps} props
    */
-  exports.prototype.businessProps = undefined;
+  exports.prototype.props = undefined;
 
   return exports;
 

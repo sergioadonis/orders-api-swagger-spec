@@ -41,16 +41,16 @@
         expect(instance).to.be.a(OrdersApi.Business);
       });
 
-      it('should have the property businessId (base name: "businessId")', function() {
-        // TODO: update the code to test the property businessId
-        expect(instance).to.have.property('businessId');
-        // expect(instance.businessId).to.be(expectedValueLiteral);
+      it('should have the property id (base name: "id")', function() {
+        // TODO: update the code to test the property id
+        expect(instance).to.have.property('id');
+        // expect(instance.id).to.be(expectedValueLiteral);
       });
 
-      it('should have the property businessProps (base name: "businessProps")', function() {
-        // TODO: update the code to test the property businessProps
-        expect(instance).to.have.property('businessProps');
-        // expect(instance.businessProps).to.be(expectedValueLiteral);
+      it('should have the property props (base name: "props")', function() {
+        // TODO: update the code to test the property props
+        expect(instance).to.have.property('props');
+        // expect(instance.props).to.be(expectedValueLiteral);
       });
 
     });
