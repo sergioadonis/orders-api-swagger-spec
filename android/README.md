@@ -64,9 +64,9 @@ public class BusinessApiExample {
 
     public static void main(String[] args) {
         BusinessApi apiInstance = new BusinessApi();
-        Props props = new Props(); // Props | 
+        Props bussinesProps = new Props(); // Props | 
         try {
-            Business result = apiInstance.createBusiness(props);
+            Business result = apiInstance.createBusiness(bussinesProps);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BusinessApi#createBusiness");

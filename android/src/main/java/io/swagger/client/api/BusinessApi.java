@@ -60,15 +60,15 @@ public class BusinessApi {
   /**
   * Create business
   * 
-   * @param props 
+   * @param bussinesProps 
    * @return Business
   */
-  public Business createBusiness (Props props) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = props;
-    // verify the required parameter 'props' is set
-    if (props == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'props' when calling createBusiness",
-        new ApiException(400, "Missing the required parameter 'props' when calling createBusiness"));
+  public Business createBusiness (Props bussinesProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = bussinesProps;
+    // verify the required parameter 'bussinesProps' is set
+    if (bussinesProps == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling createBusiness",
+        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling createBusiness"));
     }
 
     // create path and map variables
@@ -123,15 +123,15 @@ public class BusinessApi {
       /**
    * Create business
    * 
-   * @param props 
+   * @param bussinesProps 
   */
-  public void createBusiness (Props props, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = props;
+  public void createBusiness (Props bussinesProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = bussinesProps;
 
-    // verify the required parameter 'props' is set
-    if (props == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'props' when calling createBusiness",
-        new ApiException(400, "Missing the required parameter 'props' when calling createBusiness"));
+    // verify the required parameter 'bussinesProps' is set
+    if (bussinesProps == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling createBusiness",
+        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling createBusiness"));
     }
 
     // create path and map variables
@@ -558,20 +558,20 @@ public class BusinessApi {
   * Update business
   * 
    * @param id 
-   * @param props 
+   * @param bussinesProps 
    * @return Business
   */
-  public Business updateBusinessById (String id, Props props) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = props;
+  public Business updateBusinessById (String id, Props bussinesProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = bussinesProps;
     // verify the required parameter 'id' is set
     if (id == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBusinessById",
         new ApiException(400, "Missing the required parameter 'id' when calling updateBusinessById"));
     }
-    // verify the required parameter 'props' is set
-    if (props == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'props' when calling updateBusinessById",
-        new ApiException(400, "Missing the required parameter 'props' when calling updateBusinessById"));
+    // verify the required parameter 'bussinesProps' is set
+    if (bussinesProps == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling updateBusinessById",
+        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling updateBusinessById"));
     }
 
     // create path and map variables
@@ -626,20 +626,20 @@ public class BusinessApi {
       /**
    * Update business
    * 
-   * @param id    * @param props 
+   * @param id    * @param bussinesProps 
   */
-  public void updateBusinessById (String id, Props props, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = props;
+  public void updateBusinessById (String id, Props bussinesProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = bussinesProps;
 
     // verify the required parameter 'id' is set
     if (id == null) {
       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBusinessById",
         new ApiException(400, "Missing the required parameter 'id' when calling updateBusinessById"));
     }
-    // verify the required parameter 'props' is set
-    if (props == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'props' when calling updateBusinessById",
-        new ApiException(400, "Missing the required parameter 'props' when calling updateBusinessById"));
+    // verify the required parameter 'bussinesProps' is set
+    if (bussinesProps == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bussinesProps' when calling updateBusinessById",
+        new ApiException(400, "Missing the required parameter 'bussinesProps' when calling updateBusinessById"));
     }
 
     // create path and map variables

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createBusiness"></a>
 # **createBusiness**
-> Business createBusiness(props)
+> Business createBusiness(bussinesProps)
 
 Create business
 
@@ -23,9 +23,9 @@ Create business
 //import io.swagger.client.api.BusinessApi;
 
 BusinessApi apiInstance = new BusinessApi();
-Props props = new Props(); // Props | 
+Props bussinesProps = new Props(); // Props | 
 try {
-    Business result = apiInstance.createBusiness(props);
+    Business result = apiInstance.createBusiness(bussinesProps);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessApi#createBusiness");
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **props** | [**Props**](Props.md)|  |
+ **bussinesProps** | [**Props**](Props.md)|  |
 
 ### Return type
 
@@ -172,7 +172,7 @@ No authorization required
 
 <a name="updateBusinessById"></a>
 # **updateBusinessById**
-> Business updateBusinessById(id, props)
+> Business updateBusinessById(id, bussinesProps)
 
 Update business
 
@@ -183,9 +183,9 @@ Update business
 
 BusinessApi apiInstance = new BusinessApi();
 String id = "id_example"; // String | 
-Props props = new Props(); // Props | 
+Props bussinesProps = new Props(); // Props | 
 try {
-    Business result = apiInstance.updateBusinessById(id, props);
+    Business result = apiInstance.updateBusinessById(id, bussinesProps);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BusinessApi#updateBusinessById");
@@ -198,7 +198,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  |
- **props** | [**Props**](Props.md)|  |
+ **bussinesProps** | [**Props**](Props.md)|  |
 
 ### Return type
 
