@@ -107,14 +107,7 @@ responses:
     schema:
       type: array
       items:
-        type: object
-        properties:
-          code:
-            type: string
-          message:
-            type: string
-          target:
-            type: string
+        $ref: "#/definitions/Error"
                 
 
 definitions:
@@ -156,6 +149,16 @@ definitions:
             example: RSTRNT
         required:
           - name
+          
+  Error:
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+      target:
+        type: string
   
 
 # Added by API Auto Mocking Plugin
