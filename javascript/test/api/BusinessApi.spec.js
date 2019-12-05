@@ -40,9 +40,9 @@
         it('should call createBusiness successfully', function(done) {
           // TODO: uncomment, update parameter values for createBusiness call and complete the assertions
           /*
-          var props = new OrdersApi.Props();
+          var bussinesProps = new OrdersApi.Props();
 
-          instance.createBusiness(props, function(error, data, response) {
+          instance.createBusiness(bussinesProps, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -197,9 +197,9 @@
           // TODO: uncomment, update parameter values for updateBusinessById call and complete the assertions
           /*
           var id = "id_example";
-          var props = new OrdersApi.Props();
+          var bussinesProps = new OrdersApi.Props();
 
-          instance.updateBusinessById(id, props, function(error, data, response) {
+          instance.updateBusinessById(id, bussinesProps, function(error, data, response) {
             if (error) {
               done(error);
               return;

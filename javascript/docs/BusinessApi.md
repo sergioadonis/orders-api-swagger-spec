@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createBusiness"></a>
 # **createBusiness**
-> Business createBusiness(props)
+> Business createBusiness(bussinesProps)
 
 Create business
 
@@ -23,7 +23,7 @@ var OrdersApi = require('orders_api');
 
 var apiInstance = new OrdersApi.BusinessApi();
 
-var props = new OrdersApi.Props(); // Props | 
+var bussinesProps = new OrdersApi.Props(); // Props | 
 
 
 var callback = function(error, data, response) {
@@ -33,14 +33,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createBusiness(props, callback);
+apiInstance.createBusiness(bussinesProps, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **props** | [**Props**](Props.md)|  | 
+ **bussinesProps** | [**Props**](Props.md)|  | 
 
 ### Return type
 
@@ -183,7 +183,7 @@ No authorization required
 
 <a name="updateBusinessById"></a>
 # **updateBusinessById**
-> Business updateBusinessById(id, props)
+> Business updateBusinessById(id, bussinesProps)
 
 Update business
 
@@ -195,7 +195,7 @@ var apiInstance = new OrdersApi.BusinessApi();
 
 var id = "id_example"; // String | 
 
-var props = new OrdersApi.Props(); // Props | 
+var bussinesProps = new OrdersApi.Props(); // Props | 
 
 
 var callback = function(error, data, response) {
@@ -205,7 +205,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateBusinessById(id, props, callback);
+apiInstance.updateBusinessById(id, bussinesProps, callback);
 ```
 
 ### Parameters
@@ -213,7 +213,7 @@ apiInstance.updateBusinessById(id, props, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **props** | [**Props**](Props.md)|  | 
+ **bussinesProps** | [**Props**](Props.md)|  | 
 
 ### Return type
 

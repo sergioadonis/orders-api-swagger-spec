@@ -97,7 +97,7 @@ var OrdersApi = require('orders_api');
 
 var api = new OrdersApi.BusinessApi()
 
-var props = new OrdersApi.Props(); // {Props} 
+var bussinesProps = new OrdersApi.Props(); // {Props} 
 
 
 var callback = function(error, data, response) {
@@ -107,7 +107,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.createBusiness(props, callback);
+api.createBusiness(bussinesProps, callback);
 
 ```
 

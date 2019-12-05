@@ -58,16 +58,16 @@
 
     /**
      * Create business
-     * @param {module:model/Props} props 
+     * @param {module:model/Props} bussinesProps 
      * @param {module:api/BusinessApi~createBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.createBusiness = function(props, callback) {
-      var postBody = props;
+    this.createBusiness = function(bussinesProps, callback) {
+      var postBody = bussinesProps;
 
-      // verify the required parameter 'props' is set
-      if (props === undefined || props === null) {
-        throw new Error("Missing the required parameter 'props' when calling createBusiness");
+      // verify the required parameter 'bussinesProps' is set
+      if (bussinesProps === undefined || bussinesProps === null) {
+        throw new Error("Missing the required parameter 'bussinesProps' when calling createBusiness");
       }
 
 
@@ -238,21 +238,21 @@
     /**
      * Update business
      * @param {String} id 
-     * @param {module:model/Props} props 
+     * @param {module:model/Props} bussinesProps 
      * @param {module:api/BusinessApi~updateBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.updateBusinessById = function(id, props, callback) {
-      var postBody = props;
+    this.updateBusinessById = function(id, bussinesProps, callback) {
+      var postBody = bussinesProps;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateBusinessById");
       }
 
-      // verify the required parameter 'props' is set
-      if (props === undefined || props === null) {
-        throw new Error("Missing the required parameter 'props' when calling updateBusinessById");
+      // verify the required parameter 'bussinesProps' is set
+      if (bussinesProps === undefined || bussinesProps === null) {
+        throw new Error("Missing the required parameter 'bussinesProps' when calling updateBusinessById");
       }
 
 
