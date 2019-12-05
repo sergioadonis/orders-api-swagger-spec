@@ -15,6 +15,7 @@ paths:
   /business:
     get:
       summary: Get businesses
+      operationId: getBusinessesList
       tags:
         - Business
       responses:
@@ -24,6 +25,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
     post:
       summary: Create business
+      operationId: createOneBusiness
       tags:
         - Business
       parameters:
@@ -36,6 +38,7 @@ paths:
   /business/{businessId}:
     get:
       summary: Get business
+      operationId: getOneBusiness
       tags:
         - Business
       parameters:
@@ -47,6 +50,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
     put:
       summary: Update business
+      operationId: updateOneBusiness
       tags:
         - Business
       parameters:
@@ -59,6 +63,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
     delete:
       summary: Delete business
+      operationId: deleteOneBusiness
       tags:
         - Business
       parameters:
