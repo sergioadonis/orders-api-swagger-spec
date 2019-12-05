@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BusinessProps'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BusinessProps'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.OrdersApi) {
       root.OrdersApi = {};
     }
-    root.OrdersApi.Business = factory(root.OrdersApi.ApiClient, root.OrdersApi.BusinessProps);
+    root.OrdersApi.Business = factory(root.OrdersApi.ApiClient);
   }
-}(this, function(ApiClient, BusinessProps) {
+}(this, function(ApiClient) {
   'use strict';
 
   /**
@@ -41,8 +41,10 @@
    * Constructs a new <code>Business</code>.
    * @alias module:model/Business
    * @class
+   * @param name {String} 
    */
-  var exports = function() {
+  var exports = function(name) {
+    this.name = name;
   };
 
   /**
@@ -57,8 +59,18 @@
       obj = obj || new exports();
       if (data.hasOwnProperty('id'))
         obj.id = ApiClient.convertToType(data['id'], 'String');
-      if (data.hasOwnProperty('props'))
-        obj.props = BusinessProps.constructFromObject(data['props']);
+      if (data.hasOwnProperty('name'))
+        obj.name = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('description'))
+        obj.description = ApiClient.convertToType(data['description'], 'String');
+      if (data.hasOwnProperty('category'))
+        obj.category = ApiClient.convertToType(data['category'], 'String');
+      if (data.hasOwnProperty('tags'))
+        obj.tags = ApiClient.convertToType(data['tags'], ['String']);
+      if (data.hasOwnProperty('photoUrl'))
+        obj.photoUrl = ApiClient.convertToType(data['photoUrl'], 'String');
+      if (data.hasOwnProperty('type'))
+        obj.type = ApiClient.convertToType(data['type'], 'String');
     }
     return obj;
   }
@@ -69,9 +81,37 @@
   exports.prototype.id = undefined;
 
   /**
-   * @member {module:model/BusinessProps} props
+   * @member {String} name
    */
-  exports.prototype.props = undefined;
+  exports.prototype.name = undefined;
+
+  /**
+   * @member {String} description
+   */
+  exports.prototype.description = undefined;
+
+  /**
+   * Business category
+   * @member {String} category
+   */
+  exports.prototype.category = undefined;
+
+  /**
+   * labels or tags
+   * @member {Array.<String>} tags
+   */
+  exports.prototype.tags = undefined;
+
+  /**
+   * @member {String} photoUrl
+   */
+  exports.prototype.photoUrl = undefined;
+
+  /**
+   * Internal business object type
+   * @member {String} type
+   */
+  exports.prototype.type = undefined;
 
   return exports;
 

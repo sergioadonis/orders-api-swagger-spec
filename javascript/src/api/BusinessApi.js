@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Business', 'model/Error', 'model/Props'], factory);
+    define(['ApiClient', 'model/Business', 'model/Error'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/Error'), require('../model/Props'));
+    module.exports = factory(require('../ApiClient'), require('../model/Business'), require('../model/Error'));
   } else {
     // Browser globals (root is window)
     if (!root.OrdersApi) {
       root.OrdersApi = {};
     }
-    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.Error, root.OrdersApi.Props);
+    root.OrdersApi.BusinessApi = factory(root.OrdersApi.ApiClient, root.OrdersApi.Business, root.OrdersApi.Error);
   }
-}(this, function(ApiClient, Business, Error, Props) {
+}(this, function(ApiClient, Business, Error) {
   'use strict';
 
   /**
@@ -58,16 +58,16 @@
 
     /**
      * Create business
-     * @param {module:model/Props} bussinesProps 
+     * @param {module:model/Business} bussines 
      * @param {module:api/BusinessApi~createBusinessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.createBusiness = function(bussinesProps, callback) {
-      var postBody = bussinesProps;
+    this.createBusiness = function(bussines, callback) {
+      var postBody = bussines;
 
-      // verify the required parameter 'bussinesProps' is set
-      if (bussinesProps === undefined || bussinesProps === null) {
-        throw new Error("Missing the required parameter 'bussinesProps' when calling createBusiness");
+      // verify the required parameter 'bussines' is set
+      if (bussines === undefined || bussines === null) {
+        throw new Error("Missing the required parameter 'bussines' when calling createBusiness");
       }
 
 
@@ -238,21 +238,21 @@
     /**
      * Update business
      * @param {String} id 
-     * @param {module:model/Props} bussinesProps 
+     * @param {module:model/Business} bussines 
      * @param {module:api/BusinessApi~updateBusinessByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Business}
      */
-    this.updateBusinessById = function(id, bussinesProps, callback) {
-      var postBody = bussinesProps;
+    this.updateBusinessById = function(id, bussines, callback) {
+      var postBody = bussines;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling updateBusinessById");
       }
 
-      // verify the required parameter 'bussinesProps' is set
-      if (bussinesProps === undefined || bussinesProps === null) {
-        throw new Error("Missing the required parameter 'bussinesProps' when calling updateBusinessById");
+      // verify the required parameter 'bussines' is set
+      if (bussines === undefined || bussines === null) {
+        throw new Error("Missing the required parameter 'bussines' when calling updateBusinessById");
       }
 
 

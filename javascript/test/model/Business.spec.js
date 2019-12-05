@@ -47,10 +47,40 @@
         // expect(instance.id).to.be(expectedValueLiteral);
       });
 
-      it('should have the property props (base name: "props")', function() {
-        // TODO: update the code to test the property props
-        expect(instance).to.have.property('props');
-        // expect(instance.props).to.be(expectedValueLiteral);
+      it('should have the property name (base name: "name")', function() {
+        // TODO: update the code to test the property name
+        expect(instance).to.have.property('name');
+        // expect(instance.name).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property description (base name: "description")', function() {
+        // TODO: update the code to test the property description
+        expect(instance).to.have.property('description');
+        // expect(instance.description).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property category (base name: "category")', function() {
+        // TODO: update the code to test the property category
+        expect(instance).to.have.property('category');
+        // expect(instance.category).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property tags (base name: "tags")', function() {
+        // TODO: update the code to test the property tags
+        expect(instance).to.have.property('tags');
+        // expect(instance.tags).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property photoUrl (base name: "photoUrl")', function() {
+        // TODO: update the code to test the property photoUrl
+        expect(instance).to.have.property('photoUrl');
+        // expect(instance.photoUrl).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property type (base name: "type")', function() {
+        // TODO: update the code to test the property type
+        expect(instance).to.have.property('type');
+        // expect(instance.type).to.be(expectedValueLiteral);
       });
 
     });

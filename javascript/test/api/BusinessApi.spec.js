@@ -40,9 +40,16 @@
         it('should call createBusiness successfully', function(done) {
           // TODO: uncomment, update parameter values for createBusiness call and complete the assertions
           /*
-          var bussinesProps = new OrdersApi.Props();
+          var bussines = new OrdersApi.Business();
+          bussines.id = "12ea34-651d76c-87bd-85b6f9";
+          bussines.name = "El Zócalo";
+          bussines.description = "Restaurante de comida mexicana, tequila, karaoke y mucho más!";
+          bussines.category = "Mexican restaurant";
+          bussines.tags = ["Mexican food","Karaoke","Tacos","Tequila"];
+          bussines.photoUrl = "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9";
+          bussines.type = "RSTRNT";
 
-          instance.createBusiness(bussinesProps, function(error, data, response) {
+          instance.createBusiness(bussines, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -51,27 +58,26 @@
             expect(data).to.be.a(OrdersApi.Business);
             expect(data.id).to.be.a('string');
             expect(data.id).to.be("12ea34-651d76c-87bd-85b6f9");
-            expect(data.props).to.be.a(OrdersApi.BusinessProps);
-                  expect(data.props.name).to.be.a('string');
-              expect(data.props.name).to.be("El Zócalo");
-              expect(data.props.description).to.be.a('string');
-              expect(data.props.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
-              expect(data.props.category).to.be.a('string');
-              expect(data.props.category).to.be("Mexican restaurant");
-              {
-                let dataCtr = data.props.tags;
-                expect(dataCtr).to.be.an(Array);
-                expect(dataCtr).to.not.be.empty();
-                for (let p in dataCtr) {
-                  let data = dataCtr[p];
-                  expect(data).to.be.a('string');
-                  expect(data).to.be("");
-                }
+            expect(data.name).to.be.a('string');
+            expect(data.name).to.be("El Zócalo");
+            expect(data.description).to.be.a('string');
+            expect(data.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
+            expect(data.category).to.be.a('string');
+            expect(data.category).to.be("Mexican restaurant");
+            {
+              let dataCtr = data.tags;
+              expect(dataCtr).to.be.an(Array);
+              expect(dataCtr).to.not.be.empty();
+              for (let p in dataCtr) {
+                let data = dataCtr[p];
+                expect(data).to.be.a('string');
+                expect(data).to.be("");
               }
-              expect(data.props.photoUrl).to.be.a('string');
-              expect(data.props.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
-              expect(data.props.type).to.be.a('string');
-              expect(data.props.type).to.be("RSTRNT");
+            }
+            expect(data.photoUrl).to.be.a('string');
+            expect(data.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
+            expect(data.type).to.be.a('string');
+            expect(data.type).to.be("RSTRNT");
 
             done();
           });
@@ -114,27 +120,26 @@
             expect(data).to.be.a(OrdersApi.Business);
             expect(data.id).to.be.a('string');
             expect(data.id).to.be("12ea34-651d76c-87bd-85b6f9");
-            expect(data.props).to.be.a(OrdersApi.BusinessProps);
-                  expect(data.props.name).to.be.a('string');
-              expect(data.props.name).to.be("El Zócalo");
-              expect(data.props.description).to.be.a('string');
-              expect(data.props.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
-              expect(data.props.category).to.be.a('string');
-              expect(data.props.category).to.be("Mexican restaurant");
-              {
-                let dataCtr = data.props.tags;
-                expect(dataCtr).to.be.an(Array);
-                expect(dataCtr).to.not.be.empty();
-                for (let p in dataCtr) {
-                  let data = dataCtr[p];
-                  expect(data).to.be.a('string');
-                  expect(data).to.be("");
-                }
+            expect(data.name).to.be.a('string');
+            expect(data.name).to.be("El Zócalo");
+            expect(data.description).to.be.a('string');
+            expect(data.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
+            expect(data.category).to.be.a('string');
+            expect(data.category).to.be("Mexican restaurant");
+            {
+              let dataCtr = data.tags;
+              expect(dataCtr).to.be.an(Array);
+              expect(dataCtr).to.not.be.empty();
+              for (let p in dataCtr) {
+                let data = dataCtr[p];
+                expect(data).to.be.a('string');
+                expect(data).to.be("");
               }
-              expect(data.props.photoUrl).to.be.a('string');
-              expect(data.props.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
-              expect(data.props.type).to.be.a('string');
-              expect(data.props.type).to.be("RSTRNT");
+            }
+            expect(data.photoUrl).to.be.a('string');
+            expect(data.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
+            expect(data.type).to.be.a('string');
+            expect(data.type).to.be("RSTRNT");
 
             done();
           });
@@ -162,27 +167,26 @@
               expect(data).to.be.a(OrdersApi.Business);
               expect(data.id).to.be.a('string');
               expect(data.id).to.be("12ea34-651d76c-87bd-85b6f9");
-              expect(data.props).to.be.a(OrdersApi.BusinessProps);
-                    expect(data.props.name).to.be.a('string');
-                expect(data.props.name).to.be("El Zócalo");
-                expect(data.props.description).to.be.a('string');
-                expect(data.props.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
-                expect(data.props.category).to.be.a('string');
-                expect(data.props.category).to.be("Mexican restaurant");
-                {
-                  let dataCtr = data.props.tags;
-                  expect(dataCtr).to.be.an(Array);
-                  expect(dataCtr).to.not.be.empty();
-                  for (let p in dataCtr) {
-                    let data = dataCtr[p];
-                    expect(data).to.be.a('string');
-                    expect(data).to.be("");
-                  }
+              expect(data.name).to.be.a('string');
+              expect(data.name).to.be("El Zócalo");
+              expect(data.description).to.be.a('string');
+              expect(data.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
+              expect(data.category).to.be.a('string');
+              expect(data.category).to.be("Mexican restaurant");
+              {
+                let dataCtr = data.tags;
+                expect(dataCtr).to.be.an(Array);
+                expect(dataCtr).to.not.be.empty();
+                for (let p in dataCtr) {
+                  let data = dataCtr[p];
+                  expect(data).to.be.a('string');
+                  expect(data).to.be("");
                 }
-                expect(data.props.photoUrl).to.be.a('string');
-                expect(data.props.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
-                expect(data.props.type).to.be.a('string');
-                expect(data.props.type).to.be("RSTRNT");
+              }
+              expect(data.photoUrl).to.be.a('string');
+              expect(data.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
+              expect(data.type).to.be.a('string');
+              expect(data.type).to.be("RSTRNT");
             }
 
             done();
@@ -197,9 +201,16 @@
           // TODO: uncomment, update parameter values for updateBusinessById call and complete the assertions
           /*
           var id = "id_example";
-          var bussinesProps = new OrdersApi.Props();
+          var bussines = new OrdersApi.Business();
+          bussines.id = "12ea34-651d76c-87bd-85b6f9";
+          bussines.name = "El Zócalo";
+          bussines.description = "Restaurante de comida mexicana, tequila, karaoke y mucho más!";
+          bussines.category = "Mexican restaurant";
+          bussines.tags = ["Mexican food","Karaoke","Tacos","Tequila"];
+          bussines.photoUrl = "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9";
+          bussines.type = "RSTRNT";
 
-          instance.updateBusinessById(id, bussinesProps, function(error, data, response) {
+          instance.updateBusinessById(id, bussines, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -208,27 +219,26 @@
             expect(data).to.be.a(OrdersApi.Business);
             expect(data.id).to.be.a('string');
             expect(data.id).to.be("12ea34-651d76c-87bd-85b6f9");
-            expect(data.props).to.be.a(OrdersApi.BusinessProps);
-                  expect(data.props.name).to.be.a('string');
-              expect(data.props.name).to.be("El Zócalo");
-              expect(data.props.description).to.be.a('string');
-              expect(data.props.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
-              expect(data.props.category).to.be.a('string');
-              expect(data.props.category).to.be("Mexican restaurant");
-              {
-                let dataCtr = data.props.tags;
-                expect(dataCtr).to.be.an(Array);
-                expect(dataCtr).to.not.be.empty();
-                for (let p in dataCtr) {
-                  let data = dataCtr[p];
-                  expect(data).to.be.a('string');
-                  expect(data).to.be("");
-                }
+            expect(data.name).to.be.a('string');
+            expect(data.name).to.be("El Zócalo");
+            expect(data.description).to.be.a('string');
+            expect(data.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
+            expect(data.category).to.be.a('string');
+            expect(data.category).to.be("Mexican restaurant");
+            {
+              let dataCtr = data.tags;
+              expect(dataCtr).to.be.an(Array);
+              expect(dataCtr).to.not.be.empty();
+              for (let p in dataCtr) {
+                let data = dataCtr[p];
+                expect(data).to.be.a('string');
+                expect(data).to.be("");
               }
-              expect(data.props.photoUrl).to.be.a('string');
-              expect(data.props.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
-              expect(data.props.type).to.be.a('string');
-              expect(data.props.type).to.be("RSTRNT");
+            }
+            expect(data.photoUrl).to.be.a('string');
+            expect(data.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
+            expect(data.type).to.be.a('string');
+            expect(data.type).to.be("RSTRNT");
 
             done();
           });

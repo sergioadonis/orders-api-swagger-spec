@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0
+     * @default https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1
      */
-    this.basePath = 'https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0'.replace(/\/+$/, '');
+    this.basePath = 'https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

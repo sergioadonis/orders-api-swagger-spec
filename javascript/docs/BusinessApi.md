@@ -1,6 +1,6 @@
 # OrdersApi.BusinessApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createBusiness"></a>
 # **createBusiness**
-> Business createBusiness(bussinesProps)
+> Business createBusiness(bussines)
 
 Create business
 
@@ -23,7 +23,7 @@ var OrdersApi = require('orders_api');
 
 var apiInstance = new OrdersApi.BusinessApi();
 
-var bussinesProps = new OrdersApi.Props(); // Props | 
+var bussines = new OrdersApi.Business(); // Business | 
 
 
 var callback = function(error, data, response) {
@@ -33,14 +33,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createBusiness(bussinesProps, callback);
+apiInstance.createBusiness(bussines, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bussinesProps** | [**Props**](Props.md)|  | 
+ **bussines** | [**Business**](Business.md)|  | 
 
 ### Return type
 
@@ -183,7 +183,7 @@ No authorization required
 
 <a name="updateBusinessById"></a>
 # **updateBusinessById**
-> Business updateBusinessById(id, bussinesProps)
+> Business updateBusinessById(id, bussines)
 
 Update business
 
@@ -195,7 +195,7 @@ var apiInstance = new OrdersApi.BusinessApi();
 
 var id = "id_example"; // String | 
 
-var bussinesProps = new OrdersApi.Props(); // Props | 
+var bussines = new OrdersApi.Business(); // Business | 
 
 
 var callback = function(error, data, response) {
@@ -205,7 +205,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateBusinessById(id, bussinesProps, callback);
+apiInstance.updateBusinessById(id, bussines, callback);
 ```
 
 ### Parameters
@@ -213,7 +213,7 @@ apiInstance.updateBusinessById(id, bussinesProps, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **bussinesProps** | [**Props**](Props.md)|  | 
+ **bussines** | [**Business**](Business.md)|  | 
 
 ### Return type
 

@@ -97,7 +97,7 @@ var OrdersApi = require('orders_api');
 
 var api = new OrdersApi.BusinessApi()
 
-var bussinesProps = new OrdersApi.Props(); // {Props} 
+var bussines = new OrdersApi.Business(); // {Business} 
 
 
 var callback = function(error, data, response) {
@@ -107,13 +107,13 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.createBusiness(bussinesProps, callback);
+api.createBusiness(bussines, callback);
 
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -127,7 +127,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OrdersApi.Business](docs/Business.md)
- - [OrdersApi.BusinessProps](docs/BusinessProps.md)
  - [OrdersApi.Error](docs/Error.md)
 
 
