@@ -58,17 +58,145 @@ public class BusinessApi {
   }
 
   /**
+  * Create business
+  * 
+   * @param businessProps 
+   * @return Business
+  */
+  public Business createOneBusiness (BusinessProps businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = businessProps;
+    // verify the required parameter 'businessProps' is set
+    if (businessProps == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling createOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessProps' when calling createOneBusiness"));
+    }
+
+    // create path and map variables
+    String path = "/business";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (Business) ApiInvoker.deserialize(localVarResponse, "", Business.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Create business
+   * 
+   * @param businessProps 
+  */
+  public void createOneBusiness (BusinessProps businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = businessProps;
+
+    // verify the required parameter 'businessProps' is set
+    if (businessProps == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling createOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessProps' when calling createOneBusiness"));
+    }
+
+    // create path and map variables
+    String path = "/business".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((Business) ApiInvoker.deserialize(localVarResponse,  "", Business.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
   * Delete business
   * 
    * @param businessId 
    * @return void
   */
-  public void businessBusinessIdDelete (String businessId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void deleteOneBusiness (String businessId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling businessBusinessIdDelete",
-        new ApiException(400, "Missing the required parameter 'businessId' when calling businessBusinessIdDelete"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling deleteOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessId' when calling deleteOneBusiness"));
     }
 
     // create path and map variables
@@ -125,13 +253,13 @@ public class BusinessApi {
    * 
    * @param businessId 
   */
-  public void businessBusinessIdDelete (String businessId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void deleteOneBusiness (String businessId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling businessBusinessIdDelete",
-        new ApiException(400, "Missing the required parameter 'businessId' when calling businessBusinessIdDelete"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling deleteOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessId' when calling deleteOneBusiness"));
     }
 
     // create path and map variables
@@ -182,17 +310,134 @@ public class BusinessApi {
     }
   }
   /**
+  * Get businesses
+  * 
+   * @return List<Business>
+  */
+  public List<Business> getBusinessesList () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+
+    // create path and map variables
+    String path = "/business";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<Business>) ApiInvoker.deserialize(localVarResponse, "array", Business.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Get businesses
+   * 
+
+  */
+  public void getBusinessesList (final Response.Listener<List<Business>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+
+    // create path and map variables
+    String path = "/business".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<Business>) ApiInvoker.deserialize(localVarResponse,  "array", Business.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
   * Get business
   * 
    * @param businessId 
    * @return Business
   */
-  public Business businessBusinessIdGet (String businessId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Business getOneBusiness (String businessId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling businessBusinessIdGet",
-        new ApiException(400, "Missing the required parameter 'businessId' when calling businessBusinessIdGet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling getOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessId' when calling getOneBusiness"));
     }
 
     // create path and map variables
@@ -249,13 +494,13 @@ public class BusinessApi {
    * 
    * @param businessId 
   */
-  public void businessBusinessIdGet (String businessId, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+  public void getOneBusiness (String businessId, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling businessBusinessIdGet",
-        new ApiException(400, "Missing the required parameter 'businessId' when calling businessBusinessIdGet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling getOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessId' when calling getOneBusiness"));
     }
 
     // create path and map variables
@@ -316,17 +561,17 @@ public class BusinessApi {
    * @param businessProps 
    * @return Business
   */
-  public Business businessBusinessIdPut (String businessId, BusinessProps businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Business updateOneBusiness (String businessId, BusinessProps businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = businessProps;
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling businessBusinessIdPut",
-        new ApiException(400, "Missing the required parameter 'businessId' when calling businessBusinessIdPut"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling updateOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessId' when calling updateOneBusiness"));
     }
     // verify the required parameter 'businessProps' is set
     if (businessProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling businessBusinessIdPut",
-        new ApiException(400, "Missing the required parameter 'businessProps' when calling businessBusinessIdPut"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling updateOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessProps' when calling updateOneBusiness"));
     }
 
     // create path and map variables
@@ -383,18 +628,18 @@ public class BusinessApi {
    * 
    * @param businessId    * @param businessProps 
   */
-  public void businessBusinessIdPut (String businessId, BusinessProps businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+  public void updateOneBusiness (String businessId, BusinessProps businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = businessProps;
 
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling businessBusinessIdPut",
-        new ApiException(400, "Missing the required parameter 'businessId' when calling businessBusinessIdPut"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessId' when calling updateOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessId' when calling updateOneBusiness"));
     }
     // verify the required parameter 'businessProps' is set
     if (businessProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling businessBusinessIdPut",
-        new ApiException(400, "Missing the required parameter 'businessProps' when calling businessBusinessIdPut"));
+      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling updateOneBusiness",
+        new ApiException(400, "Missing the required parameter 'businessProps' when calling updateOneBusiness"));
     }
 
     // create path and map variables
@@ -429,251 +674,6 @@ public class BusinessApi {
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
-        new Response.Listener<String>() {
-          @Override
-          public void onResponse(String localVarResponse) {
-            try {
-              responseListener.onResponse((Business) ApiInvoker.deserialize(localVarResponse,  "", Business.class));
-            } catch (ApiException exception) {
-               errorListener.onErrorResponse(new VolleyError(exception));
-            }
-          }
-      }, new Response.ErrorListener() {
-          @Override
-          public void onErrorResponse(VolleyError error) {
-            errorListener.onErrorResponse(error);
-          }
-      });
-    } catch (ApiException ex) {
-      errorListener.onErrorResponse(new VolleyError(ex));
-    }
-  }
-  /**
-  * Get businesses
-  * 
-   * @return List<Business>
-  */
-  public List<Business> businessGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = null;
-
-    // create path and map variables
-    String path = "/business";
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-    String[] contentTypes = {
-      "application/json"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-    }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
-      if (localVarResponse != null) {
-         return (List<Business>) ApiInvoker.deserialize(localVarResponse, "array", Business.class);
-      } else {
-         return null;
-      }
-    } catch (ApiException ex) {
-       throw ex;
-    } catch (InterruptedException ex) {
-       throw ex;
-    } catch (ExecutionException ex) {
-      if (ex.getCause() instanceof VolleyError) {
-        VolleyError volleyError = (VolleyError)ex.getCause();
-        if (volleyError.networkResponse != null) {
-          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-        }
-      }
-      throw ex;
-    } catch (TimeoutException ex) {
-      throw ex;
-    }
-  }
-
-      /**
-   * Get businesses
-   * 
-
-  */
-  public void businessGet (final Response.Listener<List<Business>> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = null;
-
-
-    // create path and map variables
-    String path = "/business".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-
-
-
-    String[] contentTypes = {
-      "application/json"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      
-
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-          }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
-        new Response.Listener<String>() {
-          @Override
-          public void onResponse(String localVarResponse) {
-            try {
-              responseListener.onResponse((List<Business>) ApiInvoker.deserialize(localVarResponse,  "array", Business.class));
-            } catch (ApiException exception) {
-               errorListener.onErrorResponse(new VolleyError(exception));
-            }
-          }
-      }, new Response.ErrorListener() {
-          @Override
-          public void onErrorResponse(VolleyError error) {
-            errorListener.onErrorResponse(error);
-          }
-      });
-    } catch (ApiException ex) {
-      errorListener.onErrorResponse(new VolleyError(ex));
-    }
-  }
-  /**
-  * Create business
-  * 
-   * @param businessProps 
-   * @return Business
-  */
-  public Business businessPost (BusinessProps businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = businessProps;
-    // verify the required parameter 'businessProps' is set
-    if (businessProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling businessPost",
-        new ApiException(400, "Missing the required parameter 'businessProps' when calling businessPost"));
-    }
-
-    // create path and map variables
-    String path = "/business";
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-    String[] contentTypes = {
-      "application/json"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-    }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
-      if (localVarResponse != null) {
-         return (Business) ApiInvoker.deserialize(localVarResponse, "", Business.class);
-      } else {
-         return null;
-      }
-    } catch (ApiException ex) {
-       throw ex;
-    } catch (InterruptedException ex) {
-       throw ex;
-    } catch (ExecutionException ex) {
-      if (ex.getCause() instanceof VolleyError) {
-        VolleyError volleyError = (VolleyError)ex.getCause();
-        if (volleyError.networkResponse != null) {
-          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-        }
-      }
-      throw ex;
-    } catch (TimeoutException ex) {
-      throw ex;
-    }
-  }
-
-      /**
-   * Create business
-   * 
-   * @param businessProps 
-  */
-  public void businessPost (BusinessProps businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = businessProps;
-
-    // verify the required parameter 'businessProps' is set
-    if (businessProps == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'businessProps' when calling businessPost",
-        new ApiException(400, "Missing the required parameter 'businessProps' when calling businessPost"));
-    }
-
-    // create path and map variables
-    String path = "/business".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-
-
-
-    String[] contentTypes = {
-      "application/json"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      
-
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-          }
-
-    String[] authNames = new String[] {  };
-
-    try {
-      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
