@@ -64,7 +64,7 @@ public class BusinessApiExample {
 
     public static void main(String[] args) {
         BusinessApi apiInstance = new BusinessApi();
-        BusinessProps businessProps = new BusinessProps(); // BusinessProps | 
+        Props businessProps = new Props(); // Props | 
         try {
             Business result = apiInstance.createOneBusiness(businessProps);
             System.out.println(result);
@@ -93,7 +93,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Business](docs/Business.md)
- - [BusinessBusinessProps](docs/BusinessBusinessProps.md)
+ - [BusinessProps](docs/BusinessProps.md)
  - [Error](docs/Error.md)
 
 

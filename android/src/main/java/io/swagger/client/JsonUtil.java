@@ -61,8 +61,8 @@ public class JsonUtil {
       return new TypeToken<List<Business>>(){}.getType();
     }
     
-    if ("BusinessBusinessProps".equalsIgnoreCase(className)) {
-      return new TypeToken<List<BusinessBusinessProps>>(){}.getType();
+    if ("BusinessProps".equalsIgnoreCase(className)) {
+      return new TypeToken<List<BusinessProps>>(){}.getType();
     }
     
     if ("Error".equalsIgnoreCase(className)) {
@@ -79,8 +79,8 @@ public class JsonUtil {
       return new TypeToken<Business>(){}.getType();
     }
     
-    if ("BusinessBusinessProps".equalsIgnoreCase(className)) {
-      return new TypeToken<BusinessBusinessProps>(){}.getType();
+    if ("BusinessProps".equalsIgnoreCase(className)) {
+      return new TypeToken<BusinessProps>(){}.getType();
     }
     
     if ("Error".equalsIgnoreCase(className)) {

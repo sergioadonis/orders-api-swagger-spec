@@ -23,7 +23,7 @@ Create business
 //import io.swagger.client.api.BusinessApi;
 
 BusinessApi apiInstance = new BusinessApi();
-BusinessProps businessProps = new BusinessProps(); // BusinessProps | 
+Props businessProps = new Props(); // Props | 
 try {
     Business result = apiInstance.createOneBusiness(businessProps);
     System.out.println(result);
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **businessProps** | [**BusinessProps**](BusinessProps.md)|  |
+ **businessProps** | [**Props**](Props.md)|  |
 
 ### Return type
 
@@ -183,7 +183,7 @@ Update business
 
 BusinessApi apiInstance = new BusinessApi();
 String businessId = "businessId_example"; // String | 
-BusinessProps businessProps = new BusinessProps(); // BusinessProps | 
+Props businessProps = new Props(); // Props | 
 try {
     Business result = apiInstance.updateOneBusiness(businessId, businessProps);
     System.out.println(result);
@@ -198,7 +198,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessId** | **String**|  |
- **businessProps** | [**BusinessProps**](BusinessProps.md)|  |
+ **businessProps** | [**Props**](Props.md)|  |
 
 ### Return type
 

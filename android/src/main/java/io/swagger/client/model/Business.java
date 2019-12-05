@@ -12,36 +12,36 @@
 
 package io.swagger.client.model;
 
-import io.swagger.client.model.BusinessBusinessProps;
+import io.swagger.client.model.BusinessProps;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
 public class Business {
   
-  @SerializedName("businessId")
-  private String businessId = null;
-  @SerializedName("businessProps")
-  private BusinessBusinessProps businessProps = null;
+  @SerializedName("id")
+  private String id = null;
+  @SerializedName("props")
+  private BusinessProps props = null;
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getBusinessId() {
-    return businessId;
+  public String getId() {
+    return id;
   }
-  public void setBusinessId(String businessId) {
-    this.businessId = businessId;
+  public void setId(String id) {
+    this.id = id;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public BusinessBusinessProps getBusinessProps() {
-    return businessProps;
+  public BusinessProps getProps() {
+    return props;
   }
-  public void setBusinessProps(BusinessBusinessProps businessProps) {
-    this.businessProps = businessProps;
+  public void setProps(BusinessProps props) {
+    this.props = props;
   }
 
 
@@ -54,15 +54,15 @@ public class Business {
       return false;
     }
     Business business = (Business) o;
-    return (this.businessId == null ? business.businessId == null : this.businessId.equals(business.businessId)) &&
-        (this.businessProps == null ? business.businessProps == null : this.businessProps.equals(business.businessProps));
+    return (this.id == null ? business.id == null : this.id.equals(business.id)) &&
+        (this.props == null ? business.props == null : this.props.equals(business.props));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.businessId == null ? 0: this.businessId.hashCode());
-    result = 31 * result + (this.businessProps == null ? 0: this.businessProps.hashCode());
+    result = 31 * result + (this.id == null ? 0: this.id.hashCode());
+    result = 31 * result + (this.props == null ? 0: this.props.hashCode());
     return result;
   }
 
@@ -71,8 +71,8 @@ public class Business {
     StringBuilder sb = new StringBuilder();
     sb.append("class Business {\n");
     
-    sb.append("  businessId: ").append(businessId).append("\n");
-    sb.append("  businessProps: ").append(businessProps).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  props: ").append(props).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

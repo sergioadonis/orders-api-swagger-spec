@@ -24,8 +24,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import io.swagger.client.model.Business;
-import io.swagger.client.model.BusinessProps;
 import io.swagger.client.model.Error;
+import io.swagger.client.model.Props;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -63,7 +63,7 @@ public class BusinessApi {
    * @param businessProps 
    * @return Business
   */
-  public Business createOneBusiness (BusinessProps businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Business createOneBusiness (Props businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = businessProps;
     // verify the required parameter 'businessProps' is set
     if (businessProps == null) {
@@ -125,7 +125,7 @@ public class BusinessApi {
    * 
    * @param businessProps 
   */
-  public void createOneBusiness (BusinessProps businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+  public void createOneBusiness (Props businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = businessProps;
 
     // verify the required parameter 'businessProps' is set
@@ -561,7 +561,7 @@ public class BusinessApi {
    * @param businessProps 
    * @return Business
   */
-  public Business updateOneBusiness (String businessId, BusinessProps businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Business updateOneBusiness (String businessId, Props businessProps) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = businessProps;
     // verify the required parameter 'businessId' is set
     if (businessId == null) {
@@ -628,7 +628,7 @@ public class BusinessApi {
    * 
    * @param businessId    * @param businessProps 
   */
-  public void updateOneBusiness (String businessId, BusinessProps businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
+  public void updateOneBusiness (String businessId, Props businessProps, final Response.Listener<Business> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = businessProps;
 
     // verify the required parameter 'businessId' is set
