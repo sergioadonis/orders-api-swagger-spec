@@ -78,7 +78,7 @@ paths:
 parameters:
   BusinessProps:
     in: body
-    name: props
+    name: bussinesProps
     required: true
     schema:
       $ref: "#/definitions/Business/properties/props"
