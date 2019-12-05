@@ -81,7 +81,7 @@ parameters:
     name: businessProps
     required: true
     schema:
-      $ref: "#/definitions/Business/properties/businessProps"
+      $ref: "#/definitions/Business/properties/props"
   BusinessId:
     in: path
     name: businessId
@@ -114,10 +114,10 @@ definitions:
   Business:
     type: object
     properties:
-      businessId:
+      id:
         type: string
         example: "12ea34-651d76c-87bd-85b6f9"
-      businessProps:
+      props:
         type: object
         properties:
           name:
