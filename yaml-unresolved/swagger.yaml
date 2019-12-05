@@ -15,7 +15,7 @@ paths:
   /business:
     get:
       summary: Get businesses
-      operationId: getBusinessesList
+      operationId: getBusinesses
       tags:
         - Business
       responses:
@@ -25,7 +25,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
     post:
       summary: Create business
-      operationId: createOneBusiness
+      operationId: createBusiness
       tags:
         - Business
       parameters:
@@ -35,10 +35,10 @@ paths:
           $ref: "#/responses/BusinessObjectResponse"
         default:
           $ref: "#/responses/ErrorResponse"
-  /business/{businessId}:
+  /business/{id}:
     get:
       summary: Get business
-      operationId: getOneBusiness
+      operationId: getBusinessById
       tags:
         - Business
       parameters:
@@ -50,7 +50,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
     put:
       summary: Update business
-      operationId: updateOneBusiness
+      operationId: updateBusinessById
       tags:
         - Business
       parameters:
@@ -63,7 +63,7 @@ paths:
           $ref: "#/responses/ErrorResponse"
     delete:
       summary: Delete business
-      operationId: deleteOneBusiness
+      operationId: deleteBusinessById
       tags:
         - Business
       parameters:
@@ -78,13 +78,13 @@ paths:
 parameters:
   BusinessProps:
     in: body
-    name: businessProps
+    name: props
     required: true
     schema:
       $ref: "#/definitions/Business/properties/props"
   BusinessId:
     in: path
-    name: businessId
+    name: id
     type: string
     required: true
     
