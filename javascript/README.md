@@ -97,7 +97,7 @@ var OrdersApi = require('orders_api');
 
 var api = new OrdersApi.BusinessApi()
 
-var businessProps = new OrdersApi.Props(); // {Props} 
+var props = new OrdersApi.Props(); // {Props} 
 
 
 var callback = function(error, data, response) {
@@ -107,7 +107,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.createOneBusiness(businessProps, callback);
+api.createBusiness(props, callback);
 
 ```
 
@@ -117,11 +117,11 @@ All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OrdersApi.BusinessApi* | [**createOneBusiness**](docs/BusinessApi.md#createOneBusiness) | **POST** /business | Create business
-*OrdersApi.BusinessApi* | [**deleteOneBusiness**](docs/BusinessApi.md#deleteOneBusiness) | **DELETE** /business/{businessId} | Delete business
-*OrdersApi.BusinessApi* | [**getBusinessesList**](docs/BusinessApi.md#getBusinessesList) | **GET** /business | Get businesses
-*OrdersApi.BusinessApi* | [**getOneBusiness**](docs/BusinessApi.md#getOneBusiness) | **GET** /business/{businessId} | Get business
-*OrdersApi.BusinessApi* | [**updateOneBusiness**](docs/BusinessApi.md#updateOneBusiness) | **PUT** /business/{businessId} | Update business
+*OrdersApi.BusinessApi* | [**createBusiness**](docs/BusinessApi.md#createBusiness) | **POST** /business | Create business
+*OrdersApi.BusinessApi* | [**deleteBusinessById**](docs/BusinessApi.md#deleteBusinessById) | **DELETE** /business/{id} | Delete business
+*OrdersApi.BusinessApi* | [**getBusinessById**](docs/BusinessApi.md#getBusinessById) | **GET** /business/{id} | Get business
+*OrdersApi.BusinessApi* | [**getBusinesses**](docs/BusinessApi.md#getBusinesses) | **GET** /business | Get businesses
+*OrdersApi.BusinessApi* | [**updateBusinessById**](docs/BusinessApi.md#updateBusinessById) | **PUT** /business/{id} | Update business
 
 
 ## Documentation for Models

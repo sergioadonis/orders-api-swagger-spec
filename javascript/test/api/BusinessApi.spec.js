@@ -36,13 +36,13 @@
 
   describe('(package)', function() {
     describe('BusinessApi', function() {
-      describe('createOneBusiness', function() {
-        it('should call createOneBusiness successfully', function(done) {
-          // TODO: uncomment, update parameter values for createOneBusiness call and complete the assertions
+      describe('createBusiness', function() {
+        it('should call createBusiness successfully', function(done) {
+          // TODO: uncomment, update parameter values for createBusiness call and complete the assertions
           /*
-          var businessProps = new OrdersApi.Props();
+          var props = new OrdersApi.Props();
 
-          instance.createOneBusiness(businessProps, function(error, data, response) {
+          instance.createBusiness(props, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -80,13 +80,13 @@
           done();
         });
       });
-      describe('deleteOneBusiness', function() {
-        it('should call deleteOneBusiness successfully', function(done) {
-          // TODO: uncomment, update parameter values for deleteOneBusiness call
+      describe('deleteBusinessById', function() {
+        it('should call deleteBusinessById successfully', function(done) {
+          // TODO: uncomment, update parameter values for deleteBusinessById call
           /*
-          var businessId = "businessId_example";
+          var id = "id_example";
 
-          instance.deleteOneBusiness(businessId, function(error, data, response) {
+          instance.deleteBusinessById(id, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -99,12 +99,56 @@
           done();
         });
       });
-      describe('getBusinessesList', function() {
-        it('should call getBusinessesList successfully', function(done) {
-          // TODO: uncomment getBusinessesList call and complete the assertions
+      describe('getBusinessById', function() {
+        it('should call getBusinessById successfully', function(done) {
+          // TODO: uncomment, update parameter values for getBusinessById call and complete the assertions
+          /*
+          var id = "id_example";
+
+          instance.getBusinessById(id, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            expect(data).to.be.a(OrdersApi.Business);
+            expect(data.id).to.be.a('string');
+            expect(data.id).to.be("12ea34-651d76c-87bd-85b6f9");
+            expect(data.props).to.be.a(OrdersApi.BusinessProps);
+                  expect(data.props.name).to.be.a('string');
+              expect(data.props.name).to.be("El Zócalo");
+              expect(data.props.description).to.be.a('string');
+              expect(data.props.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
+              expect(data.props.category).to.be.a('string');
+              expect(data.props.category).to.be("Mexican restaurant");
+              {
+                let dataCtr = data.props.tags;
+                expect(dataCtr).to.be.an(Array);
+                expect(dataCtr).to.not.be.empty();
+                for (let p in dataCtr) {
+                  let data = dataCtr[p];
+                  expect(data).to.be.a('string');
+                  expect(data).to.be("");
+                }
+              }
+              expect(data.props.photoUrl).to.be.a('string');
+              expect(data.props.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
+              expect(data.props.type).to.be.a('string');
+              expect(data.props.type).to.be("RSTRNT");
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
+      describe('getBusinesses', function() {
+        it('should call getBusinesses successfully', function(done) {
+          // TODO: uncomment getBusinesses call and complete the assertions
           /*
 
-          instance.getBusinessesList(function(error, data, response) {
+          instance.getBusinesses(function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -148,58 +192,14 @@
           done();
         });
       });
-      describe('getOneBusiness', function() {
-        it('should call getOneBusiness successfully', function(done) {
-          // TODO: uncomment, update parameter values for getOneBusiness call and complete the assertions
+      describe('updateBusinessById', function() {
+        it('should call updateBusinessById successfully', function(done) {
+          // TODO: uncomment, update parameter values for updateBusinessById call and complete the assertions
           /*
-          var businessId = "businessId_example";
+          var id = "id_example";
+          var props = new OrdersApi.Props();
 
-          instance.getOneBusiness(businessId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(OrdersApi.Business);
-            expect(data.id).to.be.a('string');
-            expect(data.id).to.be("12ea34-651d76c-87bd-85b6f9");
-            expect(data.props).to.be.a(OrdersApi.BusinessProps);
-                  expect(data.props.name).to.be.a('string');
-              expect(data.props.name).to.be("El Zócalo");
-              expect(data.props.description).to.be.a('string');
-              expect(data.props.description).to.be("Restaurante de comida mexicana, tequila, karaoke y mucho más!");
-              expect(data.props.category).to.be.a('string');
-              expect(data.props.category).to.be("Mexican restaurant");
-              {
-                let dataCtr = data.props.tags;
-                expect(dataCtr).to.be.an(Array);
-                expect(dataCtr).to.not.be.empty();
-                for (let p in dataCtr) {
-                  let data = dataCtr[p];
-                  expect(data).to.be.a('string');
-                  expect(data).to.be("");
-                }
-              }
-              expect(data.props.photoUrl).to.be.a('string');
-              expect(data.props.photoUrl).to.be("https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9");
-              expect(data.props.type).to.be.a('string');
-              expect(data.props.type).to.be("RSTRNT");
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('updateOneBusiness', function() {
-        it('should call updateOneBusiness successfully', function(done) {
-          // TODO: uncomment, update parameter values for updateOneBusiness call and complete the assertions
-          /*
-          var businessId = "businessId_example";
-          var businessProps = new OrdersApi.Props();
-
-          instance.updateOneBusiness(businessId, businessProps, function(error, data, response) {
+          instance.updateBusinessById(id, props, function(error, data, response) {
             if (error) {
               done(error);
               return;
