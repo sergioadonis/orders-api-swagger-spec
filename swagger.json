@@ -218,9 +218,9 @@
           "type" : "string",
           "description" : "Field or entity that causes error"
         },
-        "requestId" : {
+        "traceId" : {
           "type" : "string",
-          "description" : "For logs and tracing"
+          "description" : "For log tracing"
         }
       }
     }
