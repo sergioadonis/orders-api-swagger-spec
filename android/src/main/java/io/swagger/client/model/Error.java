@@ -26,8 +26,9 @@ public class Error {
   private String target = null;
 
   /**
+   * Internal code error
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Internal code error")
   public String getCode() {
     return code;
   }
@@ -36,8 +37,9 @@ public class Error {
   }
 
   /**
+   * Description of error
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Description of error")
   public String getMessage() {
     return message;
   }
@@ -46,8 +48,9 @@ public class Error {
   }
 
   /**
+   * Field or entity that causes error
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Field or entity that causes error")
   public String getTarget() {
     return target;
   }
