@@ -26,7 +26,7 @@ function toPromise(f, req, res) {
   });
 }
 
-exports.sergioadonis/orders-api/1.0.1 = function(req, res) {
+exports.openapi = function(req, res) {
   swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
     var metadata = middleware.swaggerMetadata();
     var validator = middleware.swaggerValidator();

@@ -8,7 +8,6 @@ info:
     name: "Sergio Adonis"
     email: "sergio.adonis@outlook.com"
 host: "virtserver.swaggerhub.com"
-basePath: "/sergioadonis/orders-api/1.0.1"
 tags:
 - name: "Business"
   description: "Business operations"
