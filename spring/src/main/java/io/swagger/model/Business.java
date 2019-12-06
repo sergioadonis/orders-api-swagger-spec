@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.BusinessCategory;
+import io.swagger.model.BusinessGeoLocation;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.validation.annotation.Validated;
@@ -15,7 +17,7 @@ import javax.validation.constraints.*;
  * Business
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T05:39:09.551Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T19:18:23.260Z")
 
 public class Business   {
   @JsonProperty("id")
@@ -28,7 +30,16 @@ public class Business   {
   private String description = null;
 
   @JsonProperty("category")
-  private String category = null;
+  private BusinessCategory category = null;
+
+  @JsonProperty("phoneNumber")
+  private String phoneNumber = null;
+
+  @JsonProperty("address")
+  private String address = null;
+
+  @JsonProperty("geoLocation")
+  private BusinessGeoLocation geoLocation = null;
 
   @JsonProperty("tags")
   @Valid
@@ -101,24 +112,86 @@ public class Business   {
     this.description = description;
   }
 
-  public Business category(String category) {
+  public Business category(BusinessCategory category) {
     this.category = category;
     return this;
   }
 
   /**
-   * Business category
+   * Get category
    * @return category
   **/
-  @ApiModelProperty(example = "Mexican restaurant", value = "Business category")
+  @ApiModelProperty(value = "")
 
+  @Valid
 
-  public String getCategory() {
+  public BusinessCategory getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(BusinessCategory category) {
     this.category = category;
+  }
+
+  public Business phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+  /**
+   * Get phoneNumber
+   * @return phoneNumber
+  **/
+  @ApiModelProperty(example = "2222-5555", value = "")
+
+
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public Business address(String address) {
+    this.address = address;
+    return this;
+  }
+
+  /**
+   * Get address
+   * @return address
+  **/
+  @ApiModelProperty(example = "La direccion del negocio", value = "")
+
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public Business geoLocation(BusinessGeoLocation geoLocation) {
+    this.geoLocation = geoLocation;
+    return this;
+  }
+
+  /**
+   * Get geoLocation
+   * @return geoLocation
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public BusinessGeoLocation getGeoLocation() {
+    return geoLocation;
+  }
+
+  public void setGeoLocation(BusinessGeoLocation geoLocation) {
+    this.geoLocation = geoLocation;
   }
 
   public Business tags(List<String> tags) {
@@ -203,6 +276,9 @@ public class Business   {
         Objects.equals(this.name, business.name) &&
         Objects.equals(this.description, business.description) &&
         Objects.equals(this.category, business.category) &&
+        Objects.equals(this.phoneNumber, business.phoneNumber) &&
+        Objects.equals(this.address, business.address) &&
+        Objects.equals(this.geoLocation, business.geoLocation) &&
         Objects.equals(this.tags, business.tags) &&
         Objects.equals(this.photoUrl, business.photoUrl) &&
         Objects.equals(this.type, business.type);
@@ -210,7 +286,7 @@ public class Business   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, category, tags, photoUrl, type);
+    return Objects.hash(id, name, description, category, phoneNumber, address, geoLocation, tags, photoUrl, type);
   }
 
   @Override
@@ -222,6 +298,9 @@ public class Business   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    geoLocation: ").append(toIndentedString(geoLocation)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    photoUrl: ").append(toIndentedString(photoUrl)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

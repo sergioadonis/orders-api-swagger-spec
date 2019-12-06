@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * Error
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T05:39:09.551Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T19:18:23.260Z")
 
 public class Error   {
   @JsonProperty("code")
@@ -24,6 +24,9 @@ public class Error   {
 
   @JsonProperty("target")
   private String target = null;
+
+  @JsonProperty("traceId")
+  private String traceId = null;
 
   public Error code(String code) {
     this.code = code;
@@ -85,6 +88,26 @@ public class Error   {
     this.target = target;
   }
 
+  public Error traceId(String traceId) {
+    this.traceId = traceId;
+    return this;
+  }
+
+  /**
+   * For log tracing
+   * @return traceId
+  **/
+  @ApiModelProperty(value = "For log tracing")
+
+
+  public String getTraceId() {
+    return traceId;
+  }
+
+  public void setTraceId(String traceId) {
+    this.traceId = traceId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -97,12 +120,13 @@ public class Error   {
     Error error = (Error) o;
     return Objects.equals(this.code, error.code) &&
         Objects.equals(this.message, error.message) &&
-        Objects.equals(this.target, error.target);
+        Objects.equals(this.target, error.target) &&
+        Objects.equals(this.traceId, error.traceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, target);
+    return Objects.hash(code, message, target, traceId);
   }
 
   @Override
@@ -113,6 +137,7 @@ public class Error   {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
+    sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

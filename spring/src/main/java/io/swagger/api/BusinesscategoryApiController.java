@@ -24,40 +24,21 @@ import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T19:18:23.260Z")
 
 @Controller
-public class BusinessApiController implements BusinessApi {
+public class BusinesscategoryApiController implements BusinesscategoryApi {
 
-    private static final Logger log = LoggerFactory.getLogger(BusinessApiController.class);
+    private static final Logger log = LoggerFactory.getLogger(BusinesscategoryApiController.class);
 
     private final ObjectMapper objectMapper;
 
     private final HttpServletRequest request;
 
     @org.springframework.beans.factory.annotation.Autowired
-    public BusinessApiController(ObjectMapper objectMapper, HttpServletRequest request) {
+    public BusinesscategoryApiController(ObjectMapper objectMapper, HttpServletRequest request) {
         this.objectMapper = objectMapper;
         this.request = request;
     }
 
     public ResponseEntity<Business> createBusiness(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Business bussines) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<Business>(objectMapper.readValue("{  \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",  \"phoneNumber\" : \"2222-5555\",  \"address\" : \"La direccion del negocio\",  \"geoLocation\" : {    \"latitud\" : 0,    \"longitud\" : 6  },  \"name\" : \"El Zócalo\",  \"description\" : \"Restaurante de comida mexicana, tequila, karaoke y mucho más!\",  \"id\" : \"12ea34-651d76c-87bd-85b6f9\",  \"category\" : {    \"name\" : \"Mexican restaurant\",    \"description\" : \"description\",    \"style\" : {      \"iconName\" : \"iconName\",      \"accentColor\" : \"accentColor\",      \"baseColor\" : \"baseColor\"    },    \"id\" : \"{}\"  },  \"type\" : \"RSTRNT\",  \"tags\" : [ \"Mexican food\", \"Karaoke\", \"Tacos\", \"Tequila\" ]}", Business.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<Business>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        return new ResponseEntity<Business>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<Void> deleteBusinessById(@ApiParam(value = "",required=true) @PathVariable("id") String id) {
-        String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<Business> getBusinessById(@ApiParam(value = "",required=true) @PathVariable("id") String id) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -83,20 +64,6 @@ public class BusinessApiController implements BusinessApi {
         }
 
         return new ResponseEntity<List<Business>>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<Business> updateBusinessById(@ApiParam(value = "",required=true) @PathVariable("id") String id,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Business bussines) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<Business>(objectMapper.readValue("{  \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",  \"phoneNumber\" : \"2222-5555\",  \"address\" : \"La direccion del negocio\",  \"geoLocation\" : {    \"latitud\" : 0,    \"longitud\" : 6  },  \"name\" : \"El Zócalo\",  \"description\" : \"Restaurante de comida mexicana, tequila, karaoke y mucho más!\",  \"id\" : \"12ea34-651d76c-87bd-85b6f9\",  \"category\" : {    \"name\" : \"Mexican restaurant\",    \"description\" : \"description\",    \"style\" : {      \"iconName\" : \"iconName\",      \"accentColor\" : \"accentColor\",      \"baseColor\" : \"baseColor\"    },    \"id\" : \"{}\"  },  \"type\" : \"RSTRNT\",  \"tags\" : [ \"Mexican food\", \"Karaoke\", \"Tacos\", \"Tequila\" ]}", Business.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<Business>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        return new ResponseEntity<Business>(HttpStatus.NOT_IMPLEMENTED);
     }
 
 }

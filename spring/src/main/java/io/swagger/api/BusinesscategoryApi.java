@@ -24,61 +24,28 @@ import javax.validation.constraints.*;
 import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T19:18:23.260Z")
 
-@Api(value = "business", description = "the business API")
-public interface BusinessApi {
+@Api(value = "businesscategory", description = "the businesscategory API")
+public interface BusinesscategoryApi {
 
     @ApiOperation(value = "Create business", nickname = "createBusiness", notes = "", response = Business.class, tags={ "Business", })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "ok", response = Business.class),
         @ApiResponse(code = 200, message = "error", response = Error.class, responseContainer = "List") })
-    @RequestMapping(value = "/business/",
+    @RequestMapping(value = "/businesscategory/",
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
     ResponseEntity<Business> createBusiness(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Business bussines);
 
 
-    @ApiOperation(value = "Delete business by id", nickname = "deleteBusinessById", notes = "", tags={ "Business", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "ok"),
-        @ApiResponse(code = 200, message = "error", response = Error.class, responseContainer = "List") })
-    @RequestMapping(value = "/business/{id}",
-        produces = { "application/json" }, 
-        consumes = { "application/json" },
-        method = RequestMethod.DELETE)
-    ResponseEntity<Void> deleteBusinessById(@ApiParam(value = "",required=true) @PathVariable("id") String id);
-
-
-    @ApiOperation(value = "Get business by id", nickname = "getBusinessById", notes = "", response = Business.class, tags={ "Business", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "ok", response = Business.class),
-        @ApiResponse(code = 200, message = "error", response = Error.class, responseContainer = "List") })
-    @RequestMapping(value = "/business/{id}",
-        produces = { "application/json" }, 
-        consumes = { "application/json" },
-        method = RequestMethod.GET)
-    ResponseEntity<Business> getBusinessById(@ApiParam(value = "",required=true) @PathVariable("id") String id);
-
-
     @ApiOperation(value = "Get businesses", nickname = "getBusinesses", notes = "", response = Business.class, responseContainer = "List", tags={ "Business", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "ok", response = Business.class, responseContainer = "List"),
         @ApiResponse(code = 200, message = "error", response = Error.class, responseContainer = "List") })
-    @RequestMapping(value = "/business/",
+    @RequestMapping(value = "/businesscategory/",
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
     ResponseEntity<List<Business>> getBusinesses(@ApiParam(value = "Limit of items in an array to return", defaultValue = "100") @Valid @RequestParam(value = "limit", required = false, defaultValue="100") Integer limit,@ApiParam(value = "Offset to skip in an array to return", defaultValue = "0") @Valid @RequestParam(value = "offset", required = false, defaultValue="0") Integer offset,@ApiParam(value = "") @Valid @RequestParam(value = "category", required = false) String category);
-
-
-    @ApiOperation(value = "Update business by id", nickname = "updateBusinessById", notes = "", response = Business.class, tags={ "Business", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "ok", response = Business.class),
-        @ApiResponse(code = 200, message = "error", response = Error.class, responseContainer = "List") })
-    @RequestMapping(value = "/business/{id}",
-        produces = { "application/json" }, 
-        consumes = { "application/json" },
-        method = RequestMethod.PUT)
-    ResponseEntity<Business> updateBusinessById(@ApiParam(value = "",required=true) @PathVariable("id") String id,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Business bussines);
 
 }
