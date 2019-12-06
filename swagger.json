@@ -19,6 +19,11 @@
         "summary" : "Get businesses",
         "operationId" : "getBusinesses",
         "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/QueryLimit"
+        }, {
+          "$ref" : "#/parameters/QueryOffset"
+        } ],
         "responses" : {
           "200" : {
             "$ref" : "#/responses/BusinessArrayResponse"
@@ -99,6 +104,20 @@
     }
   },
   "parameters" : {
+    "QueryLimit" : {
+      "in" : "query",
+      "name" : "limit",
+      "type" : "integer",
+      "default" : 100,
+      "description" : "Limit of items in an array to return"
+    },
+    "QueryOffset" : {
+      "in" : "query",
+      "name" : "offset",
+      "type" : "integer",
+      "default" : 0,
+      "description" : "Offset to skip in an array to return"
+    },
     "BusinessBody" : {
       "in" : "body",
       "name" : "bussines",
