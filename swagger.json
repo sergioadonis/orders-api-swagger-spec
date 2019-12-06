@@ -203,7 +203,6 @@
     }
   },
   "host" : "virtserver.swaggerhub.com",
-  "basePath" : "/sergioadonis/orders-api/1.0.1",
   "schemes" : [ "https" ],
   "consumes" : [ "application/json" ],
   "produces" : [ "application/json" ]
