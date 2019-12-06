@@ -14,7 +14,7 @@
     "description" : "Business operations"
   } ],
   "paths" : {
-    "/business" : {
+    "/business/" : {
       "get" : {
         "summary" : "Get businesses",
         "operationId" : "getBusinesses",
