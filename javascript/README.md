@@ -88,7 +88,7 @@ api.createBusiness(bussines, callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1*
+All URIs are relative to *https://virtserver.swaggerhub.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

@@ -34,9 +34,9 @@ export class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1
+         * @default https://virtserver.swaggerhub.com
          */
-        this.basePath = 'https://virtserver.swaggerhub.com/sergioadonis/orders-api/1.0.1'.replace(/\/+$/, '');
+        this.basePath = 'https://virtserver.swaggerhub.com'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
