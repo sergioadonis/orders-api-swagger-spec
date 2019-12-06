@@ -107,7 +107,7 @@
     "/businesscategory/" : {
       "get" : {
         "summary" : "Get businesses",
-        "operationId" : "getBusinesses",
+        "operationId" : "getBusinessCategories",
         "tags" : [ "Business" ],
         "parameters" : [ {
           "$ref" : "#/parameters/QueryLimit"
@@ -127,7 +127,7 @@
       },
       "post" : {
         "summary" : "Create business",
-        "operationId" : "createBusiness",
+        "operationId" : "createBusinesCategory",
         "tags" : [ "Business" ],
         "parameters" : [ {
           "$ref" : "#/parameters/BusinessBody"
@@ -135,6 +135,58 @@
         "responses" : {
           "201" : {
             "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      }
+    },
+    "/businesscategory/{id}" : {
+      "get" : {
+        "summary" : "Get business by id",
+        "operationId" : "getBusinesCategoryById",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessId"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update business by id",
+        "operationId" : "updateBusinesCategoryById",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessId"
+        }, {
+          "$ref" : "#/parameters/BusinessBody"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete business by id",
+        "operationId" : "deleteBusinesCategoryById",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessId"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/EmptyResponse"
           },
           "default" : {
             "$ref" : "#/responses/ErrorResponse"
