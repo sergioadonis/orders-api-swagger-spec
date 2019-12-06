@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * Error
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T04:19:29.518Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-12-06T04:39:23.412Z")
 
 public class Error   {
   @JsonProperty("code")
@@ -31,10 +31,10 @@ public class Error   {
   }
 
   /**
-   * Get code
+   * Internal code error
    * @return code
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Internal code error")
 
 
   public String getCode() {
@@ -51,10 +51,10 @@ public class Error   {
   }
 
   /**
-   * Get message
+   * Description of error
    * @return message
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Description of error")
 
 
   public String getMessage() {
@@ -71,10 +71,10 @@ public class Error   {
   }
 
   /**
-   * Get target
+   * Field or entity that causes error
    * @return target
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Field or entity that causes error")
 
 
   public String getTarget() {
