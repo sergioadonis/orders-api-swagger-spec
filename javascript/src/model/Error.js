@@ -52,16 +52,19 @@ export class Error {
 }
 
 /**
+ * Internal code error
  * @member {String} code
  */
 Error.prototype.code = undefined;
 
 /**
+ * Description of error
  * @member {String} message
  */
 Error.prototype.message = undefined;
 
 /**
+ * Field or entity that causes error
  * @member {String} target
  */
 Error.prototype.target = undefined;
