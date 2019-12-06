@@ -23,6 +23,8 @@
           "$ref" : "#/parameters/QueryLimit"
         }, {
           "$ref" : "#/parameters/QueryOffset"
+        }, {
+          "$ref" : "#/parameters/QueryBusinessCategory"
         } ],
         "responses" : {
           "200" : {
@@ -101,6 +103,44 @@
           }
         }
       }
+    },
+    "/businesscategory/" : {
+      "get" : {
+        "summary" : "Get businesses",
+        "operationId" : "getBusinesses",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/QueryLimit"
+        }, {
+          "$ref" : "#/parameters/QueryOffset"
+        }, {
+          "$ref" : "#/parameters/QueryBusinessCategory"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/BusinessArrayResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create business",
+        "operationId" : "createBusiness",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessBody"
+        } ],
+        "responses" : {
+          "201" : {
+            "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      }
     }
   },
   "parameters" : {
@@ -131,6 +171,25 @@
       "name" : "id",
       "type" : "string",
       "required" : true
+    },
+    "BusinessCategoryBody" : {
+      "in" : "body",
+      "name" : "bussines",
+      "required" : true,
+      "schema" : {
+        "$ref" : "#/definitions/BusinessCategory"
+      }
+    },
+    "BusinessCategoryId" : {
+      "in" : "path",
+      "name" : "id",
+      "type" : "string",
+      "required" : true
+    },
+    "QueryBusinessCategory" : {
+      "in" : "query",
+      "name" : "category",
+      "type" : "string"
     }
   },
   "responses" : {
