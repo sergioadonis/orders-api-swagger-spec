@@ -1,0 +1,210 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.1",
+    "title" : "Orders API",
+    "description" : "Simple API to manage businesses and orders",
+    "contact" : {
+      "name" : "Sergio Adonis",
+      "email" : "sergio.adonis@outlook.com"
+    }
+  },
+  "tags" : [ {
+    "name" : "Business",
+    "description" : "Business operations"
+  } ],
+  "paths" : {
+    "/business" : {
+      "get" : {
+        "summary" : "Get businesses",
+        "operationId" : "getBusinesses",
+        "tags" : [ "Business" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/BusinessArrayResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create business",
+        "operationId" : "createBusiness",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessBody"
+        } ],
+        "responses" : {
+          "201" : {
+            "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      }
+    },
+    "/business/{id}" : {
+      "get" : {
+        "summary" : "Get business by id",
+        "operationId" : "getBusinessById",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessId"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update business by id",
+        "operationId" : "updateBusinessById",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessId"
+        }, {
+          "$ref" : "#/parameters/BusinessBody"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/BusinessObjectResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete business by id",
+        "operationId" : "deleteBusinessById",
+        "tags" : [ "Business" ],
+        "parameters" : [ {
+          "$ref" : "#/parameters/BusinessId"
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/responses/EmptyResponse"
+          },
+          "default" : {
+            "$ref" : "#/responses/ErrorResponse"
+          }
+        }
+      }
+    }
+  },
+  "parameters" : {
+    "BusinessBody" : {
+      "in" : "body",
+      "name" : "bussines",
+      "required" : true,
+      "schema" : {
+        "$ref" : "#/definitions/Business"
+      }
+    },
+    "BusinessId" : {
+      "in" : "path",
+      "name" : "id",
+      "type" : "string",
+      "required" : true
+    }
+  },
+  "responses" : {
+    "BusinessArrayResponse" : {
+      "description" : "ok",
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/Business"
+        }
+      }
+    },
+    "BusinessObjectResponse" : {
+      "description" : "ok",
+      "schema" : {
+        "$ref" : "#/definitions/Business"
+      }
+    },
+    "EmptyResponse" : {
+      "description" : "ok"
+    },
+    "ErrorResponse" : {
+      "description" : "error",
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/Error"
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Business" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "example" : "12ea34-651d76c-87bd-85b6f9"
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "El Zócalo"
+        },
+        "description" : {
+          "type" : "string",
+          "example" : "Restaurante de comida mexicana, tequila, karaoke y mucho más!"
+        },
+        "category" : {
+          "description" : "Business category",
+          "example" : "Mexican restaurant",
+          "type" : "string"
+        },
+        "tags" : {
+          "description" : "labels or tags",
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "example" : [ "Mexican food", "Karaoke", "Tacos", "Tequila" ]
+        },
+        "photoUrl" : {
+          "type" : "string",
+          "example" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Internal business object type",
+          "example" : "RSTRNT"
+        }
+      },
+      "required" : [ "name" ]
+    },
+    "Error" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "description" : "Internal code error"
+        },
+        "message" : {
+          "type" : "string",
+          "description" : "Description of error"
+        },
+        "target" : {
+          "type" : "string",
+          "description" : "Field or entity that causes error"
+        }
+      }
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/sergioadonis/orders-api/1.0.1",
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ]
+}
