@@ -234,14 +234,19 @@
         "description" : {
           "type" : "string"
         },
-        "iconName" : {
-          "type" : "string"
-        },
-        "baseColor" : {
-          "type" : "string"
-        },
-        "accentColor" : {
-          "type" : "string"
+        "style" : {
+          "type" : "object",
+          "properties" : {
+            "iconName" : {
+              "type" : "string"
+            },
+            "baseColor" : {
+              "type" : "string"
+            },
+            "accentColor" : {
+              "type" : "string"
+            }
+          }
         }
       }
     },
