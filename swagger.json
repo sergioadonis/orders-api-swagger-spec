@@ -205,5 +205,6 @@
   "host" : "virtserver.swaggerhub.com",
   "schemes" : [ "https" ],
   "consumes" : [ "application/json" ],
-  "produces" : [ "application/json" ]
+  "produces" : [ "application/json" ],
+  "x-aws-api-id" : "icheyjco97"
 }
