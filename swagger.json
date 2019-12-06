@@ -198,6 +198,10 @@
         "target" : {
           "type" : "string",
           "description" : "Field or entity that causes error"
+        },
+        "requestId" : {
+          "type" : "string",
+          "description" : "For logs and tracing"
         }
       }
     }
