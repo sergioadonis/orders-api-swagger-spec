@@ -179,9 +179,26 @@
           "example" : "Restaurante de comida mexicana, tequila, karaoke y mucho más!"
         },
         "category" : {
-          "description" : "Business category",
-          "example" : "Mexican restaurant",
-          "type" : "string"
+          "$ref" : "#/definitions/BusinessCategory"
+        },
+        "phoneNumber" : {
+          "type" : "string",
+          "example" : "2222-5555"
+        },
+        "address" : {
+          "type" : "string",
+          "example" : "La direccion del negocio"
+        },
+        "geoLocation" : {
+          "type" : "object",
+          "properties" : {
+            "latitud" : {
+              "type" : "integer"
+            },
+            "longitud" : {
+              "type" : "integer"
+            }
+          }
         },
         "tags" : {
           "description" : "labels or tags",
@@ -202,6 +219,31 @@
         }
       },
       "required" : [ "name" ]
+    },
+    "BusinessCategory" : {
+      "type" : "object",
+      "description" : "Business category",
+      "properties" : {
+        "id" : {
+          "type" : "object"
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "Mexican restaurant"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "iconName" : {
+          "type" : "string"
+        },
+        "baseColor" : {
+          "type" : "string"
+        },
+        "accentColor" : {
+          "type" : "string"
+        }
+      }
     },
     "Error" : {
       "type" : "object",
