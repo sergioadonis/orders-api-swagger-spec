@@ -1,0 +1,226 @@
+---
+swagger: "2.0"
+info:
+  description: "Simple API to manage businesses and orders"
+  version: "1.0.1"
+  title: "Orders API"
+  contact:
+    name: "Sergio Adonis"
+    email: "sergio.adonis@outlook.com"
+host: "virtserver.swaggerhub.com"
+basePath: "/sergioadonis/orders-api/1.0.1"
+tags:
+- name: "Business"
+  description: "Business operations"
+schemes:
+- "https"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /business:
+    get:
+      tags:
+      - "Business"
+      summary: "Get businesses"
+      operationId: "getBusinesses"
+      parameters: []
+      responses:
+        "200":
+          description: "ok"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Business"
+        default:
+          description: "error"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Business"
+    post:
+      tags:
+      - "Business"
+      summary: "Create business"
+      operationId: "createBusiness"
+      parameters:
+      - in: "body"
+        name: "bussines"
+        required: true
+        schema:
+          $ref: "#/definitions/Business"
+      responses:
+        "201":
+          description: "ok"
+          schema:
+            $ref: "#/definitions/Business"
+        default:
+          description: "error"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Business"
+  /business/{id}:
+    get:
+      tags:
+      - "Business"
+      summary: "Get business by id"
+      operationId: "getBusinessById"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "ok"
+          schema:
+            $ref: "#/definitions/Business"
+        default:
+          description: "error"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Business"
+    put:
+      tags:
+      - "Business"
+      summary: "Update business by id"
+      operationId: "updateBusinessById"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "bussines"
+        required: true
+        schema:
+          $ref: "#/definitions/Business"
+      responses:
+        "200":
+          description: "ok"
+          schema:
+            $ref: "#/definitions/Business"
+        default:
+          description: "error"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Business"
+    delete:
+      tags:
+      - "Business"
+      summary: "Delete business by id"
+      operationId: "deleteBusinessById"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "ok"
+        default:
+          description: "error"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Business"
+definitions:
+  Business:
+    type: "object"
+    required:
+    - "name"
+    properties:
+      id:
+        type: "string"
+        example: "12ea34-651d76c-87bd-85b6f9"
+      name:
+        type: "string"
+        example: "El Zócalo"
+      description:
+        type: "string"
+        example: "Restaurante de comida mexicana, tequila, karaoke y mucho más!"
+      category:
+        type: "string"
+        example: "Mexican restaurant"
+        description: "Business category"
+      tags:
+        type: "array"
+        example:
+        - "Mexican food"
+        - "Karaoke"
+        - "Tacos"
+        - "Tequila"
+        description: "labels or tags"
+        items:
+          type: "string"
+      photoUrl:
+        type: "string"
+        example: "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
+      type:
+        type: "string"
+        example: "RSTRNT"
+        description: "Internal business object type"
+    example:
+      photoUrl: "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
+      name: "El Zócalo"
+      description: "Restaurante de comida mexicana, tequila, karaoke y mucho más!"
+      id: "12ea34-651d76c-87bd-85b6f9"
+      category: "Mexican restaurant"
+      type: "RSTRNT"
+      tags:
+      - "Mexican food"
+      - "Karaoke"
+      - "Tacos"
+      - "Tequila"
+  Error:
+    type: "object"
+    properties:
+      code:
+        type: "string"
+        description: "Internal code error"
+      message:
+        type: "string"
+        description: "Description of error"
+      target:
+        type: "string"
+        description: "Field or entity that causes error"
+parameters:
+  BusinessBody:
+    in: "body"
+    name: "bussines"
+    required: true
+    schema:
+      $ref: "#/definitions/Business"
+  BusinessId:
+    name: "id"
+    in: "path"
+    required: true
+    type: "string"
+responses:
+  BusinessArrayResponse:
+    description: "ok"
+    schema:
+      type: "array"
+      items:
+        $ref: "#/definitions/Business"
+  BusinessObjectResponse:
+    description: "ok"
+    schema:
+      $ref: "#/definitions/Business"
+  EmptyResponse:
+    description: "ok"
+  ErrorResponse:
+    description: "error"
+    schema:
+      type: "array"
+      items:
+        $ref: "#/definitions/Error"
