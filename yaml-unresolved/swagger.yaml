@@ -152,10 +152,13 @@ definitions:
     properties:
       code:
         type: string
+        description: Internal code error
       message:
         type: string
+        description: Description of error
       target:
         type: string
+        description: Field or entity that causes error
   
 
 # Added by API Auto Mocking Plugin
