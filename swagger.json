@@ -23,11 +23,11 @@
         "operationId" : "getBusinesses",
         "tags" : [ "Business" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/QueryLimit"
+          "$ref" : "#/parameters/LimitParam"
         }, {
-          "$ref" : "#/parameters/QueryOffset"
+          "$ref" : "#/parameters/SkipParam"
         }, {
-          "$ref" : "#/parameters/QueryCategory"
+          "$ref" : "#/parameters/CategoryParam"
         } ],
         "responses" : {
           "200" : {
@@ -43,7 +43,7 @@
         "operationId" : "createBusiness",
         "tags" : [ "Business" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessBody"
+          "$ref" : "#/parameters/BusinessBodyParam"
         } ],
         "responses" : {
           "201" : {
@@ -61,7 +61,7 @@
         "operationId" : "getBusinessById",
         "tags" : [ "Business" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessId"
+          "$ref" : "#/parameters/BusinessIdParam"
         } ],
         "responses" : {
           "200" : {
@@ -77,9 +77,9 @@
         "operationId" : "updateBusinessById",
         "tags" : [ "Business" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessId"
+          "$ref" : "#/parameters/BusinessIdParam"
         }, {
-          "$ref" : "#/parameters/BusinessBody"
+          "$ref" : "#/parameters/BusinessBodyParam"
         } ],
         "responses" : {
           "200" : {
@@ -95,7 +95,7 @@
         "operationId" : "deleteBusinessById",
         "tags" : [ "Business" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessId"
+          "$ref" : "#/parameters/BusinessIdParam"
         } ],
         "responses" : {
           "200" : {
@@ -113,11 +113,11 @@
         "operationId" : "getCategories",
         "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/QueryLimit"
+          "$ref" : "#/parameters/LimitParam"
         }, {
-          "$ref" : "#/parameters/QueryOffset"
+          "$ref" : "#/parameters/SkipParam"
         }, {
-          "$ref" : "#/parameters/QueryType"
+          "$ref" : "#/parameters/TypeParam"
         } ],
         "responses" : {
           "200" : {
@@ -133,7 +133,7 @@
         "operationId" : "createCategory",
         "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/CategoryBody"
+          "$ref" : "#/parameters/CategoryBodyParam"
         } ],
         "responses" : {
           "201" : {
@@ -151,7 +151,7 @@
         "operationId" : "getCategoryById",
         "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/CategoryId"
+          "$ref" : "#/parameters/CategoryIdParam"
         } ],
         "responses" : {
           "200" : {
@@ -167,9 +167,9 @@
         "operationId" : "updateCategoryById",
         "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/CategoryId"
+          "$ref" : "#/parameters/CategoryIdParam"
         }, {
-          "$ref" : "#/parameters/CategoryBody"
+          "$ref" : "#/parameters/CategoryBodyParam"
         } ],
         "responses" : {
           "200" : {
@@ -185,7 +185,7 @@
         "operationId" : "deleteCategoryById",
         "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/CategoryId"
+          "$ref" : "#/parameters/CategoryIdParam"
         } ],
         "responses" : {
           "200" : {
@@ -199,31 +199,33 @@
     }
   },
   "parameters" : {
-    "QueryLimit" : {
+    "SkipParam" : {
+      "name" : "skip",
       "in" : "query",
+      "description" : "number of items to skip",
+      "required" : true,
+      "type" : "integer",
+      "format" : "int32"
+    },
+    "LimitParam" : {
       "name" : "limit",
-      "type" : "integer",
-      "default" : 100,
-      "description" : "Pagination limit of items in an array to return"
-    },
-    "QueryOffset" : {
       "in" : "query",
-      "name" : "offset",
+      "description" : "max records to return",
+      "required" : true,
       "type" : "integer",
-      "default" : 0,
-      "description" : "Pagination offset to skip in an array to return"
+      "format" : "int32"
     },
-    "QueryCategory" : {
+    "CategoryParam" : {
       "in" : "query",
       "name" : "category",
       "type" : "string"
     },
-    "QueryType" : {
+    "TypeParam" : {
       "in" : "query",
       "name" : "type",
       "type" : "string"
     },
-    "BusinessBody" : {
+    "BusinessBodyParam" : {
       "in" : "body",
       "name" : "bussines",
       "required" : true,
@@ -231,13 +233,13 @@
         "$ref" : "#/definitions/Business"
       }
     },
-    "BusinessId" : {
+    "BusinessIdParam" : {
       "in" : "path",
       "name" : "id",
       "type" : "string",
       "required" : true
     },
-    "CategoryBody" : {
+    "CategoryBodyParam" : {
       "in" : "body",
       "name" : "category",
       "required" : true,
@@ -245,16 +247,11 @@
         "$ref" : "#/definitions/Category"
       }
     },
-    "CategoryId" : {
+    "CategoryIdParam" : {
       "in" : "path",
       "name" : "id",
       "type" : "string",
       "required" : true
-    },
-    "QueryBusinessCategory" : {
-      "in" : "query",
-      "name" : "category",
-      "type" : "string"
     }
   },
   "responses" : {
@@ -419,8 +416,8 @@
         },
         "type" : {
           "type" : "string",
-          "description" : "Internal use category type",
-          "example" : "BUSINESS, PRODUCT"
+          "enum" : [ "BUSINESS", "PRODUCT" ],
+          "description" : "Internal use category type"
         }
       }
     },
