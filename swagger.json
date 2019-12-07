@@ -325,11 +325,6 @@
         "photoUrl" : {
           "type" : "string",
           "example" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
-        },
-        "type" : {
-          "type" : "string",
-          "description" : "Internal business object type",
-          "example" : "RSTRNT"
         }
       },
       "required" : [ "name" ]
@@ -389,6 +384,5 @@
   "host" : "virtserver.swaggerhub.com",
   "schemes" : [ "https" ],
   "consumes" : [ "application/json" ],
-  "produces" : [ "application/json" ],
-  "x-aws-api-id" : "icheyjco97"
+  "produces" : [ "application/json" ]
 }
