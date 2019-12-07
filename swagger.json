@@ -204,14 +204,14 @@
       "name" : "limit",
       "type" : "integer",
       "default" : 100,
-      "description" : "Limit of items in an array to return"
+      "description" : "Pagination limit of items in an array to return"
     },
     "QueryOffset" : {
       "in" : "query",
       "name" : "offset",
       "type" : "integer",
       "default" : 0,
-      "description" : "Offset to skip in an array to return"
+      "description" : "Pagination offset to skip in an array to return"
     },
     "QueryCategory" : {
       "in" : "query",
@@ -359,7 +359,7 @@
       "description" : "Category for multiple business objects",
       "properties" : {
         "id" : {
-          "type" : "object"
+          "type" : "string"
         },
         "name" : {
           "type" : "string",
