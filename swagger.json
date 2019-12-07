@@ -302,6 +302,38 @@
     }
   },
   "definitions" : {
+    "CommonExample" : {
+      "type" : "object",
+      "properties" : {
+        "readAndWrite" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ReadExample" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/CommonExample"
+      }, {
+        "type" : "object"
+      } ],
+      "properties" : {
+        "readOnlyProperty" : {
+          "type" : "string"
+        }
+      }
+    },
+    "WriteExample" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/CommonExample"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "writeOnlyProperty" : {
+            "type" : "string"
+          }
+        }
+      } ]
+    },
     "Business" : {
       "type" : "object",
       "properties" : {
