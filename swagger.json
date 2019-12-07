@@ -12,6 +12,9 @@
   "tags" : [ {
     "name" : "Business",
     "description" : "Business operations"
+  }, {
+    "name" : "BusinessCategory",
+    "description" : "Business category operations"
   } ],
   "paths" : {
     "/business/" : {
@@ -108,7 +111,7 @@
       "get" : {
         "summary" : "Get businesses",
         "operationId" : "getBusinessCategories",
-        "tags" : [ "Business" ],
+        "tags" : [ "BusinessCategory" ],
         "parameters" : [ {
           "$ref" : "#/parameters/QueryLimit"
         }, {
@@ -127,8 +130,8 @@
       },
       "post" : {
         "summary" : "Create business",
-        "operationId" : "createBusinesCategory",
-        "tags" : [ "Business" ],
+        "operationId" : "createBusinessCategory",
+        "tags" : [ "BusinessCategory" ],
         "parameters" : [ {
           "$ref" : "#/parameters/BusinessBody"
         } ],
@@ -145,8 +148,8 @@
     "/businesscategory/{id}" : {
       "get" : {
         "summary" : "Get business by id",
-        "operationId" : "getBusinesCategoryById",
-        "tags" : [ "Business" ],
+        "operationId" : "getBusinessCategoryById",
+        "tags" : [ "BusinessCategory" ],
         "parameters" : [ {
           "$ref" : "#/parameters/BusinessId"
         } ],
@@ -161,8 +164,8 @@
       },
       "put" : {
         "summary" : "Update business by id",
-        "operationId" : "updateBusinesCategoryById",
-        "tags" : [ "Business" ],
+        "operationId" : "updateBusinessCategoryById",
+        "tags" : [ "BusinessCategory" ],
         "parameters" : [ {
           "$ref" : "#/parameters/BusinessId"
         }, {
@@ -179,8 +182,8 @@
       },
       "delete" : {
         "summary" : "Delete business by id",
-        "operationId" : "deleteBusinesCategoryById",
-        "tags" : [ "Business" ],
+        "operationId" : "deleteBusinessCategoryById",
+        "tags" : [ "BusinessCategory" ],
         "parameters" : [ {
           "$ref" : "#/parameters/BusinessId"
         } ],
