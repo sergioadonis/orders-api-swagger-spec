@@ -307,7 +307,8 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "example" : "12ea34-651d76c-87bd-85b6f9"
+          "example" : "12ea34-651d76c-87bd-85b6f9",
+          "readOnly" : true
         },
         "name" : {
           "type" : "string",
@@ -359,7 +360,9 @@
       "description" : "Category for multiple business objects",
       "properties" : {
         "id" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "69ea34-651d76c-87bd-854e5ac0",
+          "readOnly" : true
         },
         "name" : {
           "type" : "string",
