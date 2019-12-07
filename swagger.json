@@ -13,11 +13,11 @@
     "name" : "Business",
     "description" : "Business operations"
   }, {
-    "name" : "BusinessCategory",
-    "description" : "Business category operations"
+    "name" : "Category",
+    "description" : "Category operations"
   } ],
   "paths" : {
-    "/business/" : {
+    "/businesses/" : {
       "get" : {
         "summary" : "Get businesses",
         "operationId" : "getBusinesses",
@@ -27,7 +27,7 @@
         }, {
           "$ref" : "#/parameters/QueryOffset"
         }, {
-          "$ref" : "#/parameters/QueryBusinessCategory"
+          "$ref" : "#/parameters/QueryCategory"
         } ],
         "responses" : {
           "200" : {
@@ -55,7 +55,7 @@
         }
       }
     },
-    "/business/{id}" : {
+    "/businesses/{id}" : {
       "get" : {
         "summary" : "Get business by id",
         "operationId" : "getBusinessById",
@@ -107,21 +107,21 @@
         }
       }
     },
-    "/businesscategory/" : {
+    "/categories/" : {
       "get" : {
-        "summary" : "Get businesses",
-        "operationId" : "getBusinessCategories",
-        "tags" : [ "BusinessCategory" ],
+        "summary" : "Get categories",
+        "operationId" : "getCategories",
+        "tags" : [ "Category" ],
         "parameters" : [ {
           "$ref" : "#/parameters/QueryLimit"
         }, {
           "$ref" : "#/parameters/QueryOffset"
         }, {
-          "$ref" : "#/parameters/QueryBusinessCategory"
+          "$ref" : "#/parameters/QueryType"
         } ],
         "responses" : {
           "200" : {
-            "$ref" : "#/responses/BusinessArrayResponse"
+            "$ref" : "#/responses/CategoryArrayResponse"
           },
           "default" : {
             "$ref" : "#/responses/ErrorResponse"
@@ -129,15 +129,15 @@
         }
       },
       "post" : {
-        "summary" : "Create business",
-        "operationId" : "createBusinessCategory",
-        "tags" : [ "BusinessCategory" ],
+        "summary" : "Create category",
+        "operationId" : "createCategory",
+        "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessBody"
+          "$ref" : "#/parameters/CategoryBody"
         } ],
         "responses" : {
           "201" : {
-            "$ref" : "#/responses/BusinessObjectResponse"
+            "$ref" : "#/responses/CategoryObjectResponse"
           },
           "default" : {
             "$ref" : "#/responses/ErrorResponse"
@@ -145,17 +145,17 @@
         }
       }
     },
-    "/businesscategory/{id}" : {
+    "/category/{id}" : {
       "get" : {
-        "summary" : "Get business by id",
-        "operationId" : "getBusinessCategoryById",
-        "tags" : [ "BusinessCategory" ],
+        "summary" : "Get category by id",
+        "operationId" : "getCategoryById",
+        "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessId"
+          "$ref" : "#/parameters/CategoryId"
         } ],
         "responses" : {
           "200" : {
-            "$ref" : "#/responses/BusinessObjectResponse"
+            "$ref" : "#/responses/CategoryObjectResponse"
           },
           "default" : {
             "$ref" : "#/responses/ErrorResponse"
@@ -163,17 +163,17 @@
         }
       },
       "put" : {
-        "summary" : "Update business by id",
-        "operationId" : "updateBusinessCategoryById",
-        "tags" : [ "BusinessCategory" ],
+        "summary" : "Update category by id",
+        "operationId" : "updateCategoryById",
+        "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessId"
+          "$ref" : "#/parameters/CategoryId"
         }, {
-          "$ref" : "#/parameters/BusinessBody"
+          "$ref" : "#/parameters/CategoryBody"
         } ],
         "responses" : {
           "200" : {
-            "$ref" : "#/responses/BusinessObjectResponse"
+            "$ref" : "#/responses/CategoryObjectResponse"
           },
           "default" : {
             "$ref" : "#/responses/ErrorResponse"
@@ -181,11 +181,11 @@
         }
       },
       "delete" : {
-        "summary" : "Delete business by id",
-        "operationId" : "deleteBusinessCategoryById",
-        "tags" : [ "BusinessCategory" ],
+        "summary" : "Delete category by id",
+        "operationId" : "deleteCategoryById",
+        "tags" : [ "Category" ],
         "parameters" : [ {
-          "$ref" : "#/parameters/BusinessId"
+          "$ref" : "#/parameters/CategoryId"
         } ],
         "responses" : {
           "200" : {
@@ -213,6 +213,16 @@
       "default" : 0,
       "description" : "Offset to skip in an array to return"
     },
+    "QueryCategory" : {
+      "in" : "query",
+      "name" : "category",
+      "type" : "string"
+    },
+    "QueryType" : {
+      "in" : "query",
+      "name" : "type",
+      "type" : "string"
+    },
     "BusinessBody" : {
       "in" : "body",
       "name" : "bussines",
@@ -227,15 +237,15 @@
       "type" : "string",
       "required" : true
     },
-    "BusinessCategoryBody" : {
+    "CategoryBody" : {
       "in" : "body",
-      "name" : "bussines",
+      "name" : "category",
       "required" : true,
       "schema" : {
-        "$ref" : "#/definitions/BusinessCategory"
+        "$ref" : "#/definitions/Category"
       }
     },
-    "BusinessCategoryId" : {
+    "CategoryId" : {
       "in" : "path",
       "name" : "id",
       "type" : "string",
@@ -261,6 +271,21 @@
       "description" : "ok",
       "schema" : {
         "$ref" : "#/definitions/Business"
+      }
+    },
+    "CategoryArrayResponse" : {
+      "description" : "ok",
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/Category"
+        }
+      }
+    },
+    "CategoryObjectResponse" : {
+      "description" : "ok",
+      "schema" : {
+        "$ref" : "#/definitions/Category"
       }
     },
     "EmptyResponse" : {
@@ -293,7 +318,7 @@
           "example" : "Restaurante de comida mexicana, tequila, karaoke y mucho más!"
         },
         "category" : {
-          "$ref" : "#/definitions/BusinessCategory"
+          "$ref" : "#/definitions/Category"
         },
         "phoneNumber" : {
           "type" : "string",
@@ -329,9 +354,9 @@
       },
       "required" : [ "name" ]
     },
-    "BusinessCategory" : {
+    "Category" : {
       "type" : "object",
-      "description" : "Business category",
+      "description" : "Category for multiple business objects",
       "properties" : {
         "id" : {
           "type" : "object"
@@ -356,6 +381,11 @@
               "type" : "string"
             }
           }
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Internal use category type",
+          "example" : "BUSINESS, PRODUCT"
         }
       }
     },
