@@ -867,6 +867,11 @@
           "requestId" : {
             "type" : "string"
           }
+        },
+        "example" : {
+          "requestId" : "requestId",
+          "errorCode" : "errorCode",
+          "message" : "message"
         }
       },
       "CategoryArrayResult" : {
@@ -1030,6 +1035,9 @@
       "MenuArrayResult" : {
         "type" : "object",
         "properties" : {
+          "_result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "menus" : {
             "type" : "array",
             "items" : {
@@ -1038,15 +1046,17 @@
           }
         },
         "example" : {
+          "_result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "menus" : [ {
             "restaurantId" : 123
           }, {
             "restaurantId" : 123
           } ]
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "MenuObjectResult" : {
         "type" : "object",
