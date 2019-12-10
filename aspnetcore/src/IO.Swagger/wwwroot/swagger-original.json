@@ -1035,7 +1035,7 @@
       "MenuArrayResult" : {
         "type" : "object",
         "properties" : {
-          "_result" : {
+          "result" : {
             "$ref" : "#/components/schemas/Result"
           },
           "menus" : {
@@ -1046,7 +1046,7 @@
           }
         },
         "example" : {
-          "_result" : {
+          "result" : {
             "requestId" : "requestId",
             "errorCode" : "errorCode",
             "message" : "message"

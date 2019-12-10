@@ -113,7 +113,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(MenuArrayResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"_result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"menus\" : [ {\n    \"restaurantId\" : 123\n  }, {\n    \"restaurantId\" : 123\n  } ]\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"menus\" : [ {\n    \"restaurantId\" : 123\n  }, {\n    \"restaurantId\" : 123\n  } ]\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<MenuArrayResult>(exampleJson)

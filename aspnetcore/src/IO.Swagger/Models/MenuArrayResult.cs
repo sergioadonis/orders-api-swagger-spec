@@ -29,7 +29,7 @@ namespace IO.Swagger.Models
         /// <summary>
         /// Gets or Sets Result
         /// </summary>
-        [DataMember(Name="_result")]
+        [DataMember(Name="result")]
         public Result Result { get; set; }
 
         /// <summary>
