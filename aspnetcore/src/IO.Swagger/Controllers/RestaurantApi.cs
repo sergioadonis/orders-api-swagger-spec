@@ -36,17 +36,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants")]
         [ValidateModelState]
         [SwaggerOperation("AddRestaurant")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "Default response")]
+        [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
         public virtual IActionResult AddRestaurant([FromBody]Restaurant body)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault));
+            // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"objectId\" : 123\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
-                        : default(InlineResponseDefault);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
+                        : default(OperationResult);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -59,17 +59,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants/{id}")]
         [ValidateModelState]
         [SwaggerOperation("DeleteRestaurant")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "Default response")]
+        [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
         public virtual IActionResult DeleteRestaurant([FromRoute][Required]Id id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault));
+            // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"objectId\" : 123\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
-                        : default(InlineResponseDefault);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
+                        : default(OperationResult);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -131,17 +131,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants/{id}")]
         [ValidateModelState]
         [SwaggerOperation("UpdateRestaurant")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "Default response")]
+        [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
         public virtual IActionResult UpdateRestaurant([FromBody]Restaurant body, [FromRoute][Required]Id id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault));
+            // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"objectId\" : 123\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
-                        : default(InlineResponseDefault);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
+                        : default(OperationResult);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
     }
