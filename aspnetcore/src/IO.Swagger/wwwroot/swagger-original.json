@@ -330,7 +330,7 @@
             "default" : 0
           }
         }, {
-          "name" : "restaurant",
+          "name" : "restaurantId",
           "in" : "query",
           "required" : false,
           "style" : "form",
@@ -480,7 +480,7 @@
             "default" : 0
           }
         }, {
-          "name" : "restaurant",
+          "name" : "restaurantId",
           "in" : "query",
           "required" : false,
           "style" : "form",
@@ -489,7 +489,7 @@
             "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         }, {
-          "name" : "menu",
+          "name" : "menuId",
           "in" : "query",
           "required" : false,
           "style" : "form",
@@ -1619,8 +1619,8 @@
           "$ref" : "#/components/schemas/CommonProps/properties/id"
         }
       },
-      "restaurantParam" : {
-        "name" : "restaurant",
+      "restaurantIdParam" : {
+        "name" : "restaurantId",
         "in" : "query",
         "required" : false,
         "style" : "form",
@@ -1629,8 +1629,8 @@
           "$ref" : "#/components/schemas/CommonProps/properties/id"
         }
       },
-      "menuParam" : {
-        "name" : "menu",
+      "menuIdParam" : {
+        "name" : "menuId",
         "in" : "query",
         "required" : false,
         "style" : "form",

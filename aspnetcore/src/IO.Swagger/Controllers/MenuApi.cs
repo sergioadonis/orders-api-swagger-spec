@@ -101,14 +101,14 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="skip"></param>
-        /// <param name="restaurant"></param>
+        /// <param name="restaurantId"></param>
         /// <response code="0">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/menus")]
         [ValidateModelState]
         [SwaggerOperation("GetMenus")]
         [SwaggerResponse(statusCode: 0, type: typeof(MenuArrayResult), description: "ok")]
-        public virtual IActionResult GetMenus([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]CommonPropspropertiesid restaurant)
+        public virtual IActionResult GetMenus([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]CommonPropspropertiesid restaurantId)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(MenuArrayResult));

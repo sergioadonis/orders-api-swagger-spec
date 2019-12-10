@@ -101,15 +101,15 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="skip"></param>
-        /// <param name="restaurant"></param>
-        /// <param name="menu"></param>
+        /// <param name="restaurantId"></param>
+        /// <param name="menuId"></param>
         /// <response code="0">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/products")]
         [ValidateModelState]
         [SwaggerOperation("GetProducts")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductArrayResult), description: "ok")]
-        public virtual IActionResult GetProducts([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]CommonPropspropertiesid restaurant, [FromQuery]CommonPropspropertiesid menu)
+        public virtual IActionResult GetProducts([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]CommonPropspropertiesid restaurantId, [FromQuery]CommonPropspropertiesid menuId)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductArrayResult));
