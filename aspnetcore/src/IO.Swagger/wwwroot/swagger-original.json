@@ -872,14 +872,15 @@
       "CategoryArrayResult" : {
         "type" : "object",
         "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/CategoryArrayResult_data"
+          "categories" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Category"
+            }
           }
         },
         "example" : {
-          "data" : {
-            "categories" : [ "", "" ]
-          }
+          "categories" : [ "", "" ]
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
@@ -1288,20 +1289,6 @@
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
         } ]
-      },
-      "CategoryArrayResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "categories" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Category"
-            }
-          }
-        },
-        "example" : {
-          "categories" : [ "", "" ]
-        }
       },
       "CategoryObjectResult_data_category" : {
         "type" : "object",
