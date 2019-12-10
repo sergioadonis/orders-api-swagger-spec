@@ -60,11 +60,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/CategoryObjectResult"
                 }
               }
             }
@@ -117,11 +117,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/CategoryObjectResult"
                 }
               }
             }
@@ -143,11 +143,11 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/CategoryObjectResult"
                 }
               }
             }
@@ -210,11 +210,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/RestaurantObjectResult"
                 }
               }
             }
@@ -267,11 +267,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/RestaurantObjectResult"
                 }
               }
             }
@@ -293,11 +293,11 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/RestaurantObjectResult"
                 }
               }
             }
@@ -360,11 +360,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/MenuObjectResult"
                 }
               }
             }
@@ -417,11 +417,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/MenuObjectResult"
                 }
               }
             }
@@ -443,11 +443,11 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/MenuObjectResult"
                 }
               }
             }
@@ -519,11 +519,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/ProductObjectResult"
                 }
               }
             }
@@ -576,11 +576,11 @@
         },
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/ProductObjectResult"
                 }
               }
             }
@@ -602,11 +602,11 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "Default response",
+            "description" : "ok",
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OperationResult"
+                  "$ref" : "#/components/schemas/ProductObjectResult"
                 }
               }
             }
@@ -816,11 +816,6 @@
         "properties" : {
           "data" : {
             "$ref" : "#/components/schemas/OperationResult_data"
-          }
-        },
-        "example" : {
-          "data" : {
-            "objectId" : "{}"
           }
         },
         "allOf" : [ {
@@ -1037,9 +1032,6 @@
           "objectId" : {
             "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
-        },
-        "example" : {
-          "objectId" : "{}"
         }
       },
       "CategoryArrayResult_data" : {
