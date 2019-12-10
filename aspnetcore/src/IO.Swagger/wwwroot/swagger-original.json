@@ -811,17 +811,6 @@
           }
         }
       },
-      "OperationResult" : {
-        "type" : "object",
-        "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/OperationResult_data"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
       "CategoryArrayResult" : {
         "type" : "object",
         "properties" : {
@@ -1025,14 +1014,6 @@
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
         } ]
-      },
-      "OperationResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "objectId" : {
-            "$ref" : "#/components/schemas/CommonProps/properties/id"
-          }
-        }
       },
       "CategoryArrayResult_data" : {
         "type" : "object",
