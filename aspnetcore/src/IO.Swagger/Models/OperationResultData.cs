@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets ObjectId
         /// </summary>
         [DataMember(Name="objectId")]
-        public Id ObjectId { get; set; }
+        public CommonPropspropertiesid ObjectId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

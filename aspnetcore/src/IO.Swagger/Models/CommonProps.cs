@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id")]
-        public Id Id { get; set; }
+        public long? Id { get; private set; }
 
         /// <summary>
         /// Gets or Sets Name

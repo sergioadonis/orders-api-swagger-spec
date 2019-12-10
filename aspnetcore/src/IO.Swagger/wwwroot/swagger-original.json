@@ -83,7 +83,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -109,7 +109,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "requestBody" : {
@@ -138,7 +138,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -186,7 +186,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -233,7 +233,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -259,7 +259,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "requestBody" : {
@@ -288,7 +288,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -336,7 +336,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -383,7 +383,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -409,7 +409,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "requestBody" : {
@@ -438,7 +438,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -486,7 +486,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         }, {
           "name" : "menu",
@@ -495,7 +495,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -542,7 +542,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -568,7 +568,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "requestBody" : {
@@ -597,7 +597,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         } ],
         "responses" : {
@@ -684,17 +684,14 @@
           "$ref" : "#/components/schemas/CommonProps"
         } ]
       },
-      "Id" : {
-        "type" : "integer",
-        "format" : "int64",
-        "readOnly" : true,
-        "example" : 123
-      },
       "CommonProps" : {
         "type" : "object",
         "properties" : {
           "id" : {
-            "$ref" : "#/components/schemas/Id"
+            "type" : "integer",
+            "format" : "int64",
+            "readOnly" : true,
+            "example" : 123
           },
           "name" : {
             "type" : "string",
@@ -823,7 +820,7 @@
         },
         "example" : {
           "data" : {
-            "objectId" : 123
+            "objectId" : "{}"
           }
         },
         "allOf" : [ {
@@ -1038,11 +1035,11 @@
         "type" : "object",
         "properties" : {
           "objectId" : {
-            "$ref" : "#/components/schemas/Id"
+            "$ref" : "#/components/schemas/CommonProps/properties/id"
           }
         },
         "example" : {
-          "objectId" : 123
+          "objectId" : "{}"
         }
       },
       "CategoryArrayResult_data" : {
@@ -1416,7 +1413,7 @@
         "style" : "form",
         "explode" : true,
         "schema" : {
-          "$ref" : "#/components/schemas/Id"
+          "$ref" : "#/components/schemas/CommonProps/properties/id"
         }
       },
       "restaurantParam" : {
@@ -1426,7 +1423,7 @@
         "style" : "form",
         "explode" : true,
         "schema" : {
-          "$ref" : "#/components/schemas/Id"
+          "$ref" : "#/components/schemas/CommonProps/properties/id"
         }
       },
       "menuParam" : {
@@ -1436,7 +1433,7 @@
         "style" : "form",
         "explode" : true,
         "schema" : {
-          "$ref" : "#/components/schemas/Id"
+          "$ref" : "#/components/schemas/CommonProps/properties/id"
         }
       },
       "idParam" : {
@@ -1446,7 +1443,7 @@
         "style" : "simple",
         "explode" : false,
         "schema" : {
-          "$ref" : "#/components/schemas/Id"
+          "$ref" : "#/components/schemas/CommonProps/properties/id"
         }
       }
     },

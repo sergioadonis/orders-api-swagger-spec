@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
@@ -60,12 +60,12 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("DeleteProduct")]
         [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
-        public virtual IActionResult DeleteProduct([FromRoute][Required]Id id)
+        public virtual IActionResult DeleteProduct([FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
@@ -83,7 +83,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetProductById")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductObjectResult), description: "ok")]
-        public virtual IActionResult GetProductById([FromRoute][Required]Id id)
+        public virtual IActionResult GetProductById([FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductObjectResult));
@@ -109,7 +109,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetProducts")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductArrayResult), description: "ok")]
-        public virtual IActionResult GetProducts([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]Id restaurant, [FromQuery]Id menu)
+        public virtual IActionResult GetProducts([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]CommonPropspropertiesid restaurant, [FromQuery]CommonPropspropertiesid menu)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductArrayResult));
@@ -133,12 +133,12 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("UpdateProduct")]
         [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
-        public virtual IActionResult UpdateProduct([FromBody]Product body, [FromRoute][Required]Id id)
+        public virtual IActionResult UpdateProduct([FromBody]Product body, [FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)

@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
@@ -60,12 +60,12 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("DeleteRestaurant")]
         [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
-        public virtual IActionResult DeleteRestaurant([FromRoute][Required]Id id)
+        public virtual IActionResult DeleteRestaurant([FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
@@ -83,7 +83,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetRestaurantById")]
         [SwaggerResponse(statusCode: 0, type: typeof(RestaurantObjectResult), description: "ok")]
-        public virtual IActionResult GetRestaurantById([FromRoute][Required]Id id)
+        public virtual IActionResult GetRestaurantById([FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(RestaurantObjectResult));
@@ -108,7 +108,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetRestaurants")]
         [SwaggerResponse(statusCode: 0, type: typeof(RestaurantArrayResult), description: "ok")]
-        public virtual IActionResult GetRestaurants([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]Id categoryId)
+        public virtual IActionResult GetRestaurants([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]CommonPropspropertiesid categoryId)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(RestaurantArrayResult));
@@ -132,12 +132,12 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("UpdateRestaurant")]
         [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
-        public virtual IActionResult UpdateRestaurant([FromBody]Restaurant body, [FromRoute][Required]Id id)
+        public virtual IActionResult UpdateRestaurant([FromBody]Restaurant body, [FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)

@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
@@ -60,12 +60,12 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("DeleteCategory")]
         [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
-        public virtual IActionResult DeleteCategory([FromRoute][Required]Id id)
+        public virtual IActionResult DeleteCategory([FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
@@ -107,7 +107,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetCategoryById")]
         [SwaggerResponse(statusCode: 0, type: typeof(CategoryObjectResult), description: "ok")]
-        public virtual IActionResult GetCategoryById([FromRoute][Required]Id id)
+        public virtual IActionResult GetCategoryById([FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryObjectResult));
@@ -131,12 +131,12 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("UpdateCategory")]
         [SwaggerResponse(statusCode: 0, type: typeof(OperationResult), description: "Default response")]
-        public virtual IActionResult UpdateCategory([FromBody]Category body, [FromRoute][Required]Id id)
+        public virtual IActionResult UpdateCategory([FromBody]Category body, [FromRoute][Required]CommonPropspropertiesid id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(OperationResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"objectId\" : \"{}\"\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<OperationResult>(exampleJson)
