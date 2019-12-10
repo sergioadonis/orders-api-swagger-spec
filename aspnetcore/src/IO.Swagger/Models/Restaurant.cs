@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets CategoryId
         /// </summary>
         [DataMember(Name="categoryId")]
-        public RefId CategoryId { get; set; }
+        public ReferenceId CategoryId { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags

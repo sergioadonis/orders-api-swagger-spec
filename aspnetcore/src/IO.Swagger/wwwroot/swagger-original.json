@@ -627,7 +627,7 @@
         "type" : "object",
         "properties" : {
           "restaurantId" : {
-            "$ref" : "#/components/schemas/RefId"
+            "$ref" : "#/components/schemas/ReferenceId"
           }
         },
         "allOf" : [ {
@@ -638,7 +638,7 @@
         "type" : "object",
         "properties" : {
           "categoryId" : {
-            "$ref" : "#/components/schemas/RefId"
+            "$ref" : "#/components/schemas/ReferenceId"
           },
           "tags" : {
             "$ref" : "#/components/schemas/Tags"
@@ -667,14 +667,14 @@
         "type" : "object",
         "properties" : {
           "restaurantId" : {
-            "$ref" : "#/components/schemas/RefId"
+            "$ref" : "#/components/schemas/ReferenceId"
           },
           "price" : {
             "type" : "number",
             "format" : "currency"
           },
           "menuId" : {
-            "$ref" : "#/components/schemas/RefId"
+            "$ref" : "#/components/schemas/ReferenceId"
           },
           "tags" : {
             "$ref" : "#/components/schemas/Tags"
@@ -713,7 +713,7 @@
           "id" : 123
         }
       },
-      "RefId" : {
+      "ReferenceId" : {
         "type" : "integer",
         "format" : "int64",
         "writeOnly" : true,

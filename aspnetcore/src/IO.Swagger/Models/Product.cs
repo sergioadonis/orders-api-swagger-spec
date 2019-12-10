@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets RestaurantId
         /// </summary>
         [DataMember(Name="restaurantId")]
-        public RefId RestaurantId { get; set; }
+        public ReferenceId RestaurantId { get; set; }
 
         /// <summary>
         /// Gets or Sets Price
@@ -42,7 +42,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets MenuId
         /// </summary>
         [DataMember(Name="menuId")]
-        public RefId MenuId { get; set; }
+        public ReferenceId MenuId { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags

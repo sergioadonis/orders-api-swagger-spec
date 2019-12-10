@@ -24,14 +24,8 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class Menu : CommonProps, IEquatable<Menu>
+    public partial class ReferenceId : IEquatable<ReferenceId>
     { 
-        /// <summary>
-        /// Gets or Sets RestaurantId
-        /// </summary>
-        [DataMember(Name="restaurantId")]
-        public ReferenceId RestaurantId { get; set; }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -39,8 +33,7 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Menu {\n");
-            sb.Append("  RestaurantId: ").Append(RestaurantId).Append("\n");
+            sb.Append("class ReferenceId {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,7 +42,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -63,25 +56,20 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((Menu)obj);
+            return obj.GetType() == GetType() && Equals((ReferenceId)obj);
         }
 
         /// <summary>
-        /// Returns true if Menu instances are equal
+        /// Returns true if ReferenceId instances are equal
         /// </summary>
-        /// <param name="other">Instance of Menu to be compared</param>
+        /// <param name="other">Instance of ReferenceId to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Menu other)
+        public bool Equals(ReferenceId other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    RestaurantId == other.RestaurantId ||
-                    RestaurantId != null &&
-                    RestaurantId.Equals(other.RestaurantId)
-                );
+            return false;
         }
 
         /// <summary>
@@ -94,8 +82,6 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (RestaurantId != null)
-                    hashCode = hashCode * 59 + RestaurantId.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +89,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(Menu left, Menu right)
+        public static bool operator ==(ReferenceId left, ReferenceId right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(Menu left, Menu right)
+        public static bool operator !=(ReferenceId left, ReferenceId right)
         {
             return !Equals(left, right);
         }
