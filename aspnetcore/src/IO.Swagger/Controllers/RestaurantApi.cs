@@ -82,17 +82,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants/{id}")]
         [ValidateModelState]
         [SwaggerOperation("GetRestaurantById")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault1), description: "ok")]
+        [SwaggerResponse(statusCode: 0, type: typeof(RestaurantObjectResult), description: "ok")]
         public virtual IActionResult GetRestaurantById([FromRoute][Required]Id id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault1));
+            // return StatusCode(0, default(RestaurantObjectResult));
             string exampleJson = null;
             exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ null, null ],\n      \"category\" : {\n        \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n        \"name\" : \"Name of object\",\n        \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n        \"id\" : 123\n      },\n      \"products\" : [ null, null ]\n    }\n  }\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault1>(exampleJson)
-                        : default(InlineResponseDefault1);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<RestaurantObjectResult>(exampleJson)
+                        : default(RestaurantObjectResult);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 

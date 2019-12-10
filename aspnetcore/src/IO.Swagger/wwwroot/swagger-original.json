@@ -242,7 +242,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/RestaurantObjectResult"
                 }
               }
             }
@@ -392,7 +392,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_2"
+                  "$ref" : "#/components/schemas/MenuObjectResult"
                 }
               }
             }
@@ -500,7 +500,14 @@
         } ],
         "responses" : {
           "default" : {
-            "$ref" : "#/components/responses/commonArrayResponse"
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ProductArrayResult"
+                }
+              }
+            }
           }
         }
       },
@@ -544,7 +551,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_3"
+                  "$ref" : "#/components/schemas/ProductObjectResult"
                 }
               }
             }
@@ -889,6 +896,31 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
+      "RestaurantObjectResult" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/RestaurantObjectResult_data"
+          }
+        },
+        "example" : {
+          "data" : {
+            "restaurant" : {
+              "menus" : [ null, null ],
+              "category" : {
+                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+                "name" : "Name of object",
+                "description" : "This is a description for this object, could be Markdown sintax.",
+                "id" : 123
+              },
+              "products" : [ null, null ]
+            }
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
       "MenuArrayResult" : {
         "type" : "object",
         "properties" : {
@@ -916,50 +948,11 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default" : {
-        "type" : "object",
-        "properties" : {
-          "objectId" : {
-            "$ref" : "#/components/schemas/Id"
-          }
-        },
-        "example" : {
-          "objectId" : 123
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
-      "inline_response_default_1" : {
+      "MenuObjectResult" : {
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_1_data"
-          }
-        },
-        "example" : {
-          "data" : {
-            "restaurant" : {
-              "menus" : [ null, null ],
-              "category" : {
-                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-                "name" : "Name of object",
-                "description" : "This is a description for this object, could be Markdown sintax.",
-                "id" : 123
-              },
-              "products" : [ null, null ]
-            }
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
-      "inline_response_default_2" : {
-        "type" : "object",
-        "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_2_data"
+            "$ref" : "#/components/schemas/MenuObjectResult_data"
           }
         },
         "example" : {
@@ -979,11 +972,38 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default_3" : {
+      "ProductArrayResult" : {
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_3_data"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "data" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "ProductObjectResult" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/ProductObjectResult_data"
           }
         },
         "example" : {
@@ -997,6 +1017,20 @@
               }
             }
           }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default" : {
+        "type" : "object",
+        "properties" : {
+          "objectId" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        },
+        "example" : {
+          "objectId" : 123
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
@@ -1049,7 +1083,7 @@
           }
         }
       },
-      "inline_response_default_1_data_restaurant" : {
+      "RestaurantObjectResult_data_restaurant" : {
         "type" : "object",
         "properties" : {
           "category" : {
@@ -1079,11 +1113,11 @@
           "products" : [ null, null ]
         }
       },
-      "inline_response_default_1_data" : {
+      "RestaurantObjectResult_data" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
-            "$ref" : "#/components/schemas/inline_response_default_1_data_restaurant"
+            "$ref" : "#/components/schemas/RestaurantObjectResult_data_restaurant"
           }
         },
         "example" : {
@@ -1099,7 +1133,7 @@
           }
         }
       },
-      "inline_response_default_2_data_menu" : {
+      "MenuObjectResult_data_menu" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
@@ -1122,11 +1156,11 @@
           "products" : [ null, null ]
         }
       },
-      "inline_response_default_2_data" : {
+      "MenuObjectResult_data" : {
         "type" : "object",
         "properties" : {
           "menu" : {
-            "$ref" : "#/components/schemas/inline_response_default_2_data_menu"
+            "$ref" : "#/components/schemas/MenuObjectResult_data_menu"
           }
         },
         "example" : {
@@ -1141,7 +1175,7 @@
           }
         }
       },
-      "inline_response_default_3_data_product" : {
+      "ProductObjectResult_data_product" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
@@ -1160,11 +1194,11 @@
           }
         }
       },
-      "inline_response_default_3_data" : {
+      "ProductObjectResult_data" : {
         "type" : "object",
         "properties" : {
           "product" : {
-            "$ref" : "#/components/schemas/inline_response_default_3_data_product"
+            "$ref" : "#/components/schemas/ProductObjectResult_data_product"
           }
         },
         "example" : {
@@ -1215,74 +1249,7 @@
         "content" : {
           "application/json" : {
             "schema" : {
-              "type" : "object",
-              "properties" : {
-                "data" : {
-                  "type" : "object",
-                  "properties" : {
-                    "restaurant" : {
-                      "type" : "object",
-                      "properties" : {
-                        "category" : {
-                          "$ref" : "#/components/schemas/CommonProps"
-                        },
-                        "menus" : {
-                          "type" : "array",
-                          "items" : {
-                            "$ref" : "#/components/schemas/CommonProps"
-                          }
-                        },
-                        "products" : {
-                          "type" : "array",
-                          "items" : {
-                            "$ref" : "#/components/schemas/CommonProps"
-                          }
-                        }
-                      },
-                      "allOf" : [ {
-                        "$ref" : "#/components/schemas/Restaurant"
-                      } ]
-                    }
-                  }
-                }
-              },
-              "allOf" : [ {
-                "$ref" : "#/components/schemas/Result"
-              } ]
-            }
-          }
-        }
-      },
-      "productObjectResponse" : {
-        "description" : "ok",
-        "content" : {
-          "application/json" : {
-            "schema" : {
-              "type" : "object",
-              "properties" : {
-                "data" : {
-                  "type" : "object",
-                  "properties" : {
-                    "product" : {
-                      "type" : "object",
-                      "properties" : {
-                        "restaurant" : {
-                          "$ref" : "#/components/schemas/CommonProps"
-                        },
-                        "menu" : {
-                          "$ref" : "#/components/schemas/CommonProps"
-                        }
-                      },
-                      "allOf" : [ {
-                        "$ref" : "#/components/schemas/Product"
-                      } ]
-                    }
-                  }
-                }
-              },
-              "allOf" : [ {
-                "$ref" : "#/components/schemas/Result"
-              } ]
+              "$ref" : "#/components/schemas/RestaurantObjectResult"
             }
           }
         }
@@ -1302,34 +1269,27 @@
         "content" : {
           "application/json" : {
             "schema" : {
-              "type" : "object",
-              "properties" : {
-                "data" : {
-                  "type" : "object",
-                  "properties" : {
-                    "menu" : {
-                      "type" : "object",
-                      "properties" : {
-                        "restaurant" : {
-                          "$ref" : "#/components/schemas/CommonProps"
-                        },
-                        "products" : {
-                          "type" : "array",
-                          "items" : {
-                            "$ref" : "#/components/schemas/CommonProps"
-                          }
-                        }
-                      },
-                      "allOf" : [ {
-                        "$ref" : "#/components/schemas/Menu"
-                      } ]
-                    }
-                  }
-                }
-              },
-              "allOf" : [ {
-                "$ref" : "#/components/schemas/Result"
-              } ]
+              "$ref" : "#/components/schemas/MenuObjectResult"
+            }
+          }
+        }
+      },
+      "productArrayResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/ProductArrayResult"
+            }
+          }
+        }
+      },
+      "productObjectResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/ProductObjectResult"
             }
           }
         }
