@@ -103,23 +103,17 @@ namespace IO.Swagger.Controllers
         /// <param name="skip"></param>
         /// <param name="restaurant"></param>
         /// <param name="menu"></param>
-        /// <response code="0">ok</response>
+        /// <response code="0"></response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/products")]
         [ValidateModelState]
         [SwaggerOperation("GetProducts")]
-        [SwaggerResponse(statusCode: 0, type: typeof(CategoryArrayResult), description: "ok")]
         public virtual IActionResult GetProducts([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]Id restaurant, [FromQuery]Id menu)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(CategoryArrayResult));
-            string exampleJson = null;
-            exampleJson = "{\n  \"data\" : [ {\n    \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n    \"name\" : \"Name of object\",\n    \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n    \"id\" : 123\n  }, {\n    \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n    \"name\" : \"Name of object\",\n    \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n    \"id\" : 123\n  } ]\n}";
-            
-                        var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<CategoryArrayResult>(exampleJson)
-                        : default(CategoryArrayResult);            //TODO: Change the data returned
-            return new ObjectResult(example);
+            // return StatusCode(0);
+
+            throw new NotImplementedException();
         }
 
         /// <summary>

@@ -41,14 +41,7 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "ok",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CategoryArrayResult"
-                }
-              }
-            }
+            "$ref" : "#/components/responses/commonArrayResponse"
           }
         }
       },
@@ -191,14 +184,7 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "ok",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CategoryArrayResult"
-                }
-              }
-            }
+            "$ref" : "#/components/responses/commonArrayResponse"
           }
         }
       },
@@ -341,14 +327,7 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "ok",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CategoryArrayResult"
-                }
-              }
-            }
+            "$ref" : "#/components/responses/commonArrayResponse"
           }
         }
       },
@@ -500,14 +479,7 @@
         } ],
         "responses" : {
           "default" : {
-            "description" : "ok",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CategoryArrayResult"
-                }
-              }
-            }
+            "$ref" : "#/components/responses/commonArrayResponse"
           }
         }
       },
@@ -824,19 +796,6 @@
             }
           }
         },
-        "example" : {
-          "data" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          } ]
-        },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
         } ]
@@ -1133,12 +1092,22 @@
       }
     },
     "responses" : {
-      "commonArrayResponse" : {
+      "categoryArrayResponse" : {
         "description" : "ok",
         "content" : {
           "application/json" : {
             "schema" : {
               "$ref" : "#/components/schemas/CategoryArrayResult"
+            }
+          }
+        }
+      },
+      "categoryObjectResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/CategoryObjectResult"
             }
           }
         }
@@ -1157,16 +1126,6 @@
               "allOf" : [ {
                 "$ref" : "#/components/schemas/Result"
               } ]
-            }
-          }
-        }
-      },
-      "categoryObjectResponse" : {
-        "description" : "ok",
-        "content" : {
-          "application/json" : {
-            "schema" : {
-              "$ref" : "#/components/schemas/CategoryObjectResult"
             }
           }
         }
