@@ -36,17 +36,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants")]
         [ValidateModelState]
         [SwaggerOperation("AddRestaurant")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault1), description: "Default response")]
+        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "Default response")]
         public virtual IActionResult AddRestaurant([FromBody]Restaurant body)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault1));
+            // return StatusCode(0, default(InlineResponseDefault));
             string exampleJson = null;
             exampleJson = "{\n  \"objectId\" : 123\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault1>(exampleJson)
-                        : default(InlineResponseDefault1);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
+                        : default(InlineResponseDefault);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -59,17 +59,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants/{id}")]
         [ValidateModelState]
         [SwaggerOperation("DeleteRestaurant")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault1), description: "Default response")]
+        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "Default response")]
         public virtual IActionResult DeleteRestaurant([FromRoute][Required]Id id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault1));
+            // return StatusCode(0, default(InlineResponseDefault));
             string exampleJson = null;
             exampleJson = "{\n  \"objectId\" : 123\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault1>(exampleJson)
-                        : default(InlineResponseDefault1);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
+                        : default(InlineResponseDefault);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -82,17 +82,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants/{id}")]
         [ValidateModelState]
         [SwaggerOperation("GetRestaurantById")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault3), description: "ok")]
+        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault1), description: "ok")]
         public virtual IActionResult GetRestaurantById([FromRoute][Required]Id id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault3));
+            // return StatusCode(0, default(InlineResponseDefault1));
             string exampleJson = null;
             exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ null, null ],\n      \"category\" : {\n        \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n        \"name\" : \"Name of object\",\n        \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n        \"id\" : 123\n      },\n      \"products\" : [ null, null ]\n    }\n  }\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault3>(exampleJson)
-                        : default(InlineResponseDefault3);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<InlineResponseDefault1>(exampleJson)
+                        : default(InlineResponseDefault1);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -107,17 +107,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants")]
         [ValidateModelState]
         [SwaggerOperation("GetRestaurants")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "ok")]
+        [SwaggerResponse(statusCode: 0, type: typeof(CategoryArrayResult), description: "ok")]
         public virtual IActionResult GetRestaurants([FromQuery]int? limit, [FromQuery]int? skip, [FromQuery]Id categoryId)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault));
+            // return StatusCode(0, default(CategoryArrayResult));
             string exampleJson = null;
             exampleJson = "{\n  \"data\" : [ {\n    \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n    \"name\" : \"Name of object\",\n    \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n    \"id\" : 123\n  }, {\n    \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n    \"name\" : \"Name of object\",\n    \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n    \"id\" : 123\n  } ]\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
-                        : default(InlineResponseDefault);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<CategoryArrayResult>(exampleJson)
+                        : default(CategoryArrayResult);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
 
@@ -131,17 +131,17 @@ namespace IO.Swagger.Controllers
         [Route("/sergioadonis/restaurant-orders-api/v1/restaurants/{id}")]
         [ValidateModelState]
         [SwaggerOperation("UpdateRestaurant")]
-        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault1), description: "Default response")]
+        [SwaggerResponse(statusCode: 0, type: typeof(InlineResponseDefault), description: "Default response")]
         public virtual IActionResult UpdateRestaurant([FromBody]Restaurant body, [FromRoute][Required]Id id)
         { 
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(InlineResponseDefault1));
+            // return StatusCode(0, default(InlineResponseDefault));
             string exampleJson = null;
             exampleJson = "{\n  \"objectId\" : 123\n}";
             
                         var example = exampleJson != null
-                        ? JsonConvert.DeserializeObject<InlineResponseDefault1>(exampleJson)
-                        : default(InlineResponseDefault1);            //TODO: Change the data returned
+                        ? JsonConvert.DeserializeObject<InlineResponseDefault>(exampleJson)
+                        : default(InlineResponseDefault);            //TODO: Change the data returned
             return new ObjectResult(example);
         }
     }

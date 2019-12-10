@@ -27,10 +27,10 @@ namespace IO.Swagger.Models
     public partial class InlineResponseDefault2Data : IEquatable<InlineResponseDefault2Data>
     { 
         /// <summary>
-        /// Gets or Sets Category
+        /// Gets or Sets Menu
         /// </summary>
-        [DataMember(Name="category")]
-        public InlineResponseDefault2DataCategory Category { get; set; }
+        [DataMember(Name="menu")]
+        public InlineResponseDefault2DataMenu Menu { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -40,7 +40,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponseDefault2Data {\n");
-            sb.Append("  Category: ").Append(Category).Append("\n");
+            sb.Append("  Menu: ").Append(Menu).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,9 +78,9 @@ namespace IO.Swagger.Models
 
             return 
                 (
-                    Category == other.Category ||
-                    Category != null &&
-                    Category.Equals(other.Category)
+                    Menu == other.Menu ||
+                    Menu != null &&
+                    Menu.Equals(other.Menu)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Category != null)
-                    hashCode = hashCode * 59 + Category.GetHashCode();
+                    if (Menu != null)
+                    hashCode = hashCode * 59 + Menu.GetHashCode();
                 return hashCode;
             }
         }

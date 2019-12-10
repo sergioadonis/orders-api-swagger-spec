@@ -24,13 +24,19 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class InlineResponseDefault3Data : IEquatable<InlineResponseDefault3Data>
+    public partial class InlineResponseDefault3DataProduct : IEquatable<InlineResponseDefault3DataProduct>
     { 
         /// <summary>
-        /// Gets or Sets Product
+        /// Gets or Sets Restaurant
         /// </summary>
-        [DataMember(Name="product")]
-        public InlineResponseDefault3DataProduct Product { get; set; }
+        [DataMember(Name="restaurant")]
+        public CommonProps Restaurant { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Menu
+        /// </summary>
+        [DataMember(Name="menu")]
+        public CommonProps Menu { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -39,8 +45,9 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponseDefault3Data {\n");
-            sb.Append("  Product: ").Append(Product).Append("\n");
+            sb.Append("class InlineResponseDefault3DataProduct {\n");
+            sb.Append("  Restaurant: ").Append(Restaurant).Append("\n");
+            sb.Append("  Menu: ").Append(Menu).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -63,24 +70,29 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((InlineResponseDefault3Data)obj);
+            return obj.GetType() == GetType() && Equals((InlineResponseDefault3DataProduct)obj);
         }
 
         /// <summary>
-        /// Returns true if InlineResponseDefault3Data instances are equal
+        /// Returns true if InlineResponseDefault3DataProduct instances are equal
         /// </summary>
-        /// <param name="other">Instance of InlineResponseDefault3Data to be compared</param>
+        /// <param name="other">Instance of InlineResponseDefault3DataProduct to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponseDefault3Data other)
+        public bool Equals(InlineResponseDefault3DataProduct other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Product == other.Product ||
-                    Product != null &&
-                    Product.Equals(other.Product)
+                    Restaurant == other.Restaurant ||
+                    Restaurant != null &&
+                    Restaurant.Equals(other.Restaurant)
+                ) && 
+                (
+                    Menu == other.Menu ||
+                    Menu != null &&
+                    Menu.Equals(other.Menu)
                 );
         }
 
@@ -94,8 +106,10 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Product != null)
-                    hashCode = hashCode * 59 + Product.GetHashCode();
+                    if (Restaurant != null)
+                    hashCode = hashCode * 59 + Restaurant.GetHashCode();
+                    if (Menu != null)
+                    hashCode = hashCode * 59 + Menu.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +117,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(InlineResponseDefault3Data left, InlineResponseDefault3Data right)
+        public static bool operator ==(InlineResponseDefault3DataProduct left, InlineResponseDefault3DataProduct right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(InlineResponseDefault3Data left, InlineResponseDefault3Data right)
+        public static bool operator !=(InlineResponseDefault3DataProduct left, InlineResponseDefault3DataProduct right)
         {
             return !Equals(left, right);
         }

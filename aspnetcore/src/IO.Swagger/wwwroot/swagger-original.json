@@ -45,7 +45,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default"
+                  "$ref" : "#/components/schemas/CategoryArrayResult"
                 }
               }
             }
@@ -64,7 +64,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -92,7 +92,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_2"
+                  "$ref" : "#/components/schemas/CategoryObjectResult"
                 }
               }
             }
@@ -121,7 +121,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -147,7 +147,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -195,7 +195,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default"
+                  "$ref" : "#/components/schemas/CategoryArrayResult"
                 }
               }
             }
@@ -214,7 +214,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -242,7 +242,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_3"
+                  "$ref" : "#/components/schemas/inline_response_default_1"
                 }
               }
             }
@@ -271,7 +271,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -297,7 +297,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -345,7 +345,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default"
+                  "$ref" : "#/components/schemas/CategoryArrayResult"
                 }
               }
             }
@@ -364,7 +364,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -392,7 +392,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_4"
+                  "$ref" : "#/components/schemas/inline_response_default_2"
                 }
               }
             }
@@ -421,7 +421,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -447,7 +447,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -504,7 +504,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default"
+                  "$ref" : "#/components/schemas/CategoryArrayResult"
                 }
               }
             }
@@ -523,7 +523,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -551,7 +551,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_5"
+                  "$ref" : "#/components/schemas/inline_response_default_3"
                 }
               }
             }
@@ -580,7 +580,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -606,7 +606,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_default_1"
+                  "$ref" : "#/components/schemas/inline_response_default"
                 }
               }
             }
@@ -814,7 +814,7 @@
           }
         }
       },
-      "inline_response_default" : {
+      "CategoryArrayResult" : {
         "type" : "object",
         "properties" : {
           "data" : {
@@ -841,25 +841,11 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default_1" : {
-        "type" : "object",
-        "properties" : {
-          "objectId" : {
-            "$ref" : "#/components/schemas/Id"
-          }
-        },
-        "example" : {
-          "objectId" : 123
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
-      "inline_response_default_2" : {
+      "CategoryObjectResult" : {
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_2_data"
+            "$ref" : "#/components/schemas/CategoryObjectResult_data"
           }
         },
         "example" : {
@@ -883,11 +869,25 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default_3" : {
+      "inline_response_default" : {
+        "type" : "object",
+        "properties" : {
+          "objectId" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        },
+        "example" : {
+          "objectId" : 123
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_1" : {
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_3_data"
+            "$ref" : "#/components/schemas/inline_response_default_1_data"
           }
         },
         "example" : {
@@ -908,11 +908,11 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default_4" : {
+      "inline_response_default_2" : {
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_4_data"
+            "$ref" : "#/components/schemas/inline_response_default_2_data"
           }
         },
         "example" : {
@@ -932,11 +932,11 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default_5" : {
+      "inline_response_default_3" : {
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/inline_response_default_5_data"
+            "$ref" : "#/components/schemas/inline_response_default_3_data"
           }
         },
         "example" : {
@@ -955,7 +955,7 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "inline_response_default_2_data_category" : {
+      "CategoryObjectResult_data_category" : {
         "type" : "object",
         "properties" : {
           "restaurants" : {
@@ -979,11 +979,11 @@
           } ]
         }
       },
-      "inline_response_default_2_data" : {
+      "CategoryObjectResult_data" : {
         "type" : "object",
         "properties" : {
           "category" : {
-            "$ref" : "#/components/schemas/inline_response_default_2_data_category"
+            "$ref" : "#/components/schemas/CategoryObjectResult_data_category"
           }
         },
         "example" : {
@@ -1002,7 +1002,7 @@
           }
         }
       },
-      "inline_response_default_3_data_restaurant" : {
+      "inline_response_default_1_data_restaurant" : {
         "type" : "object",
         "properties" : {
           "category" : {
@@ -1032,11 +1032,11 @@
           "products" : [ null, null ]
         }
       },
-      "inline_response_default_3_data" : {
+      "inline_response_default_1_data" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
-            "$ref" : "#/components/schemas/inline_response_default_3_data_restaurant"
+            "$ref" : "#/components/schemas/inline_response_default_1_data_restaurant"
           }
         },
         "example" : {
@@ -1052,7 +1052,7 @@
           }
         }
       },
-      "inline_response_default_4_data_menu" : {
+      "inline_response_default_2_data_menu" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
@@ -1075,11 +1075,11 @@
           "products" : [ null, null ]
         }
       },
-      "inline_response_default_4_data" : {
+      "inline_response_default_2_data" : {
         "type" : "object",
         "properties" : {
           "menu" : {
-            "$ref" : "#/components/schemas/inline_response_default_4_data_menu"
+            "$ref" : "#/components/schemas/inline_response_default_2_data_menu"
           }
         },
         "example" : {
@@ -1094,7 +1094,7 @@
           }
         }
       },
-      "inline_response_default_5_data_product" : {
+      "inline_response_default_3_data_product" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
@@ -1113,11 +1113,11 @@
           }
         }
       },
-      "inline_response_default_5_data" : {
+      "inline_response_default_3_data" : {
         "type" : "object",
         "properties" : {
           "product" : {
-            "$ref" : "#/components/schemas/inline_response_default_5_data_product"
+            "$ref" : "#/components/schemas/inline_response_default_3_data_product"
           }
         },
         "example" : {
@@ -1138,18 +1138,7 @@
         "content" : {
           "application/json" : {
             "schema" : {
-              "type" : "object",
-              "properties" : {
-                "data" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/CommonProps"
-                  }
-                }
-              },
-              "allOf" : [ {
-                "$ref" : "#/components/schemas/Result"
-              } ]
+              "$ref" : "#/components/schemas/CategoryArrayResult"
             }
           }
         }
@@ -1177,31 +1166,7 @@
         "content" : {
           "application/json" : {
             "schema" : {
-              "type" : "object",
-              "properties" : {
-                "data" : {
-                  "type" : "object",
-                  "properties" : {
-                    "category" : {
-                      "type" : "object",
-                      "properties" : {
-                        "restaurants" : {
-                          "type" : "array",
-                          "items" : {
-                            "$ref" : "#/components/schemas/CommonProps"
-                          }
-                        }
-                      },
-                      "allOf" : [ {
-                        "$ref" : "#/components/schemas/Category"
-                      } ]
-                    }
-                  }
-                }
-              },
-              "allOf" : [ {
-                "$ref" : "#/components/schemas/Result"
-              } ]
+              "$ref" : "#/components/schemas/CategoryObjectResult"
             }
           }
         }

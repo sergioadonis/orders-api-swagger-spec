@@ -27,10 +27,10 @@ namespace IO.Swagger.Models
     public partial class InlineResponseDefault : Result, IEquatable<InlineResponseDefault>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets ObjectId
         /// </summary>
-        [DataMember(Name="data")]
-        public List<CommonProps> Data { get; set; }
+        [DataMember(Name="objectId")]
+        public Id ObjectId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -40,7 +40,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class InlineResponseDefault {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  ObjectId: ").Append(ObjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,9 +78,9 @@ namespace IO.Swagger.Models
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.SequenceEqual(other.Data)
+                    ObjectId == other.ObjectId ||
+                    ObjectId != null &&
+                    ObjectId.Equals(other.ObjectId)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (ObjectId != null)
+                    hashCode = hashCode * 59 + ObjectId.GetHashCode();
                 return hashCode;
             }
         }
