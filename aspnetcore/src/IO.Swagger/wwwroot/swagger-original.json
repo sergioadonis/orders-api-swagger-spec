@@ -56,7 +56,10 @@
           "401" : {
             "description" : "Access token is missing or invalid"
           }
-        }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Category" ],
