@@ -1363,16 +1363,6 @@
             }
           }
         }
-      },
-      "operationResultResponse" : {
-        "description" : "Default response",
-        "content" : {
-          "application/json" : {
-            "schema" : {
-              "$ref" : "#/components/schemas/OperationResult"
-            }
-          }
-        }
       }
     },
     "parameters" : {
