@@ -1,166 +1,613 @@
 {
-  "swagger" : "2.0",
+  "openapi" : "3.0.0",
   "info" : {
-    "description" : "Simple API to manage businesses and orders",
-    "version" : "1.0.1",
-    "title" : "Orders API",
+    "title" : "Restaurant Orders",
+    "description" : "Simple API to manage restaurant orders",
     "contact" : {
       "name" : "Sergio Adonis",
       "email" : "sergio.adonis@outlook.com"
-    }
+    },
+    "version" : "v1"
   },
-  "host" : "virtserver.swaggerhub.com",
-  "basePath" : "/sergioadonis/orders-api/1.0.1",
-  "tags" : [ {
-    "name" : "Business",
-    "description" : "Business operations"
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/sergioadonis/restaurant-orders-api/v1",
+    "description" : "SwaggerHub API Auto Mocking"
   } ],
-  "schemes" : [ "https" ],
-  "consumes" : [ "application/json" ],
-  "produces" : [ "application/json" ],
   "paths" : {
-    "/business" : {
+    "/categories" : {
       "get" : {
-        "tags" : [ "Business" ],
-        "summary" : "Get businesses",
-        "operationId" : "getBusinesses",
-        "parameters" : [ ],
+        "tags" : [ "Category" ],
+        "operationId" : "getCategories",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 50
+          }
+        }, {
+          "name" : "skip",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 0
+          }
+        } ],
         "responses" : {
-          "200" : {
-            "description" : "ok",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Business"
-              }
-            }
-          },
           "default" : {
-            "description" : "error",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Error"
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default"
+                }
               }
             }
           }
         }
       },
       "post" : {
-        "tags" : [ "Business" ],
-        "summary" : "Create business",
-        "operationId" : "createBusiness",
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "bussines",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/definitions/Business"
-          }
-        } ],
+        "tags" : [ "Category" ],
+        "operationId" : "addCategory",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/categoryBody"
+        },
         "responses" : {
-          "201" : {
-            "description" : "ok",
-            "schema" : {
-              "$ref" : "#/definitions/Business"
-            }
-          },
           "default" : {
-            "description" : "error",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Error"
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
               }
             }
           }
         }
       }
     },
-    "/business/{id}" : {
+    "/categories/{id}" : {
       "get" : {
-        "tags" : [ "Business" ],
-        "summary" : "Get business by id",
-        "operationId" : "getBusinessById",
+        "tags" : [ "Category" ],
+        "operationId" : "getCategoryById",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
-          "type" : "string"
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "ok",
-            "schema" : {
-              "$ref" : "#/definitions/Business"
-            }
-          },
           "default" : {
-            "description" : "error",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Error"
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_2"
+                }
               }
             }
           }
         }
       },
       "put" : {
-        "tags" : [ "Business" ],
-        "summary" : "Update business by id",
-        "operationId" : "updateBusinessById",
+        "tags" : [ "Category" ],
+        "operationId" : "updateCategory",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
-          "type" : "string"
-        }, {
-          "in" : "body",
-          "name" : "bussines",
-          "required" : true,
+          "style" : "simple",
+          "explode" : false,
           "schema" : {
-            "$ref" : "#/definitions/Business"
+            "$ref" : "#/components/schemas/Id"
           }
         } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/categoryBody"
+        },
         "responses" : {
-          "200" : {
-            "description" : "ok",
-            "schema" : {
-              "$ref" : "#/definitions/Business"
-            }
-          },
           "default" : {
-            "description" : "error",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Error"
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
               }
             }
           }
         }
       },
       "delete" : {
-        "tags" : [ "Business" ],
-        "summary" : "Delete business by id",
-        "operationId" : "deleteBusinessById",
+        "tags" : [ "Category" ],
+        "operationId" : "deleteCategory",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
-          "type" : "string"
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "ok"
-          },
           "default" : {
-            "description" : "error",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/Error"
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/restaurants" : {
+      "get" : {
+        "tags" : [ "Restaurant" ],
+        "operationId" : "getRestaurants",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 50
+          }
+        }, {
+          "name" : "skip",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 0
+          }
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Restaurant" ],
+        "operationId" : "addRestaurant",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/restaurantBody"
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/restaurants/{id}" : {
+      "get" : {
+        "tags" : [ "Restaurant" ],
+        "operationId" : "getRestaurantById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_3"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Restaurant" ],
+        "operationId" : "updateRestaurant",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/restaurantBody"
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Restaurant" ],
+        "operationId" : "deleteRestaurant",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/menus" : {
+      "get" : {
+        "tags" : [ "Menu" ],
+        "operationId" : "getMenus",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 50
+          }
+        }, {
+          "name" : "skip",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 0
+          }
+        }, {
+          "name" : "restaurant",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Menu" ],
+        "operationId" : "addMenu",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/menuBody"
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/menus/{id}" : {
+      "get" : {
+        "tags" : [ "Menu" ],
+        "operationId" : "getMenuById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_4"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Menu" ],
+        "operationId" : "updateMenu",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/menuBody"
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Menu" ],
+        "operationId" : "deleteMenu",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products" : {
+      "get" : {
+        "tags" : [ "Product" ],
+        "operationId" : "getProducts",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 50
+          }
+        }, {
+          "name" : "skip",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 0
+          }
+        }, {
+          "name" : "restaurant",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        }, {
+          "name" : "menu",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Product" ],
+        "operationId" : "addProduct",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/productBody"
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}" : {
+      "get" : {
+        "tags" : [ "Product" ],
+        "operationId" : "getProductById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_5"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Product" ],
+        "operationId" : "updateProduct",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/productBody"
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Product" ],
+        "operationId" : "deleteProduct",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_default_1"
+                }
               }
             }
           }
@@ -168,113 +615,816 @@
       }
     }
   },
-  "definitions" : {
-    "Business" : {
-      "type" : "object",
-      "required" : [ "name" ],
-      "properties" : {
-        "id" : {
-          "type" : "string",
-          "example" : "12ea34-651d76c-87bd-85b6f9"
-        },
-        "name" : {
-          "type" : "string",
-          "example" : "El Zócalo"
-        },
-        "description" : {
-          "type" : "string",
-          "example" : "Restaurante de comida mexicana, tequila, karaoke y mucho más!"
-        },
-        "category" : {
-          "type" : "string",
-          "example" : "Mexican restaurant",
-          "description" : "Business category"
-        },
-        "tags" : {
-          "type" : "array",
-          "example" : [ "Mexican food", "Karaoke", "Tacos", "Tequila" ],
-          "description" : "labels or tags",
-          "items" : {
-            "type" : "string"
+  "components" : {
+    "schemas" : {
+      "Category" : {
+        "type" : "object",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/CommonProps"
+        } ]
+      },
+      "Menu" : {
+        "type" : "object",
+        "properties" : {
+          "restaurantId" : {
+            "$ref" : "#/components/schemas/RefId"
           }
         },
-        "photoUrl" : {
-          "type" : "string",
-          "example" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/CommonProps"
+        } ]
+      },
+      "Restaurant" : {
+        "type" : "object",
+        "properties" : {
+          "categoryId" : {
+            "$ref" : "#/components/schemas/RefId"
+          },
+          "tags" : {
+            "$ref" : "#/components/schemas/Tags"
+          },
+          "contact" : {
+            "$ref" : "#/components/schemas/Contact"
+          },
+          "address" : {
+            "$ref" : "#/components/schemas/Address"
+          },
+          "geoLocation" : {
+            "$ref" : "#/components/schemas/GeoLocation"
+          },
+          "schedules" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Schedule"
+            }
+          }
         },
-        "type" : {
-          "type" : "string",
-          "example" : "RSTRNT",
-          "description" : "Internal business object type"
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/CommonProps"
+        } ]
+      },
+      "Product" : {
+        "type" : "object",
+        "properties" : {
+          "restaurantId" : {
+            "$ref" : "#/components/schemas/RefId"
+          },
+          "price" : {
+            "type" : "number",
+            "format" : "currency"
+          },
+          "menuId" : {
+            "$ref" : "#/components/schemas/RefId"
+          },
+          "tags" : {
+            "$ref" : "#/components/schemas/Tags"
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/CommonProps"
+        } ]
+      },
+      "Id" : {
+        "type" : "integer",
+        "format" : "int64",
+        "readOnly" : true,
+        "example" : 123
+      },
+      "CommonProps" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/Id"
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Name of object"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "This is a description for this object, could be Markdown sintax."
+          },
+          "photoUrl" : {
+            "type" : "string",
+            "example" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
+          }
+        },
+        "example" : {
+          "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+          "name" : "Name of object",
+          "description" : "This is a description for this object, could be Markdown sintax.",
+          "id" : 123
         }
       },
-      "example" : {
-        "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-        "name" : "El Zócalo",
-        "description" : "Restaurante de comida mexicana, tequila, karaoke y mucho más!",
-        "id" : "12ea34-651d76c-87bd-85b6f9",
-        "category" : "Mexican restaurant",
-        "type" : "RSTRNT",
-        "tags" : [ "Mexican food", "Karaoke", "Tacos", "Tequila" ]
-      }
-    },
-    "Error" : {
-      "type" : "object",
-      "properties" : {
-        "code" : {
-          "type" : "string"
-        },
-        "message" : {
-          "type" : "string"
-        },
-        "target" : {
-          "type" : "string"
-        }
-      }
-    }
-  },
-  "parameters" : {
-    "BusinessBody" : {
-      "in" : "body",
-      "name" : "bussines",
-      "required" : true,
-      "schema" : {
-        "$ref" : "#/definitions/Business"
-      }
-    },
-    "BusinessId" : {
-      "name" : "id",
-      "in" : "path",
-      "required" : true,
-      "type" : "string"
-    }
-  },
-  "responses" : {
-    "BusinessArrayResponse" : {
-      "description" : "ok",
-      "schema" : {
+      "RefId" : {
+        "type" : "integer",
+        "format" : "int64",
+        "writeOnly" : true,
+        "example" : 123
+      },
+      "Tags" : {
         "type" : "array",
+        "example" : [ "Mexican", "Japan", "Favorite" ],
         "items" : {
-          "$ref" : "#/definitions/Business"
+          "type" : "string"
+        }
+      },
+      "Contact" : {
+        "type" : "object",
+        "properties" : {
+          "phoneNumber" : {
+            "type" : "string",
+            "example" : "2222-5555"
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "correo@ejemplo.com"
+          },
+          "whatsapp" : {
+            "type" : "string",
+            "example" : "7788-9900"
+          },
+          "facebook" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Address" : {
+        "type" : "object",
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "state" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "line1" : {
+            "type" : "string"
+          },
+          "line2" : {
+            "type" : "string"
+          }
+        }
+      },
+      "GeoLocation" : {
+        "type" : "object",
+        "properties" : {
+          "latitud" : {
+            "type" : "integer"
+          },
+          "longitud" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Schedule" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "days" : {
+            "type" : "string"
+          },
+          "openTime" : {
+            "type" : "string"
+          },
+          "closeTime" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Result" : {
+        "type" : "object",
+        "properties" : {
+          "errorCode" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "requestId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_default" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "data" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_1" : {
+        "type" : "object",
+        "properties" : {
+          "objectId" : {
+            "$ref" : "#/components/schemas/Id"
+          }
+        },
+        "example" : {
+          "objectId" : 123
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_2" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/inline_response_default_2_data"
+          }
+        },
+        "example" : {
+          "data" : {
+            "category" : {
+              "restaurants" : [ {
+                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+                "name" : "Name of object",
+                "description" : "This is a description for this object, could be Markdown sintax.",
+                "id" : 123
+              }, {
+                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+                "name" : "Name of object",
+                "description" : "This is a description for this object, could be Markdown sintax.",
+                "id" : 123
+              } ]
+            }
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_3" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/inline_response_default_3_data"
+          }
+        },
+        "example" : {
+          "data" : {
+            "restaurant" : {
+              "menus" : [ null, null ],
+              "category" : {
+                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+                "name" : "Name of object",
+                "description" : "This is a description for this object, could be Markdown sintax.",
+                "id" : 123
+              },
+              "products" : [ null, null ]
+            }
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_4" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/inline_response_default_4_data"
+          }
+        },
+        "example" : {
+          "data" : {
+            "menu" : {
+              "restaurant" : {
+                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+                "name" : "Name of object",
+                "description" : "This is a description for this object, could be Markdown sintax.",
+                "id" : 123
+              },
+              "products" : [ null, null ]
+            }
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_5" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/inline_response_default_5_data"
+          }
+        },
+        "example" : {
+          "data" : {
+            "product" : {
+              "restaurant" : {
+                "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+                "name" : "Name of object",
+                "description" : "This is a description for this object, could be Markdown sintax.",
+                "id" : 123
+              }
+            }
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "inline_response_default_2_data_category" : {
+        "type" : "object",
+        "properties" : {
+          "restaurants" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "restaurants" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
+        }
+      },
+      "inline_response_default_2_data" : {
+        "type" : "object",
+        "properties" : {
+          "category" : {
+            "$ref" : "#/components/schemas/inline_response_default_2_data_category"
+          }
+        },
+        "example" : {
+          "category" : {
+            "restaurants" : [ {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            }, {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            } ]
+          }
+        }
+      },
+      "inline_response_default_3_data_restaurant" : {
+        "type" : "object",
+        "properties" : {
+          "category" : {
+            "$ref" : "#/components/schemas/CommonProps"
+          },
+          "menus" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          },
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "menus" : [ null, null ],
+          "category" : {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          },
+          "products" : [ null, null ]
+        }
+      },
+      "inline_response_default_3_data" : {
+        "type" : "object",
+        "properties" : {
+          "restaurant" : {
+            "$ref" : "#/components/schemas/inline_response_default_3_data_restaurant"
+          }
+        },
+        "example" : {
+          "restaurant" : {
+            "menus" : [ null, null ],
+            "category" : {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            },
+            "products" : [ null, null ]
+          }
+        }
+      },
+      "inline_response_default_4_data_menu" : {
+        "type" : "object",
+        "properties" : {
+          "restaurant" : {
+            "$ref" : "#/components/schemas/CommonProps"
+          },
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "restaurant" : {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          },
+          "products" : [ null, null ]
+        }
+      },
+      "inline_response_default_4_data" : {
+        "type" : "object",
+        "properties" : {
+          "menu" : {
+            "$ref" : "#/components/schemas/inline_response_default_4_data_menu"
+          }
+        },
+        "example" : {
+          "menu" : {
+            "restaurant" : {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            },
+            "products" : [ null, null ]
+          }
+        }
+      },
+      "inline_response_default_5_data_product" : {
+        "type" : "object",
+        "properties" : {
+          "restaurant" : {
+            "$ref" : "#/components/schemas/CommonProps"
+          },
+          "menu" : {
+            "$ref" : "#/components/schemas/CommonProps"
+          }
+        },
+        "example" : {
+          "restaurant" : {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }
+        }
+      },
+      "inline_response_default_5_data" : {
+        "type" : "object",
+        "properties" : {
+          "product" : {
+            "$ref" : "#/components/schemas/inline_response_default_5_data_product"
+          }
+        },
+        "example" : {
+          "product" : {
+            "restaurant" : {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            }
+          }
         }
       }
     },
-    "BusinessObjectResponse" : {
-      "description" : "ok",
-      "schema" : {
-        "$ref" : "#/definitions/Business"
+    "responses" : {
+      "commonArrayResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/CommonProps"
+                  }
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
+      },
+      "operationResultResponse" : {
+        "description" : "Default response",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "objectId" : {
+                  "$ref" : "#/components/schemas/Id"
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
+      },
+      "categoryObjectResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "type" : "object",
+                  "properties" : {
+                    "category" : {
+                      "type" : "object",
+                      "properties" : {
+                        "restaurants" : {
+                          "type" : "array",
+                          "items" : {
+                            "$ref" : "#/components/schemas/CommonProps"
+                          }
+                        }
+                      },
+                      "allOf" : [ {
+                        "$ref" : "#/components/schemas/Category"
+                      } ]
+                    }
+                  }
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
+      },
+      "restaurantObjectResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "type" : "object",
+                  "properties" : {
+                    "restaurant" : {
+                      "type" : "object",
+                      "properties" : {
+                        "category" : {
+                          "$ref" : "#/components/schemas/CommonProps"
+                        },
+                        "menus" : {
+                          "type" : "array",
+                          "items" : {
+                            "$ref" : "#/components/schemas/CommonProps"
+                          }
+                        },
+                        "products" : {
+                          "type" : "array",
+                          "items" : {
+                            "$ref" : "#/components/schemas/CommonProps"
+                          }
+                        }
+                      },
+                      "allOf" : [ {
+                        "$ref" : "#/components/schemas/Restaurant"
+                      } ]
+                    }
+                  }
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
+      },
+      "productObjectResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "type" : "object",
+                  "properties" : {
+                    "product" : {
+                      "type" : "object",
+                      "properties" : {
+                        "restaurant" : {
+                          "$ref" : "#/components/schemas/CommonProps"
+                        },
+                        "menu" : {
+                          "$ref" : "#/components/schemas/CommonProps"
+                        }
+                      },
+                      "allOf" : [ {
+                        "$ref" : "#/components/schemas/Product"
+                      } ]
+                    }
+                  }
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
+      },
+      "menuObjectResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "type" : "object",
+                  "properties" : {
+                    "menu" : {
+                      "type" : "object",
+                      "properties" : {
+                        "restaurant" : {
+                          "$ref" : "#/components/schemas/CommonProps"
+                        },
+                        "products" : {
+                          "type" : "array",
+                          "items" : {
+                            "$ref" : "#/components/schemas/CommonProps"
+                          }
+                        }
+                      },
+                      "allOf" : [ {
+                        "$ref" : "#/components/schemas/Menu"
+                      } ]
+                    }
+                  }
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
       }
     },
-    "EmptyResponse" : {
-      "description" : "ok"
-    },
-    "ErrorResponse" : {
-      "description" : "error",
-      "schema" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/Error"
+    "parameters" : {
+      "limitParam" : {
+        "name" : "limit",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer",
+          "default" : 50
         }
+      },
+      "skipParam" : {
+        "name" : "skip",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer",
+          "default" : 0
+        }
+      },
+      "categoryIdParam" : {
+        "name" : "categoryId",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "$ref" : "#/components/schemas/Id"
+        }
+      },
+      "restaurantParam" : {
+        "name" : "restaurant",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "$ref" : "#/components/schemas/Id"
+        }
+      },
+      "menuParam" : {
+        "name" : "menu",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "$ref" : "#/components/schemas/Id"
+        }
+      },
+      "idParam" : {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "$ref" : "#/components/schemas/Id"
+        }
+      }
+    },
+    "requestBodies" : {
+      "categoryBody" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Category"
+            }
+          }
+        },
+        "required" : true
+      },
+      "restaurantBody" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Restaurant"
+            }
+          }
+        },
+        "required" : true
+      },
+      "menuBody" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Menu"
+            }
+          }
+        },
+        "required" : true
+      },
+      "productBody" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Product"
+            }
+          }
+        },
+        "required" : true
       }
     }
   }

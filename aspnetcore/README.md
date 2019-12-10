@@ -1,6 +1,6 @@
 # IO.Swagger - ASP.NET Core 2.0 Server
 
-Simple API to manage businesses and orders
+Simple API to manage restaurant orders
 
 ## Run
 
