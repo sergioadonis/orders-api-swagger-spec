@@ -939,24 +939,23 @@
         "type" : "object",
         "properties" : {
           "data" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonProps"
-            }
+            "$ref" : "#/components/schemas/MenuArrayResult_data"
           }
         },
         "example" : {
-          "data" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          } ]
+          "data" : {
+            "menus" : [ {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            }, {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            } ]
+          }
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
@@ -990,24 +989,23 @@
         "type" : "object",
         "properties" : {
           "data" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonProps"
-            }
+            "$ref" : "#/components/schemas/ProductArrayResult_data"
           }
         },
         "example" : {
-          "data" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          } ]
+          "data" : {
+            "products" : [ {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            }, {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            } ]
+          }
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
@@ -1168,6 +1166,30 @@
           }
         }
       },
+      "MenuArrayResult_data" : {
+        "type" : "object",
+        "properties" : {
+          "menus" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "menus" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
+        }
+      },
       "MenuObjectResult_data_menu" : {
         "type" : "object",
         "properties" : {
@@ -1208,6 +1230,30 @@
             },
             "products" : [ null, null ]
           }
+        }
+      },
+      "ProductArrayResult_data" : {
+        "type" : "object",
+        "properties" : {
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "products" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
         }
       },
       "ProductObjectResult_data_product" : {

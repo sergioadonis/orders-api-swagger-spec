@@ -24,13 +24,13 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class MenuArrayResult : Result, IEquatable<MenuArrayResult>
+    public partial class MenuArrayResultData : IEquatable<MenuArrayResultData>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Menus
         /// </summary>
-        [DataMember(Name="data")]
-        public MenuArrayResultData Data { get; set; }
+        [DataMember(Name="menus")]
+        public List<CommonProps> Menus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -39,8 +39,8 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MenuArrayResult {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class MenuArrayResultData {\n");
+            sb.Append("  Menus: ").Append(Menus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,7 +49,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -63,24 +63,24 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((MenuArrayResult)obj);
+            return obj.GetType() == GetType() && Equals((MenuArrayResultData)obj);
         }
 
         /// <summary>
-        /// Returns true if MenuArrayResult instances are equal
+        /// Returns true if MenuArrayResultData instances are equal
         /// </summary>
-        /// <param name="other">Instance of MenuArrayResult to be compared</param>
+        /// <param name="other">Instance of MenuArrayResultData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(MenuArrayResult other)
+        public bool Equals(MenuArrayResultData other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.Equals(other.Data)
+                    Menus == other.Menus ||
+                    Menus != null &&
+                    Menus.SequenceEqual(other.Menus)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (Menus != null)
+                    hashCode = hashCode * 59 + Menus.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +103,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(MenuArrayResult left, MenuArrayResult right)
+        public static bool operator ==(MenuArrayResultData left, MenuArrayResultData right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(MenuArrayResult left, MenuArrayResult right)
+        public static bool operator !=(MenuArrayResultData left, MenuArrayResultData right)
         {
             return !Equals(left, right);
         }
