@@ -80,18 +80,28 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="skip"></param>
-        /// <response code="0">Access token is missing or invalid</response>
+        /// <response code="200">ok</response>
+        /// <response code="401">Access token is missing or invalid</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/categories")]
         [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("GetCategories")]
+        [SwaggerResponse(statusCode: 200, type: typeof(CategoryArrayResult), description: "ok")]
         public virtual IActionResult GetCategories([FromQuery]int? limit, [FromQuery]int? skip)
         { 
-            //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0);
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200, default(CategoryArrayResult));
 
-            throw new NotImplementedException();
+            //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(401);
+            string exampleJson = null;
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"categories\" : [ \"\", \"\" ]\n}";
+            
+                        var example = exampleJson != null
+                        ? JsonConvert.DeserializeObject<CategoryArrayResult>(exampleJson)
+                        : default(CategoryArrayResult);            //TODO: Change the data returned
+            return new ObjectResult(example);
         }
 
         /// <summary>
