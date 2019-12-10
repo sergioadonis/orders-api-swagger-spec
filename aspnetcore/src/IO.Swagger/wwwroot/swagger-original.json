@@ -41,7 +41,14 @@
         } ],
         "responses" : {
           "default" : {
-            "$ref" : "#/components/responses/commonArrayResponse"
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CategoryArrayResult"
+                }
+              }
+            }
           }
         }
       },
@@ -184,7 +191,14 @@
         } ],
         "responses" : {
           "default" : {
-            "$ref" : "#/components/responses/commonArrayResponse"
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RestaurantArrayResult"
+                }
+              }
+            }
           }
         }
       },
@@ -327,7 +341,14 @@
         } ],
         "responses" : {
           "default" : {
-            "$ref" : "#/components/responses/commonArrayResponse"
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MenuArrayResult"
+                }
+              }
+            }
           }
         }
       },
@@ -796,6 +817,19 @@
             }
           }
         },
+        "example" : {
+          "data" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
+        },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
         } ]
@@ -823,6 +857,60 @@
               } ]
             }
           }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "RestaurantArrayResult" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "data" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "MenuArrayResult" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CommonProps"
+            }
+          }
+        },
+        "example" : {
+          "data" : [ {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          }, {
+            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+            "name" : "Name of object",
+            "description" : "This is a description for this object, could be Markdown sintax.",
+            "id" : 123
+          } ]
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
@@ -1112,20 +1200,12 @@
           }
         }
       },
-      "operationResultResponse" : {
-        "description" : "Default response",
+      "restaurantArrayResponse" : {
+        "description" : "ok",
         "content" : {
           "application/json" : {
             "schema" : {
-              "type" : "object",
-              "properties" : {
-                "objectId" : {
-                  "$ref" : "#/components/schemas/Id"
-                }
-              },
-              "allOf" : [ {
-                "$ref" : "#/components/schemas/Result"
-              } ]
+              "$ref" : "#/components/schemas/RestaurantArrayResult"
             }
           }
         }
@@ -1207,6 +1287,16 @@
           }
         }
       },
+      "menuArrayResponse" : {
+        "description" : "ok",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/MenuArrayResult"
+            }
+          }
+        }
+      },
       "menuObjectResponse" : {
         "description" : "ok",
         "content" : {
@@ -1235,6 +1325,24 @@
                       } ]
                     }
                   }
+                }
+              },
+              "allOf" : [ {
+                "$ref" : "#/components/schemas/Result"
+              } ]
+            }
+          }
+        }
+      },
+      "operationResultResponse" : {
+        "description" : "Default response",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "objectId" : {
+                  "$ref" : "#/components/schemas/Id"
                 }
               },
               "allOf" : [ {
