@@ -43,6 +43,9 @@
           }
         } ],
         "responses" : {
+          "401" : {
+            "description" : "Access token is missing or invalid"
+          },
           "default" : {
             "description" : "ok",
             "content" : {
@@ -1236,6 +1239,9 @@
             }
           }
         }
+      },
+      "UnauthorizedError" : {
+        "description" : "Access token is missing or invalid"
       }
     },
     "parameters" : {
