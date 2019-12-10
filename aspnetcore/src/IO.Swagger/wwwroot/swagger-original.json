@@ -751,7 +751,6 @@
       "ReferenceId" : {
         "type" : "integer",
         "format" : "int64",
-        "writeOnly" : true,
         "example" : 123
       },
       "Tags" : {
