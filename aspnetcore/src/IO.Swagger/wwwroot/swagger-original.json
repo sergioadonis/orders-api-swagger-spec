@@ -1033,75 +1033,15 @@
           "menus" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/Restaurant"
+              "$ref" : "#/components/schemas/Menu"
             }
           }
         },
         "example" : {
           "menus" : [ {
-            "address" : {
-              "country" : "country",
-              "city" : "city",
-              "description" : "description",
-              "state" : "state",
-              "line2" : "line2",
-              "line1" : "line1"
-            },
-            "geoLocation" : {
-              "latitud" : 0,
-              "longitud" : 6
-            },
-            "contact" : {
-              "whatsapp" : "7788-9900",
-              "phoneNumber" : "2222-5555",
-              "facebook" : "facebook",
-              "email" : "correo@ejemplo.com"
-            },
-            "schedules" : [ {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            }, {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            } ],
-            "categoryId" : 123,
-            "tags" : [ "Mexican", "Japan", "Favorite" ]
+            "restaurantId" : 123
           }, {
-            "address" : {
-              "country" : "country",
-              "city" : "city",
-              "description" : "description",
-              "state" : "state",
-              "line2" : "line2",
-              "line1" : "line1"
-            },
-            "geoLocation" : {
-              "latitud" : 0,
-              "longitud" : 6
-            },
-            "contact" : {
-              "whatsapp" : "7788-9900",
-              "phoneNumber" : "2222-5555",
-              "facebook" : "facebook",
-              "email" : "correo@ejemplo.com"
-            },
-            "schedules" : [ {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            }, {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            } ],
-            "categoryId" : 123,
-            "tags" : [ "Mexican", "Japan", "Favorite" ]
+            "restaurantId" : 123
           } ]
         },
         "allOf" : [ {
