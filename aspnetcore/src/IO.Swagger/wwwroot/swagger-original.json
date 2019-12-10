@@ -46,7 +46,7 @@
           "401" : {
             "description" : "Access token is missing or invalid"
           },
-          "200" : {
+          "default" : {
             "description" : "ok",
             "content" : {
               "application/json" : {
