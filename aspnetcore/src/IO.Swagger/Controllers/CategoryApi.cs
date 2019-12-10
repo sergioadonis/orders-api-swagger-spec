@@ -89,7 +89,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryArrayResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : [ {\n    \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n    \"name\" : \"Name of object\",\n    \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n    \"id\" : 123\n  }, {\n    \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n    \"name\" : \"Name of object\",\n    \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n    \"id\" : 123\n  } ]\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"categories\" : [ {\n      \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n      \"name\" : \"Name of object\",\n      \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n      \"id\" : 123\n    }, {\n      \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n      \"name\" : \"Name of object\",\n      \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n      \"id\" : 123\n    } ]\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<CategoryArrayResult>(exampleJson)

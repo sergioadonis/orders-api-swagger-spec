@@ -24,13 +24,13 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class CategoryArrayResult : Result, IEquatable<CategoryArrayResult>
+    public partial class CategoryArrayResultData : IEquatable<CategoryArrayResultData>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Categories
         /// </summary>
-        [DataMember(Name="data")]
-        public CategoryArrayResultData Data { get; set; }
+        [DataMember(Name="categories")]
+        public List<CommonProps> Categories { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -39,8 +39,8 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CategoryArrayResult {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class CategoryArrayResultData {\n");
+            sb.Append("  Categories: ").Append(Categories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,7 +49,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -63,24 +63,24 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((CategoryArrayResult)obj);
+            return obj.GetType() == GetType() && Equals((CategoryArrayResultData)obj);
         }
 
         /// <summary>
-        /// Returns true if CategoryArrayResult instances are equal
+        /// Returns true if CategoryArrayResultData instances are equal
         /// </summary>
-        /// <param name="other">Instance of CategoryArrayResult to be compared</param>
+        /// <param name="other">Instance of CategoryArrayResultData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CategoryArrayResult other)
+        public bool Equals(CategoryArrayResultData other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.Equals(other.Data)
+                    Categories == other.Categories ||
+                    Categories != null &&
+                    Categories.SequenceEqual(other.Categories)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (Categories != null)
+                    hashCode = hashCode * 59 + Categories.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +103,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(CategoryArrayResult left, CategoryArrayResult right)
+        public static bool operator ==(CategoryArrayResultData left, CategoryArrayResultData right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(CategoryArrayResult left, CategoryArrayResult right)
+        public static bool operator !=(CategoryArrayResultData left, CategoryArrayResultData right)
         {
             return !Equals(left, right);
         }
