@@ -19,7 +19,7 @@ using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using IO.Swagger.Filters;
-
+using IO.Swagger.Security;
 
 using Microsoft.AspNetCore.Authentication;
 
@@ -62,6 +62,9 @@ namespace IO.Swagger
                     });
                 })
                 .AddXmlSerializerFormatters();
+
+            services.AddAuthentication(BearerAuthenticationHandler.SchemeName)
+                .AddScheme<AuthenticationSchemeOptions, BearerAuthenticationHandler>(BearerAuthenticationHandler.SchemeName, null);
 
 
             services

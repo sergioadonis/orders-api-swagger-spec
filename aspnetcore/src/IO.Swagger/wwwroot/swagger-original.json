@@ -13,6 +13,9 @@
     "url" : "https://virtserver.swaggerhub.com/sergioadonis/restaurant-orders-api/v1",
     "description" : "SwaggerHub API Auto Mocking"
   } ],
+  "security" : [ {
+    "bearerAuth" : [ ]
+  } ],
   "paths" : {
     "/categories" : {
       "get" : {
@@ -1339,6 +1342,13 @@
           }
         },
         "required" : true
+      }
+    },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
       }
     }
   }

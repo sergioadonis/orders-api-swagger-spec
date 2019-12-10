@@ -15,7 +15,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using IO.Swagger.Attributes;
-
+using IO.Swagger.Security;
 using Microsoft.AspNetCore.Authorization;
 using IO.Swagger.Models;
 
@@ -34,6 +34,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpPost]
         [Route("/sergioadonis/restaurant-orders-api/v1/products")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("AddProduct")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductObjectResult), description: "ok")]
@@ -57,6 +58,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpDelete]
         [Route("/sergioadonis/restaurant-orders-api/v1/products/{id}")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("DeleteProduct")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductObjectResult), description: "ok")]
@@ -80,6 +82,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/products/{id}")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("GetProductById")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductObjectResult), description: "ok")]
@@ -106,6 +109,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/products")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("GetProducts")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductArrayResult), description: "ok")]
@@ -130,6 +134,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpPut]
         [Route("/sergioadonis/restaurant-orders-api/v1/products/{id}")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("UpdateProduct")]
         [SwaggerResponse(statusCode: 0, type: typeof(ProductObjectResult), description: "ok")]

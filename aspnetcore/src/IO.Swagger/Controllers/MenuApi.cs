@@ -15,7 +15,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using IO.Swagger.Attributes;
-
+using IO.Swagger.Security;
 using Microsoft.AspNetCore.Authorization;
 using IO.Swagger.Models;
 
@@ -34,6 +34,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpPost]
         [Route("/sergioadonis/restaurant-orders-api/v1/menus")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("AddMenu")]
         [SwaggerResponse(statusCode: 0, type: typeof(MenuObjectResult), description: "ok")]
@@ -57,6 +58,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpDelete]
         [Route("/sergioadonis/restaurant-orders-api/v1/menus/{id}")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("DeleteMenu")]
         [SwaggerResponse(statusCode: 0, type: typeof(MenuObjectResult), description: "ok")]
@@ -80,6 +82,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/menus/{id}")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("GetMenuById")]
         [SwaggerResponse(statusCode: 0, type: typeof(MenuObjectResult), description: "ok")]
@@ -105,6 +108,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/menus")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("GetMenus")]
         [SwaggerResponse(statusCode: 0, type: typeof(MenuArrayResult), description: "ok")]
@@ -129,6 +133,7 @@ namespace IO.Swagger.Controllers
         /// <response code="0">ok</response>
         [HttpPut]
         [Route("/sergioadonis/restaurant-orders-api/v1/menus/{id}")]
+        [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("UpdateMenu")]
         [SwaggerResponse(statusCode: 0, type: typeof(MenuObjectResult), description: "ok")]
