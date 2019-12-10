@@ -45,16 +45,6 @@
         "responses" : {
           "default" : {
             "description" : "Access token is missing or invalid"
-          },
-          "200" : {
-            "description" : "ok",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CategoryArrayResult"
-                }
-              }
-            }
           }
         },
         "security" : [ {
@@ -895,14 +885,6 @@
               "$ref" : "#/components/schemas/Category"
             }
           }
-        },
-        "example" : {
-          "result" : {
-            "requestId" : "requestId",
-            "errorCode" : "errorCode",
-            "message" : "message"
-          },
-          "categories" : [ "", "" ]
         }
       },
       "CategoryObjectResult" : {
