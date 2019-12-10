@@ -30,19 +30,19 @@ namespace IO.Swagger.Models
         /// Gets or Sets Category
         /// </summary>
         [DataMember(Name="category")]
-        public CommonProps Category { get; set; }
+        public Category Category { get; set; }
 
         /// <summary>
         /// Gets or Sets Menus
         /// </summary>
         [DataMember(Name="menus")]
-        public List<CommonProps> Menus { get; set; }
+        public List<Menu> Menus { get; set; }
 
         /// <summary>
         /// Gets or Sets Products
         /// </summary>
         [DataMember(Name="products")]
-        public List<CommonProps> Products { get; set; }
+        public List<Product> Products { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

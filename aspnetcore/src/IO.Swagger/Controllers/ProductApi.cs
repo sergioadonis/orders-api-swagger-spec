@@ -114,7 +114,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductArrayResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"products\" : [ {\n      \"price\" : 0.8008281904610115,\n      \"restaurantId\" : 123,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    }, {\n      \"price\" : 0.8008281904610115,\n      \"restaurantId\" : 123,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    } ]\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"products\" : [ {\n      \"price\" : 0.8008281904610115,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    }, {\n      \"price\" : 0.8008281904610115,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    } ]\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<ProductArrayResult>(exampleJson)

@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(RestaurantObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ null, null ],\n      \"category\" : {\n        \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n        \"name\" : \"Name of object\",\n        \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n        \"id\" : 123\n      },\n      \"products\" : [ null, null ]\n    }\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ {\n        \"restaurantId\" : 123\n      }, {\n        \"restaurantId\" : 123\n      } ],\n      \"category\" : \"\",\n      \"products\" : [ {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      }, {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      } ]\n    }\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<RestaurantObjectResult>(exampleJson)
@@ -65,7 +65,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(RestaurantObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ null, null ],\n      \"category\" : {\n        \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n        \"name\" : \"Name of object\",\n        \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n        \"id\" : 123\n      },\n      \"products\" : [ null, null ]\n    }\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ {\n        \"restaurantId\" : 123\n      }, {\n        \"restaurantId\" : 123\n      } ],\n      \"category\" : \"\",\n      \"products\" : [ {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      }, {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      } ]\n    }\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<RestaurantObjectResult>(exampleJson)
@@ -88,7 +88,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(RestaurantObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ null, null ],\n      \"category\" : {\n        \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n        \"name\" : \"Name of object\",\n        \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n        \"id\" : 123\n      },\n      \"products\" : [ null, null ]\n    }\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ {\n        \"restaurantId\" : 123\n      }, {\n        \"restaurantId\" : 123\n      } ],\n      \"category\" : \"\",\n      \"products\" : [ {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      }, {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      } ]\n    }\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<RestaurantObjectResult>(exampleJson)
@@ -137,7 +137,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(RestaurantObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ null, null ],\n      \"category\" : {\n        \"photoUrl\" : \"https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9\",\n        \"name\" : \"Name of object\",\n        \"description\" : \"This is a description for this object, could be Markdown sintax.\",\n        \"id\" : 123\n      },\n      \"products\" : [ null, null ]\n    }\n  }\n}";
+            exampleJson = "{\n  \"data\" : {\n    \"restaurant\" : {\n      \"menus\" : [ {\n        \"restaurantId\" : 123\n      }, {\n        \"restaurantId\" : 123\n      } ],\n      \"category\" : \"\",\n      \"products\" : [ {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      }, {\n        \"price\" : 0.8008281904610115,\n        \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n      } ]\n    }\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<RestaurantObjectResult>(exampleJson)
