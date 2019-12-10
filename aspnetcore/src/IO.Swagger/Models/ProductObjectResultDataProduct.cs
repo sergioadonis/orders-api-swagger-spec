@@ -30,13 +30,13 @@ namespace IO.Swagger.Models
         /// Gets or Sets Restaurant
         /// </summary>
         [DataMember(Name="restaurant")]
-        public CommonProps Restaurant { get; set; }
+        public Restaurant Restaurant { get; set; }
 
         /// <summary>
         /// Gets or Sets Menu
         /// </summary>
         [DataMember(Name="menu")]
-        public CommonProps Menu { get; set; }
+        public Menu Menu { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
