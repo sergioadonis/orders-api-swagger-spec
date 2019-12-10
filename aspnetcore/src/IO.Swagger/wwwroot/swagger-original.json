@@ -888,24 +888,23 @@
         "type" : "object",
         "properties" : {
           "data" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/CommonProps"
-            }
+            "$ref" : "#/components/schemas/CategoryObjectResult_data_category"
           }
         },
         "example" : {
-          "data" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          } ]
+          "data" : {
+            "restaurants" : [ {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            }, {
+              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
+              "name" : "Name of object",
+              "description" : "This is a description for this object, could be Markdown sintax.",
+              "id" : 123
+            } ]
+          }
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
