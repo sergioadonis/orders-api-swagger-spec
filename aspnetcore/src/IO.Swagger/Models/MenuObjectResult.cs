@@ -27,10 +27,10 @@ namespace IO.Swagger.Models
     public partial class MenuObjectResult : Result, IEquatable<MenuObjectResult>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Menu
         /// </summary>
-        [DataMember(Name="data")]
-        public MenuObjectResultData Data { get; set; }
+        [DataMember(Name="menu")]
+        public MenuObjectResultMenu Menu { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -40,7 +40,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class MenuObjectResult {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Menu: ").Append(Menu).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,9 +78,9 @@ namespace IO.Swagger.Models
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.Equals(other.Data)
+                    Menu == other.Menu ||
+                    Menu != null &&
+                    Menu.Equals(other.Menu)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (Menu != null)
+                    hashCode = hashCode * 59 + Menu.GetHashCode();
                 return hashCode;
             }
         }

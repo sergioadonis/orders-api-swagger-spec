@@ -27,10 +27,10 @@ namespace IO.Swagger.Models
     public partial class RestaurantObjectResult : Result, IEquatable<RestaurantObjectResult>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Restaurant
         /// </summary>
-        [DataMember(Name="data")]
-        public RestaurantObjectResultData Data { get; set; }
+        [DataMember(Name="restaurant")]
+        public RestaurantObjectResultRestaurant Restaurant { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -40,7 +40,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class RestaurantObjectResult {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Restaurant: ").Append(Restaurant).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,9 +78,9 @@ namespace IO.Swagger.Models
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.Equals(other.Data)
+                    Restaurant == other.Restaurant ||
+                    Restaurant != null &&
+                    Restaurant.Equals(other.Restaurant)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (Restaurant != null)
+                    hashCode = hashCode * 59 + Restaurant.GetHashCode();
                 return hashCode;
             }
         }

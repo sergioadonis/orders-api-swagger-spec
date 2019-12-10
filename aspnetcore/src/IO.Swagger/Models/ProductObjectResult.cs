@@ -27,10 +27,10 @@ namespace IO.Swagger.Models
     public partial class ProductObjectResult : Result, IEquatable<ProductObjectResult>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Product
         /// </summary>
-        [DataMember(Name="data")]
-        public ProductObjectResultData Data { get; set; }
+        [DataMember(Name="product")]
+        public ProductObjectResultProduct Product { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -40,7 +40,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class ProductObjectResult {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Product: ").Append(Product).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,9 +78,9 @@ namespace IO.Swagger.Models
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.Equals(other.Data)
+                    Product == other.Product ||
+                    Product != null &&
+                    Product.Equals(other.Product)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (Product != null)
+                    hashCode = hashCode * 59 + Product.GetHashCode();
                 return hashCode;
             }
         }

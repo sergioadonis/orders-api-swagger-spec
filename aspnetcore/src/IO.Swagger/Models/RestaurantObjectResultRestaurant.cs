@@ -24,13 +24,25 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class MenuArrayResult : Result, IEquatable<MenuArrayResult>
+    public partial class RestaurantObjectResultRestaurant : IEquatable<RestaurantObjectResultRestaurant>
     { 
+        /// <summary>
+        /// Gets or Sets Category
+        /// </summary>
+        [DataMember(Name="category")]
+        public Category Category { get; set; }
+
         /// <summary>
         /// Gets or Sets Menus
         /// </summary>
         [DataMember(Name="menus")]
-        public List<Restaurant> Menus { get; set; }
+        public List<Menu> Menus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Products
+        /// </summary>
+        [DataMember(Name="products")]
+        public List<Product> Products { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -39,8 +51,10 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MenuArrayResult {\n");
+            sb.Append("class RestaurantObjectResultRestaurant {\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  Menus: ").Append(Menus).Append("\n");
+            sb.Append("  Products: ").Append(Products).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,7 +63,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -63,24 +77,34 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((MenuArrayResult)obj);
+            return obj.GetType() == GetType() && Equals((RestaurantObjectResultRestaurant)obj);
         }
 
         /// <summary>
-        /// Returns true if MenuArrayResult instances are equal
+        /// Returns true if RestaurantObjectResultRestaurant instances are equal
         /// </summary>
-        /// <param name="other">Instance of MenuArrayResult to be compared</param>
+        /// <param name="other">Instance of RestaurantObjectResultRestaurant to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(MenuArrayResult other)
+        public bool Equals(RestaurantObjectResultRestaurant other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
+                    Category == other.Category ||
+                    Category != null &&
+                    Category.Equals(other.Category)
+                ) && 
+                (
                     Menus == other.Menus ||
                     Menus != null &&
                     Menus.SequenceEqual(other.Menus)
+                ) && 
+                (
+                    Products == other.Products ||
+                    Products != null &&
+                    Products.SequenceEqual(other.Products)
                 );
         }
 
@@ -94,8 +118,12 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
+                    if (Category != null)
+                    hashCode = hashCode * 59 + Category.GetHashCode();
                     if (Menus != null)
                     hashCode = hashCode * 59 + Menus.GetHashCode();
+                    if (Products != null)
+                    hashCode = hashCode * 59 + Products.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +131,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(MenuArrayResult left, MenuArrayResult right)
+        public static bool operator ==(RestaurantObjectResultRestaurant left, RestaurantObjectResultRestaurant right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(MenuArrayResult left, MenuArrayResult right)
+        public static bool operator !=(RestaurantObjectResultRestaurant left, RestaurantObjectResultRestaurant right)
         {
             return !Equals(left, right);
         }

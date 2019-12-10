@@ -969,78 +969,79 @@
       "RestaurantArrayResult" : {
         "type" : "object",
         "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/CategoryObjectResult_category"
+          "restaurants" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Restaurant"
+            }
           }
         },
         "example" : {
-          "data" : {
-            "restaurants" : [ {
-              "address" : {
-                "country" : "country",
-                "city" : "city",
-                "description" : "description",
-                "state" : "state",
-                "line2" : "line2",
-                "line1" : "line1"
-              },
-              "geoLocation" : {
-                "latitud" : 0,
-                "longitud" : 6
-              },
-              "contact" : {
-                "whatsapp" : "7788-9900",
-                "phoneNumber" : "2222-5555",
-                "facebook" : "facebook",
-                "email" : "correo@ejemplo.com"
-              },
-              "schedules" : [ {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              }, {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              } ],
-              "categoryId" : 123,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
+          "restaurants" : [ {
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
             }, {
-              "address" : {
-                "country" : "country",
-                "city" : "city",
-                "description" : "description",
-                "state" : "state",
-                "line2" : "line2",
-                "line1" : "line1"
-              },
-              "geoLocation" : {
-                "latitud" : 0,
-                "longitud" : 6
-              },
-              "contact" : {
-                "whatsapp" : "7788-9900",
-                "phoneNumber" : "2222-5555",
-                "facebook" : "facebook",
-                "email" : "correo@ejemplo.com"
-              },
-              "schedules" : [ {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              }, {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              } ],
-              "categoryId" : 123,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            } ]
-          }
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          }, {
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          } ]
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/Result"
@@ -1049,179 +1050,18 @@
       "RestaurantObjectResult" : {
         "type" : "object",
         "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/RestaurantObjectResult_data"
+          "restaurant" : {
+            "$ref" : "#/components/schemas/RestaurantObjectResult_restaurant"
           }
         },
         "example" : {
-          "data" : {
-            "restaurant" : {
-              "menus" : [ {
-                "restaurantId" : 123
-              }, {
-                "restaurantId" : 123
-              } ],
-              "category" : "",
-              "products" : [ {
-                "price" : 0.8008281904610115,
-                "tags" : [ "Mexican", "Japan", "Favorite" ]
-              }, {
-                "price" : 0.8008281904610115,
-                "tags" : [ "Mexican", "Japan", "Favorite" ]
-              } ]
-            }
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
-      "MenuArrayResult" : {
-        "type" : "object",
-        "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/MenuArrayResult_data"
-          }
-        },
-        "example" : {
-          "data" : {
+          "restaurant" : {
             "menus" : [ {
-              "address" : {
-                "country" : "country",
-                "city" : "city",
-                "description" : "description",
-                "state" : "state",
-                "line2" : "line2",
-                "line1" : "line1"
-              },
-              "geoLocation" : {
-                "latitud" : 0,
-                "longitud" : 6
-              },
-              "contact" : {
-                "whatsapp" : "7788-9900",
-                "phoneNumber" : "2222-5555",
-                "facebook" : "facebook",
-                "email" : "correo@ejemplo.com"
-              },
-              "schedules" : [ {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              }, {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              } ],
-              "categoryId" : 123,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
+              "restaurantId" : 123
             }, {
-              "address" : {
-                "country" : "country",
-                "city" : "city",
-                "description" : "description",
-                "state" : "state",
-                "line2" : "line2",
-                "line1" : "line1"
-              },
-              "geoLocation" : {
-                "latitud" : 0,
-                "longitud" : 6
-              },
-              "contact" : {
-                "whatsapp" : "7788-9900",
-                "phoneNumber" : "2222-5555",
-                "facebook" : "facebook",
-                "email" : "correo@ejemplo.com"
-              },
-              "schedules" : [ {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              }, {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              } ],
-              "categoryId" : 123,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            } ]
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
-      "MenuObjectResult" : {
-        "type" : "object",
-        "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/MenuObjectResult_data"
-          }
-        },
-        "example" : {
-          "data" : {
-            "menu" : {
-              "restaurant" : {
-                "address" : {
-                  "country" : "country",
-                  "city" : "city",
-                  "description" : "description",
-                  "state" : "state",
-                  "line2" : "line2",
-                  "line1" : "line1"
-                },
-                "geoLocation" : {
-                  "latitud" : 0,
-                  "longitud" : 6
-                },
-                "contact" : {
-                  "whatsapp" : "7788-9900",
-                  "phoneNumber" : "2222-5555",
-                  "facebook" : "facebook",
-                  "email" : "correo@ejemplo.com"
-                },
-                "schedules" : [ {
-                  "name" : "name",
-                  "closeTime" : "closeTime",
-                  "days" : "days",
-                  "openTime" : "openTime"
-                }, {
-                  "name" : "name",
-                  "closeTime" : "closeTime",
-                  "days" : "days",
-                  "openTime" : "openTime"
-                } ],
-                "categoryId" : 123,
-                "tags" : [ "Mexican", "Japan", "Favorite" ]
-              },
-              "products" : [ {
-                "price" : 0.8008281904610115,
-                "tags" : [ "Mexican", "Japan", "Favorite" ]
-              }, {
-                "price" : 0.8008281904610115,
-                "tags" : [ "Mexican", "Japan", "Favorite" ]
-              } ]
-            }
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
-      },
-      "ProductArrayResult" : {
-        "type" : "object",
-        "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/ProductArrayResult_data"
-          }
-        },
-        "example" : {
-          "data" : {
+              "restaurantId" : 123
+            } ],
+            "category" : "",
             "products" : [ {
               "price" : 0.8008281904610115,
               "tags" : [ "Mexican", "Japan", "Favorite" ]
@@ -1235,52 +1075,209 @@
           "$ref" : "#/components/schemas/Result"
         } ]
       },
-      "ProductObjectResult" : {
+      "MenuArrayResult" : {
         "type" : "object",
         "properties" : {
-          "data" : {
-            "$ref" : "#/components/schemas/ProductObjectResult_data"
+          "menus" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Restaurant"
+            }
           }
         },
         "example" : {
-          "data" : {
-            "product" : {
-              "restaurant" : {
-                "address" : {
-                  "country" : "country",
-                  "city" : "city",
-                  "description" : "description",
-                  "state" : "state",
-                  "line2" : "line2",
-                  "line1" : "line1"
-                },
-                "geoLocation" : {
-                  "latitud" : 0,
-                  "longitud" : 6
-                },
-                "contact" : {
-                  "whatsapp" : "7788-9900",
-                  "phoneNumber" : "2222-5555",
-                  "facebook" : "facebook",
-                  "email" : "correo@ejemplo.com"
-                },
-                "schedules" : [ {
-                  "name" : "name",
-                  "closeTime" : "closeTime",
-                  "days" : "days",
-                  "openTime" : "openTime"
-                }, {
-                  "name" : "name",
-                  "closeTime" : "closeTime",
-                  "days" : "days",
-                  "openTime" : "openTime"
-                } ],
-                "categoryId" : 123,
-                "tags" : [ "Mexican", "Japan", "Favorite" ]
+          "menus" : [ {
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          }, {
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          } ]
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "MenuObjectResult" : {
+        "type" : "object",
+        "properties" : {
+          "menu" : {
+            "$ref" : "#/components/schemas/MenuObjectResult_menu"
+          }
+        },
+        "example" : {
+          "menu" : {
+            "restaurant" : {
+              "address" : {
+                "country" : "country",
+                "city" : "city",
+                "description" : "description",
+                "state" : "state",
+                "line2" : "line2",
+                "line1" : "line1"
               },
-              "menu" : {
-                "restaurantId" : 123
-              }
+              "geoLocation" : {
+                "latitud" : 0,
+                "longitud" : 6
+              },
+              "contact" : {
+                "whatsapp" : "7788-9900",
+                "phoneNumber" : "2222-5555",
+                "facebook" : "facebook",
+                "email" : "correo@ejemplo.com"
+              },
+              "schedules" : [ {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              }, {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              } ],
+              "categoryId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
+            },
+            "products" : [ {
+              "price" : 0.8008281904610115,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
+            }, {
+              "price" : 0.8008281904610115,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
+            } ]
+          }
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "ProductArrayResult" : {
+        "type" : "object",
+        "properties" : {
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Product"
+            }
+          }
+        },
+        "example" : {
+          "products" : [ {
+            "price" : 0.8008281904610115,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          }, {
+            "price" : 0.8008281904610115,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          } ]
+        },
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Result"
+        } ]
+      },
+      "ProductObjectResult" : {
+        "type" : "object",
+        "properties" : {
+          "product" : {
+            "$ref" : "#/components/schemas/ProductObjectResult_product"
+          }
+        },
+        "example" : {
+          "product" : {
+            "restaurant" : {
+              "address" : {
+                "country" : "country",
+                "city" : "city",
+                "description" : "description",
+                "state" : "state",
+                "line2" : "line2",
+                "line1" : "line1"
+              },
+              "geoLocation" : {
+                "latitud" : 0,
+                "longitud" : 6
+              },
+              "contact" : {
+                "whatsapp" : "7788-9900",
+                "phoneNumber" : "2222-5555",
+                "facebook" : "facebook",
+                "email" : "correo@ejemplo.com"
+              },
+              "schedules" : [ {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              }, {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              } ],
+              "categoryId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
+            },
+            "menu" : {
+              "restaurantId" : 123
             }
           }
         },
@@ -1366,7 +1363,7 @@
           } ]
         }
       },
-      "RestaurantObjectResult_data_restaurant" : {
+      "RestaurantObjectResult_restaurant" : {
         "type" : "object",
         "properties" : {
           "category" : {
@@ -1401,110 +1398,7 @@
           } ]
         }
       },
-      "RestaurantObjectResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "restaurant" : {
-            "$ref" : "#/components/schemas/RestaurantObjectResult_data_restaurant"
-          }
-        },
-        "example" : {
-          "restaurant" : {
-            "menus" : [ {
-              "restaurantId" : 123
-            }, {
-              "restaurantId" : 123
-            } ],
-            "category" : "",
-            "products" : [ {
-              "price" : 0.8008281904610115,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            }, {
-              "price" : 0.8008281904610115,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            } ]
-          }
-        }
-      },
-      "MenuArrayResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "menus" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Restaurant"
-            }
-          }
-        },
-        "example" : {
-          "menus" : [ {
-            "address" : {
-              "country" : "country",
-              "city" : "city",
-              "description" : "description",
-              "state" : "state",
-              "line2" : "line2",
-              "line1" : "line1"
-            },
-            "geoLocation" : {
-              "latitud" : 0,
-              "longitud" : 6
-            },
-            "contact" : {
-              "whatsapp" : "7788-9900",
-              "phoneNumber" : "2222-5555",
-              "facebook" : "facebook",
-              "email" : "correo@ejemplo.com"
-            },
-            "schedules" : [ {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            }, {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            } ],
-            "categoryId" : 123,
-            "tags" : [ "Mexican", "Japan", "Favorite" ]
-          }, {
-            "address" : {
-              "country" : "country",
-              "city" : "city",
-              "description" : "description",
-              "state" : "state",
-              "line2" : "line2",
-              "line1" : "line1"
-            },
-            "geoLocation" : {
-              "latitud" : 0,
-              "longitud" : 6
-            },
-            "contact" : {
-              "whatsapp" : "7788-9900",
-              "phoneNumber" : "2222-5555",
-              "facebook" : "facebook",
-              "email" : "correo@ejemplo.com"
-            },
-            "schedules" : [ {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            }, {
-              "name" : "name",
-              "closeTime" : "closeTime",
-              "days" : "days",
-              "openTime" : "openTime"
-            } ],
-            "categoryId" : 123,
-            "tags" : [ "Mexican", "Japan", "Favorite" ]
-          } ]
-        }
-      },
-      "MenuObjectResult_data_menu" : {
+      "MenuObjectResult_menu" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
@@ -1560,79 +1454,7 @@
           } ]
         }
       },
-      "MenuObjectResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "menu" : {
-            "$ref" : "#/components/schemas/MenuObjectResult_data_menu"
-          }
-        },
-        "example" : {
-          "menu" : {
-            "restaurant" : {
-              "address" : {
-                "country" : "country",
-                "city" : "city",
-                "description" : "description",
-                "state" : "state",
-                "line2" : "line2",
-                "line1" : "line1"
-              },
-              "geoLocation" : {
-                "latitud" : 0,
-                "longitud" : 6
-              },
-              "contact" : {
-                "whatsapp" : "7788-9900",
-                "phoneNumber" : "2222-5555",
-                "facebook" : "facebook",
-                "email" : "correo@ejemplo.com"
-              },
-              "schedules" : [ {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              }, {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              } ],
-              "categoryId" : 123,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            },
-            "products" : [ {
-              "price" : 0.8008281904610115,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            }, {
-              "price" : 0.8008281904610115,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            } ]
-          }
-        }
-      },
-      "ProductArrayResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "products" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Product"
-            }
-          }
-        },
-        "example" : {
-          "products" : [ {
-            "price" : 0.8008281904610115,
-            "tags" : [ "Mexican", "Japan", "Favorite" ]
-          }, {
-            "price" : 0.8008281904610115,
-            "tags" : [ "Mexican", "Japan", "Favorite" ]
-          } ]
-        }
-      },
-      "ProductObjectResult_data_product" : {
+      "ProductObjectResult_product" : {
         "type" : "object",
         "properties" : {
           "restaurant" : {
@@ -1678,54 +1500,6 @@
           },
           "menu" : {
             "restaurantId" : 123
-          }
-        }
-      },
-      "ProductObjectResult_data" : {
-        "type" : "object",
-        "properties" : {
-          "product" : {
-            "$ref" : "#/components/schemas/ProductObjectResult_data_product"
-          }
-        },
-        "example" : {
-          "product" : {
-            "restaurant" : {
-              "address" : {
-                "country" : "country",
-                "city" : "city",
-                "description" : "description",
-                "state" : "state",
-                "line2" : "line2",
-                "line1" : "line1"
-              },
-              "geoLocation" : {
-                "latitud" : 0,
-                "longitud" : 6
-              },
-              "contact" : {
-                "whatsapp" : "7788-9900",
-                "phoneNumber" : "2222-5555",
-                "facebook" : "facebook",
-                "email" : "correo@ejemplo.com"
-              },
-              "schedules" : [ {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              }, {
-                "name" : "name",
-                "closeTime" : "closeTime",
-                "days" : "days",
-                "openTime" : "openTime"
-              } ],
-              "categoryId" : 123,
-              "tags" : [ "Mexican", "Japan", "Favorite" ]
-            },
-            "menu" : {
-              "restaurantId" : 123
-            }
           }
         }
       }
