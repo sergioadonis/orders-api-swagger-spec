@@ -82,6 +82,7 @@ namespace IO.Swagger.Controllers
         /// <param name="skip"></param>
         /// <response code="200">ok</response>
         /// <response code="401">Access token is missing or invalid</response>
+        /// <response code="403">Access token is missing or invalid</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/categories")]
         [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
@@ -95,6 +96,9 @@ namespace IO.Swagger.Controllers
 
             //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(401);
+
+            //TODO: Uncomment the next line to return response 403 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(403);
             string exampleJson = null;
             exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"categories\" : [ \"\", \"\" ]\n}";
             
