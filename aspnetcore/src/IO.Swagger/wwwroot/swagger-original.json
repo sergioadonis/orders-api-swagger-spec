@@ -43,6 +43,16 @@
           }
         } ],
         "responses" : {
+          "200" : {
+            "description" : "ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CategoryArrayResult"
+                }
+              }
+            }
+          },
           "401" : {
             "description" : "Access token is missing or invalid"
           }
@@ -885,6 +895,14 @@
               "$ref" : "#/components/schemas/Category"
             }
           }
+        },
+        "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
+          "categories" : [ "", "" ]
         }
       },
       "CategoryObjectResult" : {
