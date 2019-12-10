@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"category\" : \"\"\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"category\" : \"\"\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<CategoryObjectResult>(exampleJson)
@@ -65,7 +65,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"category\" : \"\"\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"category\" : \"\"\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<CategoryObjectResult>(exampleJson)
@@ -89,7 +89,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryArrayResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"categories\" : [ \"\", \"\" ]\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"categories\" : [ \"\", \"\" ]\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<CategoryArrayResult>(exampleJson)
@@ -112,7 +112,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"category\" : \"\"\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"category\" : \"\"\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<CategoryObjectResult>(exampleJson)
@@ -136,7 +136,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(CategoryObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"category\" : \"\"\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"category\" : \"\"\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<CategoryObjectResult>(exampleJson)

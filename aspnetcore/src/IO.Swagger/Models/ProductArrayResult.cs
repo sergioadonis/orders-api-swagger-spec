@@ -24,8 +24,14 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class ProductArrayResult : Result, IEquatable<ProductArrayResult>
+    public partial class ProductArrayResult : IEquatable<ProductArrayResult>
     { 
+        /// <summary>
+        /// Gets or Sets Result
+        /// </summary>
+        [DataMember(Name="result")]
+        public Result Result { get; set; }
+
         /// <summary>
         /// Gets or Sets Products
         /// </summary>
@@ -40,6 +46,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class ProductArrayResult {\n");
+            sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("  Products: ").Append(Products).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -49,7 +56,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -78,6 +85,11 @@ namespace IO.Swagger.Models
 
             return 
                 (
+                    Result == other.Result ||
+                    Result != null &&
+                    Result.Equals(other.Result)
+                ) && 
+                (
                     Products == other.Products ||
                     Products != null &&
                     Products.SequenceEqual(other.Products)
@@ -94,6 +106,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
+                    if (Result != null)
+                    hashCode = hashCode * 59 + Result.GetHashCode();
                     if (Products != null)
                     hashCode = hashCode * 59 + Products.GetHashCode();
                 return hashCode;

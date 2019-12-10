@@ -877,6 +877,9 @@
       "CategoryArrayResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "categories" : {
             "type" : "array",
             "items" : {
@@ -885,29 +888,39 @@
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "categories" : [ "", "" ]
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "CategoryObjectResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "category" : {
             "$ref" : "#/components/schemas/Category"
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "category" : ""
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "RestaurantArrayResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "restaurants" : {
             "type" : "array",
             "items" : {
@@ -916,6 +929,11 @@
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "restaurants" : [ {
             "address" : {
               "country" : "country",
@@ -981,19 +999,24 @@
             "categoryId" : 123,
             "tags" : [ "Mexican", "Japan", "Favorite" ]
           } ]
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "RestaurantObjectResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "restaurant" : {
             "$ref" : "#/components/schemas/Restaurant"
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "restaurant" : {
             "address" : {
               "country" : "country",
@@ -1027,10 +1050,7 @@
             "categoryId" : 123,
             "tags" : [ "Mexican", "Japan", "Favorite" ]
           }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "MenuArrayResult" : {
         "type" : "object",
@@ -1061,22 +1081,30 @@
       "MenuObjectResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "menu" : {
             "$ref" : "#/components/schemas/Menu"
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "menu" : {
             "restaurantId" : 123
           }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "ProductArrayResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "products" : {
             "type" : "array",
             "items" : {
@@ -1085,6 +1113,11 @@
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "products" : [ {
             "price" : 0.8008281904610115,
             "restaurantId" : 123,
@@ -1094,28 +1127,30 @@
             "restaurantId" : 123,
             "tags" : [ "Mexican", "Japan", "Favorite" ]
           } ]
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       },
       "ProductObjectResult" : {
         "type" : "object",
         "properties" : {
+          "result" : {
+            "$ref" : "#/components/schemas/Result"
+          },
           "product" : {
             "$ref" : "#/components/schemas/Product"
           }
         },
         "example" : {
+          "result" : {
+            "requestId" : "requestId",
+            "errorCode" : "errorCode",
+            "message" : "message"
+          },
           "product" : {
             "price" : 0.8008281904610115,
             "restaurantId" : 123,
             "tags" : [ "Mexican", "Japan", "Favorite" ]
           }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Result"
-        } ]
+        }
       }
     },
     "responses" : {

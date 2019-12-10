@@ -24,8 +24,14 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class RestaurantArrayResult : Result, IEquatable<RestaurantArrayResult>
+    public partial class RestaurantArrayResult : IEquatable<RestaurantArrayResult>
     { 
+        /// <summary>
+        /// Gets or Sets Result
+        /// </summary>
+        [DataMember(Name="result")]
+        public Result Result { get; set; }
+
         /// <summary>
         /// Gets or Sets Restaurants
         /// </summary>
@@ -40,6 +46,7 @@ namespace IO.Swagger.Models
         {
             var sb = new StringBuilder();
             sb.Append("class RestaurantArrayResult {\n");
+            sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("  Restaurants: ").Append(Restaurants).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -49,7 +56,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -78,6 +85,11 @@ namespace IO.Swagger.Models
 
             return 
                 (
+                    Result == other.Result ||
+                    Result != null &&
+                    Result.Equals(other.Result)
+                ) && 
+                (
                     Restaurants == other.Restaurants ||
                     Restaurants != null &&
                     Restaurants.SequenceEqual(other.Restaurants)
@@ -94,6 +106,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
+                    if (Result != null)
+                    hashCode = hashCode * 59 + Result.GetHashCode();
                     if (Restaurants != null)
                     hashCode = hashCode * 59 + Restaurants.GetHashCode();
                 return hashCode;

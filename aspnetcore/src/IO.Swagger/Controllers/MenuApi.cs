@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(MenuObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<MenuObjectResult>(exampleJson)
@@ -65,7 +65,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(MenuObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<MenuObjectResult>(exampleJson)
@@ -88,7 +88,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(MenuObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<MenuObjectResult>(exampleJson)
@@ -137,7 +137,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(MenuObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
+            exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"menu\" : {\n    \"restaurantId\" : 123\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<MenuObjectResult>(exampleJson)
