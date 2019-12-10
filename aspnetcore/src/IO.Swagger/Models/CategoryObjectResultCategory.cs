@@ -24,13 +24,13 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class CategoryObjectResult : Result, IEquatable<CategoryObjectResult>
+    public partial class CategoryObjectResultCategory : IEquatable<CategoryObjectResultCategory>
     { 
         /// <summary>
-        /// Gets or Sets Category
+        /// Gets or Sets Restaurants
         /// </summary>
-        [DataMember(Name="category")]
-        public CategoryObjectResultCategory Category { get; set; }
+        [DataMember(Name="restaurants")]
+        public List<Restaurant> Restaurants { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -39,8 +39,8 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CategoryObjectResult {\n");
-            sb.Append("  Category: ").Append(Category).Append("\n");
+            sb.Append("class CategoryObjectResultCategory {\n");
+            sb.Append("  Restaurants: ").Append(Restaurants).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,7 +49,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -63,24 +63,24 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((CategoryObjectResult)obj);
+            return obj.GetType() == GetType() && Equals((CategoryObjectResultCategory)obj);
         }
 
         /// <summary>
-        /// Returns true if CategoryObjectResult instances are equal
+        /// Returns true if CategoryObjectResultCategory instances are equal
         /// </summary>
-        /// <param name="other">Instance of CategoryObjectResult to be compared</param>
+        /// <param name="other">Instance of CategoryObjectResultCategory to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CategoryObjectResult other)
+        public bool Equals(CategoryObjectResultCategory other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Category == other.Category ||
-                    Category != null &&
-                    Category.Equals(other.Category)
+                    Restaurants == other.Restaurants ||
+                    Restaurants != null &&
+                    Restaurants.SequenceEqual(other.Restaurants)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Category != null)
-                    hashCode = hashCode * 59 + Category.GetHashCode();
+                    if (Restaurants != null)
+                    hashCode = hashCode * 59 + Restaurants.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +103,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(CategoryObjectResult left, CategoryObjectResult right)
+        public static bool operator ==(CategoryObjectResultCategory left, CategoryObjectResultCategory right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(CategoryObjectResult left, CategoryObjectResult right)
+        public static bool operator !=(CategoryObjectResultCategory left, CategoryObjectResultCategory right)
         {
             return !Equals(left, right);
         }
