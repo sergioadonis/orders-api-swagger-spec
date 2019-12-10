@@ -80,21 +80,21 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="skip"></param>
-        /// <response code="401">Access token is missing or invalid</response>
-        /// <response code="0">ok</response>
+        /// <response code="0">Access token is missing or invalid</response>
+        /// <response code="200">ok</response>
         [HttpGet]
         [Route("/sergioadonis/restaurant-orders-api/v1/categories")]
         [Authorize(AuthenticationSchemes = BearerAuthenticationHandler.SchemeName)]
         [ValidateModelState]
         [SwaggerOperation("GetCategories")]
-        [SwaggerResponse(statusCode: 0, type: typeof(CategoryArrayResult), description: "ok")]
+        [SwaggerResponse(statusCode: 200, type: typeof(CategoryArrayResult), description: "ok")]
         public virtual IActionResult GetCategories([FromQuery]int? limit, [FromQuery]int? skip)
         { 
-            //TODO: Uncomment the next line to return response 401 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(401);
-
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(0, default(CategoryArrayResult));
+            // return StatusCode(0);
+
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200, default(CategoryArrayResult));
             string exampleJson = null;
             exampleJson = "{\n  \"result\" : {\n    \"requestId\" : \"requestId\",\n    \"errorCode\" : \"errorCode\",\n    \"message\" : \"message\"\n  },\n  \"categories\" : [ \"\", \"\" ]\n}";
             
