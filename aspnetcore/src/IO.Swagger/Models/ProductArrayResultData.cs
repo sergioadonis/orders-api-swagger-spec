@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Products
         /// </summary>
         [DataMember(Name="products")]
-        public List<CommonProps> Products { get; set; }
+        public List<Product> Products { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

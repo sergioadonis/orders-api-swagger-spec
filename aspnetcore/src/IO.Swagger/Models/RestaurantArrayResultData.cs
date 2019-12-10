@@ -24,13 +24,13 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class RestaurantArrayResult : Result, IEquatable<RestaurantArrayResult>
+    public partial class RestaurantArrayResultData : IEquatable<RestaurantArrayResultData>
     { 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Restaurants
         /// </summary>
-        [DataMember(Name="data")]
-        public RestaurantArrayResultData Data { get; set; }
+        [DataMember(Name="restaurants")]
+        public List<Restaurant> Restaurants { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -39,8 +39,8 @@ namespace IO.Swagger.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RestaurantArrayResult {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class RestaurantArrayResultData {\n");
+            sb.Append("  Restaurants: ").Append(Restaurants).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -49,7 +49,7 @@ namespace IO.Swagger.Models
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -63,24 +63,24 @@ namespace IO.Swagger.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((RestaurantArrayResult)obj);
+            return obj.GetType() == GetType() && Equals((RestaurantArrayResultData)obj);
         }
 
         /// <summary>
-        /// Returns true if RestaurantArrayResult instances are equal
+        /// Returns true if RestaurantArrayResultData instances are equal
         /// </summary>
-        /// <param name="other">Instance of RestaurantArrayResult to be compared</param>
+        /// <param name="other">Instance of RestaurantArrayResultData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RestaurantArrayResult other)
+        public bool Equals(RestaurantArrayResultData other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
             return 
                 (
-                    Data == other.Data ||
-                    Data != null &&
-                    Data.Equals(other.Data)
+                    Restaurants == other.Restaurants ||
+                    Restaurants != null &&
+                    Restaurants.SequenceEqual(other.Restaurants)
                 );
         }
 
@@ -94,8 +94,8 @@ namespace IO.Swagger.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Data != null)
-                    hashCode = hashCode * 59 + Data.GetHashCode();
+                    if (Restaurants != null)
+                    hashCode = hashCode * 59 + Restaurants.GetHashCode();
                 return hashCode;
             }
         }
@@ -103,12 +103,12 @@ namespace IO.Swagger.Models
         #region Operators
         #pragma warning disable 1591
 
-        public static bool operator ==(RestaurantArrayResult left, RestaurantArrayResult right)
+        public static bool operator ==(RestaurantArrayResultData left, RestaurantArrayResultData right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(RestaurantArrayResult left, RestaurantArrayResult right)
+        public static bool operator !=(RestaurantArrayResultData left, RestaurantArrayResultData right)
         {
             return !Equals(left, right);
         }

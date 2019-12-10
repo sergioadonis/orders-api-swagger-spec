@@ -659,6 +659,39 @@
             }
           }
         },
+        "example" : {
+          "address" : {
+            "country" : "country",
+            "city" : "city",
+            "description" : "description",
+            "state" : "state",
+            "line2" : "line2",
+            "line1" : "line1"
+          },
+          "geoLocation" : {
+            "latitud" : 0,
+            "longitud" : 6
+          },
+          "contact" : {
+            "whatsapp" : "7788-9900",
+            "phoneNumber" : "2222-5555",
+            "facebook" : "facebook",
+            "email" : "correo@ejemplo.com"
+          },
+          "schedules" : [ {
+            "name" : "name",
+            "closeTime" : "closeTime",
+            "days" : "days",
+            "openTime" : "openTime"
+          }, {
+            "name" : "name",
+            "closeTime" : "closeTime",
+            "days" : "days",
+            "openTime" : "openTime"
+          } ],
+          "categoryId" : 123,
+          "tags" : [ "Mexican", "Japan", "Favorite" ]
+        },
         "allOf" : [ {
           "$ref" : "#/components/schemas/CommonProps"
         } ]
@@ -679,6 +712,11 @@
           "tags" : {
             "$ref" : "#/components/schemas/Tags"
           }
+        },
+        "example" : {
+          "price" : 0.8008281904610115,
+          "restaurantId" : 123,
+          "tags" : [ "Mexican", "Japan", "Favorite" ]
         },
         "allOf" : [ {
           "$ref" : "#/components/schemas/CommonProps"
@@ -744,6 +782,12 @@
           "facebook" : {
             "type" : "string"
           }
+        },
+        "example" : {
+          "whatsapp" : "7788-9900",
+          "phoneNumber" : "2222-5555",
+          "facebook" : "facebook",
+          "email" : "correo@ejemplo.com"
         }
       },
       "Address" : {
@@ -767,6 +811,14 @@
           "line2" : {
             "type" : "string"
           }
+        },
+        "example" : {
+          "country" : "country",
+          "city" : "city",
+          "description" : "description",
+          "state" : "state",
+          "line2" : "line2",
+          "line1" : "line1"
         }
       },
       "GeoLocation" : {
@@ -778,6 +830,10 @@
           "longitud" : {
             "type" : "integer"
           }
+        },
+        "example" : {
+          "latitud" : 0,
+          "longitud" : 6
         }
       },
       "Schedule" : {
@@ -795,6 +851,12 @@
           "closeTime" : {
             "type" : "string"
           }
+        },
+        "example" : {
+          "name" : "name",
+          "closeTime" : "closeTime",
+          "days" : "days",
+          "openTime" : "openTime"
         }
       },
       "Result" : {
@@ -820,17 +882,7 @@
         },
         "example" : {
           "data" : {
-            "categories" : [ {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
-            }, {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
-            } ]
+            "categories" : [ "", "" ]
           }
         },
         "allOf" : [ {
@@ -869,21 +921,75 @@
         "type" : "object",
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/CategoryObjectResult_data_category"
+            "$ref" : "#/components/schemas/RestaurantArrayResult_data"
           }
         },
         "example" : {
           "data" : {
             "restaurants" : [ {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
+              "address" : {
+                "country" : "country",
+                "city" : "city",
+                "description" : "description",
+                "state" : "state",
+                "line2" : "line2",
+                "line1" : "line1"
+              },
+              "geoLocation" : {
+                "latitud" : 0,
+                "longitud" : 6
+              },
+              "contact" : {
+                "whatsapp" : "7788-9900",
+                "phoneNumber" : "2222-5555",
+                "facebook" : "facebook",
+                "email" : "correo@ejemplo.com"
+              },
+              "schedules" : [ {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              }, {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              } ],
+              "categoryId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
             }, {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
+              "address" : {
+                "country" : "country",
+                "city" : "city",
+                "description" : "description",
+                "state" : "state",
+                "line2" : "line2",
+                "line1" : "line1"
+              },
+              "geoLocation" : {
+                "latitud" : 0,
+                "longitud" : 6
+              },
+              "contact" : {
+                "whatsapp" : "7788-9900",
+                "phoneNumber" : "2222-5555",
+                "facebook" : "facebook",
+                "email" : "correo@ejemplo.com"
+              },
+              "schedules" : [ {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              }, {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              } ],
+              "categoryId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
             } ]
           }
         },
@@ -926,15 +1032,69 @@
         "example" : {
           "data" : {
             "menus" : [ {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
+              "address" : {
+                "country" : "country",
+                "city" : "city",
+                "description" : "description",
+                "state" : "state",
+                "line2" : "line2",
+                "line1" : "line1"
+              },
+              "geoLocation" : {
+                "latitud" : 0,
+                "longitud" : 6
+              },
+              "contact" : {
+                "whatsapp" : "7788-9900",
+                "phoneNumber" : "2222-5555",
+                "facebook" : "facebook",
+                "email" : "correo@ejemplo.com"
+              },
+              "schedules" : [ {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              }, {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              } ],
+              "categoryId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
             }, {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
+              "address" : {
+                "country" : "country",
+                "city" : "city",
+                "description" : "description",
+                "state" : "state",
+                "line2" : "line2",
+                "line1" : "line1"
+              },
+              "geoLocation" : {
+                "latitud" : 0,
+                "longitud" : 6
+              },
+              "contact" : {
+                "whatsapp" : "7788-9900",
+                "phoneNumber" : "2222-5555",
+                "facebook" : "facebook",
+                "email" : "correo@ejemplo.com"
+              },
+              "schedules" : [ {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              }, {
+                "name" : "name",
+                "closeTime" : "closeTime",
+                "days" : "days",
+                "openTime" : "openTime"
+              } ],
+              "categoryId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
             } ]
           }
         },
@@ -976,15 +1136,13 @@
         "example" : {
           "data" : {
             "products" : [ {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
+              "price" : 0.8008281904610115,
+              "restaurantId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
             }, {
-              "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-              "name" : "Name of object",
-              "description" : "This is a description for this object, could be Markdown sintax.",
-              "id" : 123
+              "price" : 0.8008281904610115,
+              "restaurantId" : 123,
+              "tags" : [ "Mexican", "Japan", "Favorite" ]
             } ]
           }
         },
@@ -1021,22 +1179,12 @@
           "categories" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/CommonProps"
+              "$ref" : "#/components/schemas/Category"
             }
           }
         },
         "example" : {
-          "categories" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
-          } ]
+          "categories" : [ "", "" ]
         }
       },
       "CategoryObjectResult_data_category" : {
@@ -1084,6 +1232,84 @@
               "id" : 123
             } ]
           }
+        }
+      },
+      "RestaurantArrayResult_data" : {
+        "type" : "object",
+        "properties" : {
+          "restaurants" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Restaurant"
+            }
+          }
+        },
+        "example" : {
+          "restaurants" : [ {
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          }, {
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
+          } ]
         }
       },
       "RestaurantObjectResult_data_restaurant" : {
@@ -1142,21 +1368,75 @@
           "menus" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/CommonProps"
+              "$ref" : "#/components/schemas/Restaurant"
             }
           }
         },
         "example" : {
           "menus" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
           }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
+            "address" : {
+              "country" : "country",
+              "city" : "city",
+              "description" : "description",
+              "state" : "state",
+              "line2" : "line2",
+              "line1" : "line1"
+            },
+            "geoLocation" : {
+              "latitud" : 0,
+              "longitud" : 6
+            },
+            "contact" : {
+              "whatsapp" : "7788-9900",
+              "phoneNumber" : "2222-5555",
+              "facebook" : "facebook",
+              "email" : "correo@ejemplo.com"
+            },
+            "schedules" : [ {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            }, {
+              "name" : "name",
+              "closeTime" : "closeTime",
+              "days" : "days",
+              "openTime" : "openTime"
+            } ],
+            "categoryId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
           } ]
         }
       },
@@ -1208,21 +1488,19 @@
           "products" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/CommonProps"
+              "$ref" : "#/components/schemas/Product"
             }
           }
         },
         "example" : {
           "products" : [ {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
+            "price" : 0.8008281904610115,
+            "restaurantId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
           }, {
-            "photoUrl" : "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9",
-            "name" : "Name of object",
-            "description" : "This is a description for this object, could be Markdown sintax.",
-            "id" : 123
+            "price" : 0.8008281904610115,
+            "restaurantId" : 123,
+            "tags" : [ "Mexican", "Japan", "Favorite" ]
           } ]
         }
       },

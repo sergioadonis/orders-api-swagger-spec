@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Menus
         /// </summary>
         [DataMember(Name="menus")]
-        public List<CommonProps> Menus { get; set; }
+        public List<Restaurant> Menus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
