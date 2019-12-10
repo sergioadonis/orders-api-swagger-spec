@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Restaurant
         /// </summary>
         [DataMember(Name="restaurant")]
-        public RestaurantObjectResultRestaurant Restaurant { get; set; }
+        public Restaurant Restaurant { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

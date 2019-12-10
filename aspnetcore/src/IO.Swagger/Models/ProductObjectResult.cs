@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Product
         /// </summary>
         [DataMember(Name="product")]
-        public ProductObjectResultProduct Product { get; set; }
+        public Product Product { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

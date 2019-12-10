@@ -42,7 +42,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"product\" : {\n    \"restaurant\" : {\n      \"address\" : {\n        \"country\" : \"country\",\n        \"city\" : \"city\",\n        \"description\" : \"description\",\n        \"state\" : \"state\",\n        \"line2\" : \"line2\",\n        \"line1\" : \"line1\"\n      },\n      \"geoLocation\" : {\n        \"latitud\" : 0,\n        \"longitud\" : 6\n      },\n      \"contact\" : {\n        \"whatsapp\" : \"7788-9900\",\n        \"phoneNumber\" : \"2222-5555\",\n        \"facebook\" : \"facebook\",\n        \"email\" : \"correo@ejemplo.com\"\n      },\n      \"schedules\" : [ {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      }, {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      } ],\n      \"categoryId\" : 123,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    },\n    \"menu\" : {\n      \"restaurantId\" : 123\n    }\n  }\n}";
+            exampleJson = "{\n  \"product\" : {\n    \"price\" : 0.8008281904610115,\n    \"restaurantId\" : 123,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<ProductObjectResult>(exampleJson)
@@ -65,7 +65,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"product\" : {\n    \"restaurant\" : {\n      \"address\" : {\n        \"country\" : \"country\",\n        \"city\" : \"city\",\n        \"description\" : \"description\",\n        \"state\" : \"state\",\n        \"line2\" : \"line2\",\n        \"line1\" : \"line1\"\n      },\n      \"geoLocation\" : {\n        \"latitud\" : 0,\n        \"longitud\" : 6\n      },\n      \"contact\" : {\n        \"whatsapp\" : \"7788-9900\",\n        \"phoneNumber\" : \"2222-5555\",\n        \"facebook\" : \"facebook\",\n        \"email\" : \"correo@ejemplo.com\"\n      },\n      \"schedules\" : [ {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      }, {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      } ],\n      \"categoryId\" : 123,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    },\n    \"menu\" : {\n      \"restaurantId\" : 123\n    }\n  }\n}";
+            exampleJson = "{\n  \"product\" : {\n    \"price\" : 0.8008281904610115,\n    \"restaurantId\" : 123,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<ProductObjectResult>(exampleJson)
@@ -88,7 +88,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"product\" : {\n    \"restaurant\" : {\n      \"address\" : {\n        \"country\" : \"country\",\n        \"city\" : \"city\",\n        \"description\" : \"description\",\n        \"state\" : \"state\",\n        \"line2\" : \"line2\",\n        \"line1\" : \"line1\"\n      },\n      \"geoLocation\" : {\n        \"latitud\" : 0,\n        \"longitud\" : 6\n      },\n      \"contact\" : {\n        \"whatsapp\" : \"7788-9900\",\n        \"phoneNumber\" : \"2222-5555\",\n        \"facebook\" : \"facebook\",\n        \"email\" : \"correo@ejemplo.com\"\n      },\n      \"schedules\" : [ {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      }, {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      } ],\n      \"categoryId\" : 123,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    },\n    \"menu\" : {\n      \"restaurantId\" : 123\n    }\n  }\n}";
+            exampleJson = "{\n  \"product\" : {\n    \"price\" : 0.8008281904610115,\n    \"restaurantId\" : 123,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<ProductObjectResult>(exampleJson)
@@ -114,7 +114,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductArrayResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"products\" : [ {\n    \"price\" : 0.8008281904610115,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  }, {\n    \"price\" : 0.8008281904610115,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  } ]\n}";
+            exampleJson = "{\n  \"products\" : [ {\n    \"price\" : 0.8008281904610115,\n    \"restaurantId\" : 123,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  }, {\n    \"price\" : 0.8008281904610115,\n    \"restaurantId\" : 123,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  } ]\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<ProductArrayResult>(exampleJson)
@@ -138,7 +138,7 @@ namespace IO.Swagger.Controllers
             //TODO: Uncomment the next line to return response 0 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(0, default(ProductObjectResult));
             string exampleJson = null;
-            exampleJson = "{\n  \"product\" : {\n    \"restaurant\" : {\n      \"address\" : {\n        \"country\" : \"country\",\n        \"city\" : \"city\",\n        \"description\" : \"description\",\n        \"state\" : \"state\",\n        \"line2\" : \"line2\",\n        \"line1\" : \"line1\"\n      },\n      \"geoLocation\" : {\n        \"latitud\" : 0,\n        \"longitud\" : 6\n      },\n      \"contact\" : {\n        \"whatsapp\" : \"7788-9900\",\n        \"phoneNumber\" : \"2222-5555\",\n        \"facebook\" : \"facebook\",\n        \"email\" : \"correo@ejemplo.com\"\n      },\n      \"schedules\" : [ {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      }, {\n        \"name\" : \"name\",\n        \"closeTime\" : \"closeTime\",\n        \"days\" : \"days\",\n        \"openTime\" : \"openTime\"\n      } ],\n      \"categoryId\" : 123,\n      \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n    },\n    \"menu\" : {\n      \"restaurantId\" : 123\n    }\n  }\n}";
+            exampleJson = "{\n  \"product\" : {\n    \"price\" : 0.8008281904610115,\n    \"restaurantId\" : 123,\n    \"tags\" : [ \"Mexican\", \"Japan\", \"Favorite\" ]\n  }\n}";
             
                         var example = exampleJson != null
                         ? JsonConvert.DeserializeObject<ProductObjectResult>(exampleJson)

@@ -30,7 +30,7 @@ namespace IO.Swagger.Models
         /// Gets or Sets Category
         /// </summary>
         [DataMember(Name="category")]
-        public CategoryObjectResultCategory Category { get; set; }
+        public Category Category { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
