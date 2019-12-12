@@ -82,6 +82,22 @@
         }
       }
     },
+    "/categories/{id}/photo" : {
+      "post" : {
+        "tags" : [ "Category" ],
+        "operationId" : "uploadCategoryPhoto",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/idParam"
+        }, {
+          "$ref" : "#/components/requestBodies/imageBinaryBody"
+        } ],
+        "responses" : {
+          "default" : {
+            "$ref" : "#/components/responses/categoryObjectResponse"
+          }
+        }
+      }
+    },
     "/restaurants" : {
       "get" : {
         "tags" : [ "Restaurant" ],
@@ -145,6 +161,22 @@
         "operationId" : "deleteRestaurant",
         "parameters" : [ {
           "$ref" : "#/components/parameters/idParam"
+        } ],
+        "responses" : {
+          "default" : {
+            "$ref" : "#/components/responses/restaurantObjectResponse"
+          }
+        }
+      }
+    },
+    "/restaurants/{id}/photo" : {
+      "post" : {
+        "tags" : [ "Restaurant" ],
+        "operationId" : "uploadRestaurantPhoto",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/idParam"
+        }, {
+          "$ref" : "#/components/requestBodies/imageBinaryBody"
         } ],
         "responses" : {
           "default" : {
@@ -224,6 +256,22 @@
         }
       }
     },
+    "/menus/{id}/photo" : {
+      "post" : {
+        "tags" : [ "Menus" ],
+        "operationId" : "uploadMenuPhoto",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/idParam"
+        }, {
+          "$ref" : "#/components/requestBodies/imageBinaryBody"
+        } ],
+        "responses" : {
+          "default" : {
+            "$ref" : "#/components/responses/menuObjectResponse"
+          }
+        }
+      }
+    },
     "/products" : {
       "get" : {
         "tags" : [ "Product" ],
@@ -289,6 +337,22 @@
         "operationId" : "deleteProduct",
         "parameters" : [ {
           "$ref" : "#/components/parameters/idParam"
+        } ],
+        "responses" : {
+          "default" : {
+            "$ref" : "#/components/responses/productObjectResponse"
+          }
+        }
+      }
+    },
+    "/products/{id}/photo" : {
+      "post" : {
+        "tags" : [ "Products" ],
+        "operationId" : "uploadProductPhoto",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/idParam"
+        }, {
+          "$ref" : "#/components/requestBodies/imageBinaryBody"
         } ],
         "responses" : {
           "default" : {
@@ -383,6 +447,16 @@
           "application/json" : {
             "schema" : {
               "$ref" : "#/components/schemas/Product"
+            }
+          }
+        }
+      },
+      "imageBinaryBody" : {
+        "content" : {
+          "image/png" : {
+            "schema" : {
+              "type" : "string",
+              "format" : "binary"
             }
           }
         }
