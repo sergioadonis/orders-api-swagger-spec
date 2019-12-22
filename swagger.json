@@ -258,7 +258,7 @@
     },
     "/menus/{id}/photo" : {
       "post" : {
-        "tags" : [ "Menus" ],
+        "tags" : [ "Menu" ],
         "operationId" : "uploadMenuPhoto",
         "parameters" : [ {
           "$ref" : "#/components/parameters/idParam"
@@ -347,7 +347,7 @@
     },
     "/products/{id}/photo" : {
       "post" : {
-        "tags" : [ "Products" ],
+        "tags" : [ "Product" ],
         "operationId" : "uploadProductPhoto",
         "parameters" : [ {
           "$ref" : "#/components/parameters/idParam"
