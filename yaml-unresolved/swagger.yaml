@@ -1,0 +1,654 @@
+openapi: 3.0.0
+info:
+  version: "v1"
+  title: "Restaurant Orders"
+  description: "Simple API to manage restaurant orders"
+  contact:
+    name: "Sergio Adonis"
+    email: "sergio.adonis@outlook.com"
+
+paths:
+  /categories:
+    get:
+      tags:
+        - Category
+      operationId: getCategories
+      parameters:
+        - $ref: "#/components/parameters/limitParam"
+        - $ref: "#/components/parameters/skipParam"
+      responses:
+        200:
+          $ref: "#/components/responses/categoryArrayResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+    post:
+      tags:
+        - Category
+      operationId: addCategory
+      requestBody:
+        $ref: "#/components/requestBodies/categoryBody"
+      responses:
+        default:
+          $ref: "#/components/responses/categoryObjectResponse"
+
+  /categories/{id}:
+    get:
+      tags:
+        - Category
+      operationId: getCategoryById
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/categoryObjectResponse"
+        
+    put:
+      tags:
+        - Category
+      operationId: updateCategory
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      requestBody:
+        $ref: "#/components/requestBodies/categoryBody"
+      responses:
+        default:
+          $ref: "#/components/responses/categoryObjectResponse"
+
+    delete:
+      tags:
+        - Category
+      operationId: deleteCategory
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/categoryObjectResponse"
+          
+  /categories/{id}/photo:
+    post:
+      tags:
+        - Category
+      operationId: uploadCategoryPhoto
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+        - $ref: "#/components/requestBodies/imageBinaryBody"
+      responses:
+        default:
+          $ref: "#/components/responses/categoryObjectResponse"
+      
+
+  /restaurants:
+    get:
+      tags:
+        - Restaurant
+      operationId: getRestaurants
+      parameters:
+        - $ref: "#/components/parameters/limitParam"
+        - $ref: "#/components/parameters/skipParam"
+        - $ref: "#/components/parameters/categoryIdParam"
+      responses:
+        default:
+          $ref: "#/components/responses/restaurantArrayResponse"
+
+    post:
+      tags:
+        - Restaurant
+      operationId: addRestaurant
+      requestBody:
+        $ref: "#/components/requestBodies/restaurantBody"
+      responses:
+        default:
+          $ref: "#/components/responses/restaurantObjectResponse"
+
+  /restaurants/{id}:
+    get:
+      tags:
+        - Restaurant
+      operationId: getRestaurantById
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/restaurantObjectResponse"
+
+    put:
+      tags:
+        - Restaurant
+      operationId: updateRestaurant
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      requestBody:
+        $ref: "#/components/requestBodies/restaurantBody"
+      responses:
+        default:
+          $ref: "#/components/responses/restaurantObjectResponse"
+
+    delete:
+      tags:
+        - Restaurant
+      operationId: deleteRestaurant
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/restaurantObjectResponse"
+          
+  /restaurants/{id}/photo:
+    post:
+      tags:
+        - Restaurant
+      operationId: uploadRestaurantPhoto
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+        - $ref: "#/components/requestBodies/imageBinaryBody"
+      responses:
+        default:
+          $ref: "#/components/responses/restaurantObjectResponse"
+
+  /menus:
+    get:
+      tags:
+        - Menu
+      operationId: getMenus
+      parameters:
+        - $ref: "#/components/parameters/limitParam"
+        - $ref: "#/components/parameters/skipParam"
+        - $ref: "#/components/parameters/restaurantIdParam"
+      responses:
+        default:
+          $ref: "#/components/responses/menuArrayResponse"
+
+    post:
+      tags:
+        - Menu
+      operationId: addMenu
+      requestBody:
+        $ref: "#/components/requestBodies/menuBody"
+      responses:
+        default:
+          $ref: "#/components/responses/menuObjectResponse"
+
+  /menus/{id}:
+    get:
+      tags:
+        - Menu
+      operationId: getMenuById
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/menuObjectResponse"
+        
+    put:
+      tags:
+        - Menu
+      operationId: updateMenu
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      requestBody:
+        $ref: "#/components/requestBodies/menuBody"
+      responses:
+        default:
+          $ref: "#/components/responses/menuObjectResponse"
+
+    delete:
+      tags:
+        - Menu
+      operationId: deleteMenu
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/menuObjectResponse"
+          
+  /menus/{id}/photo:
+    post:
+      tags:
+        - Menu
+      operationId: uploadMenuPhoto
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+        - $ref: "#/components/requestBodies/imageBinaryBody"
+      responses:
+        default:
+          $ref: "#/components/responses/menuObjectResponse"
+
+  /products:
+    get:
+      tags:
+        - Product
+      operationId: getProducts
+      parameters:
+        - $ref: "#/components/parameters/limitParam"
+        - $ref: "#/components/parameters/skipParam"
+        - $ref: "#/components/parameters/restaurantIdParam"
+        - $ref: "#/components/parameters/menuIdParam"
+      responses:
+        default:
+          $ref: "#/components/responses/productArrayResponse"
+        
+    post:
+      tags:
+        - Product
+      operationId: addProduct
+      requestBody:
+        $ref: "#/components/requestBodies/productBody"
+      responses:
+        default:
+          $ref: "#/components/responses/productObjectResponse"
+
+  /products/{id}:
+    get:
+      tags:
+        - Product
+      operationId: getProductById
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/productObjectResponse"
+        
+    put:
+      tags:
+        - Product
+      operationId: updateProduct
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      requestBody:
+        $ref: "#/components/requestBodies/productBody"
+      responses:
+        default:
+          $ref: "#/components/responses/productObjectResponse"
+
+    delete:
+      tags:
+        - Product
+      operationId: deleteProduct
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        default:
+          $ref: "#/components/responses/productObjectResponse"
+  
+  /products/{id}/photo:
+    post:
+      tags:
+        - Product
+      operationId: uploadProductPhoto
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+        - $ref: "#/components/requestBodies/imageBinaryBody"
+      responses:
+        default:
+          $ref: "#/components/responses/productObjectResponse"
+          
+
+components:
+  parameters:
+    limitParam:
+      in: query
+      name: limit
+      schema:
+        type: integer
+        default: 50
+
+    skipParam:
+      in: query
+      name: skip
+      schema:
+        type: integer
+        default: 0
+
+    categoryIdParam:
+      in: query
+      name: categoryId
+      schema:
+        $ref: "#/components/schemas/CommonProps/properties/id"
+
+    restaurantIdParam:
+      in: query
+      name: restaurantId
+      schema:
+        $ref: "#/components/schemas/CommonProps/properties/id"
+
+    menuIdParam:
+      in: query
+      name: menuId
+      schema:
+        $ref: "#/components/schemas/CommonProps/properties/id"
+
+    idParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        $ref: "#/components/schemas/CommonProps/properties/id"
+
+  requestBodies:
+    categoryBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Category"
+
+    restaurantBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Restaurant"
+
+    menuBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Menu"
+
+    productBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Product"
+    
+    imageBinaryBody:
+      content:
+        image/png:
+          schema:
+            type: string
+            format: binary
+
+  responses:
+    categoryArrayResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CategoryArrayResult"
+    
+    categoryObjectResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CategoryObjectResult"
+            
+    restaurantArrayResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RestaurantArrayResult"
+
+    restaurantObjectResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RestaurantObjectResult"
+            
+    menuArrayResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/MenuArrayResult"
+
+    menuObjectResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/MenuObjectResult"
+            
+    productArrayResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ProductArrayResult"
+    
+    productObjectResponse:
+      description: ok
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ProductObjectResult"
+            
+    UnauthorizedError:
+      description: Access token is missing or invalid
+            
+
+  schemas:
+    Category:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/CommonProps"
+
+    Menu:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/CommonProps"
+      properties:
+        restaurantId:
+          $ref: "#/components/schemas/ReferenceId"
+
+    Restaurant:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/CommonProps"
+      properties:
+        categoryId:
+          $ref: "#/components/schemas/ReferenceId"
+        tags:
+          $ref: "#/components/schemas/Tags"
+        contact:
+          $ref: "#/components/schemas/Contact"
+        address:
+          $ref: "#/components/schemas/Address"
+        geoLocation:
+          $ref: "#/components/schemas/GeoLocation"
+        schedules:
+          type: array
+          items:
+            $ref: "#/components/schemas/Schedule"
+
+    Product:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/CommonProps"
+      properties:
+        restaurantId:
+          $ref: "#/components/schemas/ReferenceId"
+        price:
+          type: number
+          format: currency
+        menuId:
+          $ref: "#/components/schemas/ReferenceId"
+        tags:
+          $ref: "#/components/schemas/Tags"
+          
+    CommonProps:
+      type: object
+      properties:
+        id: 
+          type: integer
+          format: int64
+          readOnly: true
+          example: 123
+        name: 
+          type: string
+          example: Name of object
+        description:
+          type: string
+          example: This is a description for this object, could be Markdown sintax.
+        photoUrl:
+          type: string
+          example: "https://user-contents.domain.example.com/12ea34-651d76c-87bd-85b6f9"
+      
+    ReferenceId:
+      type: integer
+      format: int64
+      example: 123
+        
+    Tags:
+      type: array
+      items:
+        type: string
+      example:
+        - Mexican
+        - Japan
+        - Favorite
+    
+    Contact:
+      type: object
+      properties:
+        phoneNumber:
+          type: string
+          example: "2222-5555"
+        email:
+          type: string
+          example: "correo@ejemplo.com"
+        whatsapp:
+          type: string
+          example: "7788-9900"
+        facebook:
+          type: string
+
+    Address:
+      type: object
+      properties:
+        description:
+          type: string
+        country:
+          type: string
+        state:
+          type: string
+        city:
+          type: string
+        line1:
+          type: string
+        line2:
+          type: string
+
+    GeoLocation:
+      type: object
+      properties:
+        latitud:
+          type: integer
+        longitud:
+          type: integer
+
+    Schedule:
+      type: object
+      properties:
+        name:
+          type: string
+        days:
+          type: string
+        openTime:
+          type: string
+        closeTime:
+          type: string
+          
+    Result:
+      type: object
+      properties:
+        errorCode:
+          type: string
+        message:
+          type: string
+        requestId:
+          type: string
+          
+    CategoryArrayResult:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/Result"
+        categories:
+          type: array
+          items:
+            $ref: "#/components/schemas/Category"
+            
+    CategoryObjectResult:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/Result"
+        category:
+          $ref: "#/components/schemas/Category"
+                    
+    RestaurantArrayResult:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/Result"
+        restaurants:
+          type: array
+          items:
+            $ref: "#/components/schemas/Restaurant"
+    
+    RestaurantObjectResult:
+      type: object
+      properties:
+        result: 
+          $ref: "#/components/schemas/Result"
+        restaurant:
+          $ref: "#/components/schemas/Restaurant"
+          
+    MenuArrayResult:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/Result"
+        menus:
+          type: array
+          items:
+            $ref: "#/components/schemas/Menu"
+            
+    MenuObjectResult:
+      type: object
+      properties:
+        result:
+          $ref: "#/components/schemas/Result"
+        menu:
+          $ref: "#/components/schemas/Menu"
+          
+    ProductArrayResult:
+      type: object
+      properties:
+        result: 
+          $ref: "#/components/schemas/Result"
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/Product"
+            
+    ProductObjectResult:
+      type: object
+      properties:
+        result: 
+          $ref: "#/components/schemas/Result"
+        product:
+          $ref: "#/components/schemas/Product"
+  
+  
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+
+security: 
+  - bearerAuth: []
+          
+
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/sergioadonis/restaurant-orders-api/v1
